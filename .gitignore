@@ -76,3 +76,4 @@ crashlytics-build.properties
 .DS_Store
 /[Aa]ssets/[Ss]cenes/[Tt]esting*
 /[Aa]ssets/[Mm]aterials/[Tt]esting/*
+/[Aa]ssets/[Ss]cripts/[Tt]esting/*
