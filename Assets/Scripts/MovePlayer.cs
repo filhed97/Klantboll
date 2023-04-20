@@ -12,6 +12,7 @@ public class MovePlayer : MonoBehaviour
     public float jumpHeight = 15;
     public float MovementSpeed = 5;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +22,10 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //directional vector for movement and character rotation.
-        Vector3 moveDirection = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
 
-        //changes velocity of RigidBody rb
-        rb.velocity += moveDirection*MovementSpeed;
-
-        //if statement that handles jump
-        if(Input.GetKeyDown("space") && IsGrounded()){
-            rb.velocity += new Vector3(Input.GetAxis("Horizontal"),jumpHeight,Input.GetAxis("Vertical"));
-        }
+        float speed = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
+        transform.Rotate(0, speed, 0);
+        rb.AddForce(transform.forward * 50);
     }
 
     bool IsGrounded(){
