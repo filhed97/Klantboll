@@ -1,7 +1,7 @@
 using UnityEngine;
 public class BallKicker : MonoBehaviour
 {
-    public float kickforce = 500;
+    public float kickforce = 80;
 
     private void OnTriggerStay(Collider other)
     {
@@ -13,6 +13,7 @@ public class BallKicker : MonoBehaviour
 
             other.attachedRigidbody.AddForce(appliedforce);
             Debug.Log(" print please" + appliedforce);
+            kickforce = 80;
         }
     }
 
