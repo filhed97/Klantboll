@@ -24,7 +24,7 @@ public class MovePlayer : MonoBehaviour
     {
 
         float speed = Input.GetAxisRaw("Horizontal") * Time.deltaTime;
-        transform.Rotate(0, speed, 0);
+        transform.Rotate(0, MovementSpeed, 0);
         rb.AddForce(transform.forward * 50);
     }
 
