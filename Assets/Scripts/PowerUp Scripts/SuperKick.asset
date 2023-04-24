@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf7c0fcdbc9f471e980450c2d2b952d, type: 3}
   m_Name: SuperKick
   m_EditorClassIdentifier: 
-  amount: 0
+  amount: 1000
