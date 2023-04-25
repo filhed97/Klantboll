@@ -6,7 +6,9 @@ public class SpawnPowerups : MonoBehaviour {
 
     [SerializeField] public GameObject superKick; // The powerup prefab to spawn
     [SerializeField] public GameObject superSpeed; // The powerup prefab to spawn
-    [SerializeField] public GameObject spikeBuff; // The powerup prefab to spawn
+    [SerializeField] public GameObject superSpike; // The powerup prefab to spawn
+    [SerializeField] public GameObject iceDebuff; // The powerup prefab to spawn
+
 
     [SerializeField] public GameObject plane; // Spawn area
 
@@ -15,12 +17,12 @@ public class SpawnPowerups : MonoBehaviour {
     private float spawnTimer = 0f; // The timer for the spawn delay
     private Bounds planeBounds;
 
-    private GameObject[] powerupsArray = new GameObject[3];
+    private GameObject[] powerupsArray = new GameObject[4];
 
     void Start() {
         planeBounds = plane.GetComponent<Renderer>().bounds;
 
-        powerupsArray = new GameObject[] {superKick, superSpeed, spikeBuff};
+        powerupsArray = new GameObject[] {superKick, superSpeed, superSpike, iceDebuff};
     }
 
     void Update() {

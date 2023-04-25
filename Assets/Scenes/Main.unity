@@ -1699,11 +1699,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e043eae6c4d0492399bbe8a9c9ea1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  superKick: {fileID: 7731749496312437795, guid: 324107a5eb169494aaa1e558dbf3c7ff, type: 3}
+  superKick: {fileID: 7731749496312437795, guid: 4f1071c88c11f73408d45a9084846343, type: 3}
   superSpeed: {fileID: 8109497134375887955, guid: c846997e398f15144a2fda3738716f27, type: 3}
-  spikeBuff: {fileID: 0}
+  superSpike: {fileID: 9126278931848280159, guid: 3f31f27c67d14b749bbb57e89c987b08, type: 3}
+  iceDebuff: {fileID: 7312892649592341310, guid: 39b1d0e66ad0942e98a47958f5c4442a, type: 3}
   plane: {fileID: 1649223622}
-  spawnDelay: 10
+  spawnDelay: 1
   spawnHeight: 1
 --- !u!1 &1728930086 stripped
 GameObject:
