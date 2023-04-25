@@ -6,24 +6,19 @@ public class CameraFollow : MonoBehaviour
 {
     public float CameraMoveSpeed = 120.0f;
     public GameObject CameraFollowObj;
-    Vector3 FollowPosition;
     public float clampAngle = 80.0f;
     public float inputSensitivity = 150.0f;
-    public GameObject CameraObj;
-    public GameObject PlayerObj;
-    public float camDistanceXToPlayer;
-    public float camDistanceYToPlayer;
-    public float camDistanceZToPlayer;
 
+    public float touchX;
+    public float touchY;
     public float mouseX;
     public float mouseY;
     //public float finalInputX;
     //public float finalInputZ;
-    public float smoothX;
-    public float smoothY;
     private float rotY = 0.0f;
     private float rotX = 0.0f;
-
+    private float finalY = 0.0f;
+    private float finalX = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -38,14 +33,22 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.touchCount > 0)
+        {
+            touchX = Input.GetTouch(0).deltaPosition.x;
+            touchY = Input.GetTouch(0).deltaPosition.y;
+        }
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
-        
-        rotY += mouseX * inputSensitivity*Time.deltaTime;
-        rotX += mouseY * inputSensitivity * Time.deltaTime;
-        rotX = Mathf.Clamp(rotX,-clampAngle,clampAngle);
-        Quaternion localRotation = Quaternion.Euler(-rotX,rotY,0.0f);
+        finalX = mouseX + touchX;
+        finalY = mouseY + touchY;
+        rotY += finalX * inputSensitivity * Time.deltaTime;
+        rotX += finalY * inputSensitivity * Time.deltaTime;
+        rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+        Quaternion localRotation = Quaternion.Euler(-rotX, rotY, 0.0f);
         transform.rotation = localRotation;
+
+
     }
 
     void LateUpdate()
