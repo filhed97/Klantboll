@@ -834,7 +834,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 
 --- !u!222 &967893636
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f16e868fc94f4901a3e64b44fb5f99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeValue: 10
+  timeValue: 120
   timerText: {fileID: 1127325951}
 --- !u!114 &1127325951
 MonoBehaviour:
@@ -1687,6 +1687,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -462981019419857548, guid: 16265a35600c94cdb9bc3b028d21c5bc, type: 3}
+--- !u!114 &1649223630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649223622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e043eae6c4d0492399bbe8a9c9ea1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  superKick: {fileID: 7731749496312437795, guid: 324107a5eb169494aaa1e558dbf3c7ff, type: 3}
+  superSpeed: {fileID: 8109497134375887955, guid: c846997e398f15144a2fda3738716f27, type: 3}
+  spikeBuff: {fileID: 0}
+  plane: {fileID: 1649223622}
+  spawnDelay: 10
+  spawnHeight: 1
 --- !u!1 &1728930086 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9062795999317930110, guid: 16265a35600c94cdb9bc3b028d21c5bc, type: 3}
