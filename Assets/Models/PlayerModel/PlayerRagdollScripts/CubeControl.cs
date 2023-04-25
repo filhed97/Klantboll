@@ -24,6 +24,6 @@ public class CubeControl : MonoBehaviour
         }
 
         //changes velocity of RigidBody rb
-        cube.AddForce(moveDirection*MovementSpeed);
+        cube.velocity = moveDirection*MovementSpeed;
     }
 }
