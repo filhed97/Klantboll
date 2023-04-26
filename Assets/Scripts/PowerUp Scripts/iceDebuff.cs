@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Powerups/iceDebuff")]
 public class iceDebuff : PowerupEffects
 {
-    public float duration = 5f; // duration of the stick effect in seconds
+    public float duration = 2f; // duration of the stick effect in seconds
 
     public override void Apply(GameObject target)
     {
