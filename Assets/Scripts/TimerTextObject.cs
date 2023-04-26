@@ -6,35 +6,30 @@ using UnityEngine.SceneManagement;
 
 public class TimerTextObject : MonoBehaviour
 {
-   public float timeValue;
-   public Text timerText;
-   public static int activate = 2;
+
+    public GameObject Object;
+    public float timeValue;
+    public Text timerText;
+    public static int activate = 2;
+
+    private void Start()
+    {
+            Object.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        // check if CountDownStarting is executed (3 2 1 GO!)
-        if(CountDownStarting.activate == 0)
-        {
-            if(timeValue > 0)
-            {
-                timeValue -= Time.deltaTime;
-            }
-            else
-            {
-                timeValue = 0;
+           // check if CountDownStarting is executed (3 2 1 GO!)
+           if(CountDownStarting.activate == 0)
+           {
+               if(timeValue > 0)
+               {
+                   timeValue -= Time.deltaTime;
+               }
 
-                // reset the scene
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-                
-
-                // to activate the countDownStarting 
-                CountDownStarting.activate = 1;
-            }
-
-            DisplayTime(timeValue);
-        }
+               DisplayTime(timeValue);
+           }
 
     }
 
