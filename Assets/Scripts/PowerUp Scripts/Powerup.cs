@@ -36,6 +36,7 @@ public class Powerup : MonoBehaviour
             Destroy(other.gameObject.GetComponent<CharacterJoint>());
             Destroy(other.gameObject.GetComponent<ConfigurableJoint>());
             Destroy(other.gameObject.GetComponent<FixedJoint>());
+            other.gameObject.GetComponent<stickscript>().sticky = false;
         }
         other.gameObject.GetComponent<PlayerMove>().hasPowerup = false;
         Destroy(gameObject);
