@@ -11,11 +11,13 @@ public class Powerup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !(other.gameObject.GetComponent<PlayerMove>().hasPowerup))
         {
+            other.gameObject.GetComponent<PlayerMove>().hasPowerup = true;
             StartCoroutine(Pickup(other));
         }
     }
+
 
     IEnumerator Pickup(Collider other)
     {
@@ -35,6 +37,7 @@ public class Powerup : MonoBehaviour
             Destroy(other.gameObject.GetComponent<ConfigurableJoint>());
             Destroy(other.gameObject.GetComponent<FixedJoint>());
         }
+        other.gameObject.GetComponent<PlayerMove>().hasPowerup = false;
         Destroy(gameObject);
 
     }
