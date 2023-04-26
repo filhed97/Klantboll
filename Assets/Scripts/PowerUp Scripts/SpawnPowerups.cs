@@ -8,19 +8,25 @@ public class SpawnPowerups : MonoBehaviour {
     [SerializeField] public GameObject superSpeed; // The powerup prefab to spawn
     [SerializeField] public GameObject superSpike; // The powerup prefab to spawn
     [SerializeField] public GameObject iceDebuff; // The powerup prefab to spawn
-
-
     [SerializeField] public GameObject plane; // Spawn area
 
     public float spawnDelay = 1f;
-    public float spawnHeight = 1f; // The height at which to spawn the powerup
-    private float spawnTimer = 0f; // The timer for the spawn delay
-    private Bounds planeBounds;
-
+    public float spawnHeight = 1f; 
+    private float spawnTimer = 0f; 
+    private List<Vector3> spawnPositions = new List<Vector3>(); 
     private GameObject[] powerupsArray = new GameObject[4];
+    public static int maxPowerups = 20;
 
     void Start() {
-        planeBounds = plane.GetComponent<Renderer>().bounds;
+        MeshFilter meshFilter = plane.GetComponent<MeshFilter>();
+        Mesh mesh = meshFilter.mesh;
+
+        Vector3[] vertices = mesh.vertices;
+
+        for (int i = 0; i < vertices.Length; i++) {
+            Vector3 worldPosition = meshFilter.transform.TransformPoint(vertices[i]);
+            spawnPositions.Add(worldPosition);
+        }
 
         powerupsArray = new GameObject[] {superKick, superSpeed, superSpike, iceDebuff};
     }
@@ -28,19 +34,19 @@ public class SpawnPowerups : MonoBehaviour {
     void Update() {
         spawnTimer += Time.deltaTime;
 
-        if (spawnTimer >= spawnDelay) {
+        if (spawnTimer >= spawnDelay && Powerup.numOfPowerups < maxPowerups) {
 
             spawnTimer = 0f;
 
-            // Calculate a random position on the plane
-            Vector3 spawnPos = new Vector3(Random.Range(planeBounds.min.x + 10, planeBounds.max.x - 10), spawnHeight, Random.Range(planeBounds.min.z + 2, planeBounds.max.z - 2));
+            // Choose a random spawn position from the list
+            Vector3 spawnPos = spawnPositions[Random.Range(0, spawnPositions.Count)];
 
             int randomIndex = Random.Range(0, powerupsArray.Length);
 
             // Spawn the powerup prefab at the random position
-            Instantiate(powerupsArray[randomIndex], spawnPos, Quaternion.identity);
+            Instantiate(powerupsArray[randomIndex], spawnPos + Vector3.up * spawnHeight, Quaternion.identity);
             
+            Powerup.numOfPowerups++;
         }
     }      
 }
-
