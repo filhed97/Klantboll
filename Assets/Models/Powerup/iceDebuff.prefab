@@ -126,6 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac8fc08d561009478cd3be013a49f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 4
+  duration: 2
   defaultspeed: 500
   powerupEffects: {fileID: 11400000, guid: 83b9c7e10777c416daaf34bd25506653, type: 2}

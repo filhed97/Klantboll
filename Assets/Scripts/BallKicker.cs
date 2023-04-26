@@ -12,7 +12,7 @@ public class BallKicker : MonoBehaviour
             Vector3 appliedforce = (centre - contact) * kickforce;
 
             other.attachedRigidbody.AddForce(appliedforce);
-            Debug.Log(" print please" + appliedforce);
+            gameObject.GetComponent<PlayerMove>().hasPowerup = false;
             kickforce = 80;
         }
     }
