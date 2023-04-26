@@ -7,18 +7,19 @@ public class Powerup : MonoBehaviour
     public float duration = 4f;
     public float defaultspeed = 500;
     public PowerupEffects powerupEffects;
+    public static int numOfPowerups;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !(other.gameObject.GetComponent<PlayerMove>().hasPowerup))
+        if (other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerMove>().hasPowerup = true;
             StartCoroutine(Pickup(other));
         }
     }
 
     IEnumerator Pickup(Collider other)
     {
+        numOfPowerups--;
         gameObject.GetComponent<Collider>().enabled = false;
         gameObject.GetComponent<MeshRenderer>().enabled = false;
 
@@ -34,7 +35,7 @@ public class Powerup : MonoBehaviour
             Destroy(other.gameObject.GetComponent<ConfigurableJoint>());
             Destroy(other.gameObject.GetComponent<FixedJoint>());
         }
-        other.gameObject.GetComponent<PlayerMove>().hasPowerup = false;
         Destroy(gameObject);
+
     }
 }
