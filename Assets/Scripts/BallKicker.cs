@@ -2,6 +2,12 @@ using UnityEngine;
 public class BallKicker : MonoBehaviour
 {
     public float kickforce = 80;
+    private AudioSource KickingBallSound;
+
+    void Start()
+    {
+        KickingBallSound = GetComponent<AudioSource> ();
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -13,6 +19,7 @@ public class BallKicker : MonoBehaviour
 
             other.attachedRigidbody.AddForce(appliedforce);
             gameObject.GetComponent<PlayerMove>().hasPowerup = false;
+            KickingBallSound.Play();
             kickforce = 80;
         }
     }
