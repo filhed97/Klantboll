@@ -5,18 +5,8 @@ using TMPro;
 
 public class GoalRegister : MonoBehaviour
 {
-    private static int score1, score2;
+    public static int score1, score2;
     [SerializeField] private TextMeshProUGUI textScore;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag.Equals("Ball")) {
