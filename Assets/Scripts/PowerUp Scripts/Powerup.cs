@@ -32,14 +32,12 @@ public class Powerup : MonoBehaviour
         other.gameObject.GetComponent<PlayerMove>().strafeSpeed = defaultspeed;
         if (other.gameObject.GetComponent<stickscript>().sticky2)
         {
-            other.gameObject.GetComponent<stickscript>().sticky2 = false;
-            Destroy(other.gameObject.GetComponent<CharacterJoint>());
-            Destroy(other.gameObject.GetComponent<ConfigurableJoint>());
-            Destroy(other.gameObject.GetComponent<FixedJoint>());
-            other.gameObject.GetComponent<stickscript>().sticky = false;
+            other.gameObject.GetComponent<stickscript>().unstick();
         }
         other.gameObject.GetComponent<PlayerMove>().hasPowerup = false;
         Destroy(gameObject);
 
     }
+
+
 }

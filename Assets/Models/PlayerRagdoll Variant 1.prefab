@@ -2679,7 +2679,6 @@ GameObject:
   - component: {fileID: 3607178072042799209}
   - component: {fileID: 59410592332870550}
   - component: {fileID: 59410592332870551}
-  - component: {fileID: 4147288928522683865}
   m_Layer: 0
   m_Name: Hips
   m_TagString: Player
@@ -2922,20 +2921,3 @@ MonoBehaviour:
   hips: {fileID: 59410592332870559}
   isGrounded: 0
   hasPowerup: 0
---- !u!114 &4147288928522683865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59410592332870624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d461e222fb54bd1bdab81fa1f3670d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 0}
-  ballDistanceThreshold: 50
-  movementSpeed: 7
-  rotationSpeed: 10
-  goal: {fileID: 0}
