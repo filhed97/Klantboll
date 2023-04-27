@@ -8,13 +8,13 @@ public class CameraFollow : MonoBehaviour
     public GameObject CameraFollowObj;
     public float clampAngle = 80.0f;
     public float inputSensitivity = 150.0f;
-
-    public float touchX;
-    public float touchY;
-    public float mouseX;
-    public float mouseY;
-    //public float finalInputX;
-    //public float finalInputZ;
+    public bool UpAndDown = true;
+    private float touchX;
+    private float touchY;
+    private float mouseX;
+    private float mouseY;
+    private float finalInputX;
+    private float finalInputZ;
     private float rotY = 0.0f;
     private float rotX = 0.0f;
     private float finalY = 0.0f;
@@ -43,10 +43,15 @@ public class CameraFollow : MonoBehaviour
         finalX = mouseX + touchX;
         finalY = mouseY + touchY;
         rotY += finalX * inputSensitivity * Time.deltaTime;
-        rotX += finalY * inputSensitivity * Time.deltaTime;
-        rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+        if(UpAndDown == true)
+        {
+            rotX += finalY * inputSensitivity * Time.deltaTime;
+            rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+        }
         Quaternion localRotation = Quaternion.Euler(-rotX, rotY, 0.0f);
         transform.rotation = localRotation;
+
+
 
 
     }
