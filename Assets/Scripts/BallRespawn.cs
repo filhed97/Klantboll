@@ -15,14 +15,9 @@ public class BallRespawn : MonoBehaviour
         rb.position = new Vector3(0,1,0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag.Equals("Goal")) {
+        if(other.gameObject.tag.Equals("Goal") && TieBreakerScript.endOfMatch == 0) {
+            Debug.Log("BallRespawn");
             stick.unstick();
             rb.Sleep();
             rb.position = new Vector3(0,1,0);

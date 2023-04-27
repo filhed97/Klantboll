@@ -1547,6 +1547,8 @@ MonoBehaviour:
   timerTextObject: {fileID: 1127325950}
   timerObj: {fileID: 1127325948}
   football: {fileID: 1526218197}
+  goal1: {fileID: 1600797802}
+  goal2: {fileID: 1086133667}
 --- !u!1 &1132786385 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2804440125542394014, guid: 1c3e0242447cc4903890c1061da65fd8, type: 3}
