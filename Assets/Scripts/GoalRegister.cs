@@ -17,7 +17,9 @@ public class GoalRegister : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag.Equals("Ball")) {
             if(name.Equals("Goal1")) {
+                Debug.Log("before sound");
                 GoalCheering.Play();
+                Debug.Log("after sound");
                 IncreaseScore1();
             }
 

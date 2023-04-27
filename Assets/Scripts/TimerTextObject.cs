@@ -42,7 +42,6 @@ public class TimerTextObject : MonoBehaviour
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        float milliseconds = timeToDisplay % 1 * 100;
 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
