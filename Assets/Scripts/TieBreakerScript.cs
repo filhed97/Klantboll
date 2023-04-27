@@ -7,11 +7,16 @@ using UnityEngine.UI;
 public class TieBreakerScript : MonoBehaviour
 {
     public GameObject Object;
-    public Vector3 spawnPoint = new(1, 1, 0);
     private int temp = 0;
     public TimerTextObject timerTextObject;
     public GameObject timerObj;
+    public GameObject football;
+    private Rigidbody footballRB;
 
+    private void Start()
+    {
+        footballRB = football.GetComponent<Rigidbody>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -42,5 +47,12 @@ public class TieBreakerScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(2);
         Object.SetActive(false);
         Time.timeScale = 1f;
+        footballRB.Sleep();
+        footballRB.position = new Vector3(0, 1, 0);
+        footballRB.velocity = Vector3.zero;
+        footballRB.WakeUp();
+
+
+
     }
 }

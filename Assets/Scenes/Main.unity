@@ -813,7 +813,7 @@ MonoBehaviour:
   superSpike: {fileID: 9126278931848280159, guid: 3f31f27c67d14b749bbb57e89c987b08, type: 3}
   iceDebuff: {fileID: 7312892649592341310, guid: 39b1d0e66ad0942e98a47958f5c4442a, type: 3}
   plane: {fileID: 870863954}
-  spawnDelay: 1
+  spawnDelay: 15
   spawnHeight: 1
 --- !u!1 &963194225
 GameObject:
@@ -1487,7 +1487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Object: {fileID: 2053238004}
-  timeValue: 100
+  timeValue: 3
   timerText: {fileID: 1127325951}
 --- !u!114 &1127325951
 MonoBehaviour:
@@ -1547,6 +1547,7 @@ MonoBehaviour:
   spawnPoint: {x: 1, y: 1, z: 0}
   timerTextObject: {fileID: 1127325950}
   timerObj: {fileID: 1127325948}
+  football: {fileID: 1526218197}
 --- !u!1 &1132786385 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2804440125542394014, guid: 1c3e0242447cc4903890c1061da65fd8, type: 3}
