@@ -7,14 +7,24 @@ public class GoalRegister : MonoBehaviour
 {
     public static int score1, score2;
     [SerializeField] private TextMeshProUGUI textScore;
+    private AudioSource GoalCheering;
+
+    void Start()
+    {
+        GoalCheering = GetComponent<AudioSource> ();
+    }
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag.Equals("Ball")) {
             if(name.Equals("Goal1")) {
+                Debug.Log("before sound");
+                GoalCheering.Play();
+                Debug.Log("after sound");
                 IncreaseScore1();
             }
 
             else if(name.Equals("Goal2")){
+                GoalCheering.Play();
                 IncreaseScore2();
             }
         }

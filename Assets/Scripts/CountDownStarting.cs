@@ -8,14 +8,17 @@ public class CountDownStarting : MonoBehaviour
     public float countdownDuration; // Duration of the countdown in seconds
     public Text countDownDisplay;
     public static int activate = 1;
+    private AudioSource RefreeWhistle;
 
     private void Start()
     {
+        RefreeWhistle = GetComponent<AudioSource> ();
         StartCoroutine(CountdownCoroutine());
     }
 
     private IEnumerator CountdownCoroutine()
     {
+       
         // Freeze the game
         Time.timeScale = 0f;
 
@@ -37,9 +40,12 @@ public class CountDownStarting : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
         
+        RefreeWhistle.Play();
+        yield return new WaitForSecondsRealtime(1f);
         // Unfreeze the game
         Time.timeScale = 1f;
         activate = 0;
         countDownDisplay.gameObject.SetActive(false);
     }
+
 }

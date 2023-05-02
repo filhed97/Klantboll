@@ -1,0 +1,13 @@
+Ladda ner "Input System" paketet från unity.
+
+Lägg till Mkey:
+Edit --> Project Settings --> Input Manager.
+Öppna "Axes"
+Öka "Size" till 19.
+Ändra sista dublettens namn till "Mkey".
+Ändra "Positive Button" till m
+Ta bort det som står på "Alt *" och "Negative Button"
+
+Sätt "AnimationControl" på "DONOTDELETE".
+Sätt "RagdollOnKick" på "Root_M" på ragdoll spelargubben.
+Assigna "Root_M" till "Rig To Get Joints From" i "Ragdoll On Kick" komponenten.

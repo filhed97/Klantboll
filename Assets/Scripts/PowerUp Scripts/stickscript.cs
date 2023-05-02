@@ -23,5 +23,13 @@ public class stickscript : MonoBehaviour
 
         }        
     }
+    public void unstick()
+    {
+        sticky = false;
+        sticky2 = false;
+        Destroy(gameObject.GetComponent<FixedJoint>());
+        Destroy(gameObject.GetComponent<ConfigurableJoint>());
+        Destroy(gameObject.GetComponent<CharacterJoint>());
+    }
 
 }

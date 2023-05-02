@@ -7,6 +7,7 @@ public class Powerup : MonoBehaviour
     public float duration = 4f;
     public float defaultspeed = 500;
     public PowerupEffects powerupEffects;
+    public static int numOfPowerups;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,8 +18,10 @@ public class Powerup : MonoBehaviour
         }
     }
 
+
     IEnumerator Pickup(Collider other)
     {
+        numOfPowerups--;
         gameObject.GetComponent<Collider>().enabled = false;
         gameObject.GetComponent<MeshRenderer>().enabled = false;
 
@@ -29,12 +32,12 @@ public class Powerup : MonoBehaviour
         other.gameObject.GetComponent<PlayerMove>().strafeSpeed = defaultspeed;
         if (other.gameObject.GetComponent<stickscript>().sticky2)
         {
-            other.gameObject.GetComponent<stickscript>().sticky2 = false;
-            Destroy(other.gameObject.GetComponent<CharacterJoint>());
-            Destroy(other.gameObject.GetComponent<ConfigurableJoint>());
-            Destroy(other.gameObject.GetComponent<FixedJoint>());
+            other.gameObject.GetComponent<stickscript>().unstick();
         }
         other.gameObject.GetComponent<PlayerMove>().hasPowerup = false;
         Destroy(gameObject);
+
     }
+
+
 }
