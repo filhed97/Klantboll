@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0022178837, g: 0.0021232986, b: 0.0020813874, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -243,17 +243,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &75738482 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3607178072042799209, guid: 8cd0dac157021f64ba4dfad01e965318, type: 3}
-  m_PrefabInstance: {fileID: 1760980412}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 75738468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 839904472ccedf04d98780240548b6d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &216032193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6615165014469235123, guid: 1c3e0242447cc4903890c1061da65fd8, type: 3}
@@ -1708,6 +1697,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5b62c30d50d242e5a14c56531e6b162, type: 3}
+--- !u!4 &1147299668 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5085626970686272920, guid: e5b62c30d50d242e5a14c56531e6b162, type: 3}
+  m_PrefabInstance: {fileID: 1147299667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182869550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,6 +2593,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1146226064179136866, guid: 32733f603157f4779a6e0e382d774588, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146226064179136866, guid: 32733f603157f4779a6e0e382d774588, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20
       objectReference: {fileID: 0}
@@ -2645,7 +2643,7 @@ PrefabInstance:
     - target: {fileID: 3942064026047147503, guid: 32733f603157f4779a6e0e382d774588, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 1526218210}
+      objectReference: {fileID: 1147299668}
     - target: {fileID: 3942064026047147503, guid: 32733f603157f4779a6e0e382d774588, type: 3}
       propertyPath: goal
       value: 
