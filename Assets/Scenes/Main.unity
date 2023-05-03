@@ -3640,6 +3640,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stick: {fileID: 0}
+--- !u!4 &1526218210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5085626970686272920, guid: e5b62c30d50d242e5a14c56531e6b162, type: 3}
+  m_PrefabInstance: {fileID: 1147299667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1600797802
 GameObject:
   m_ObjectHideFlags: 0
@@ -4617,7 +4622,7 @@ PrefabInstance:
     - target: {fileID: 3942064026047147503, guid: 32733f603157f4779a6e0e382d774588, type: 3}
       propertyPath: ball
       value: 
-      objectReference: {fileID: 1147299668}
+      objectReference: {fileID: 1526218210}
     - target: {fileID: 3942064026047147503, guid: 32733f603157f4779a6e0e382d774588, type: 3}
       propertyPath: goal
       value: 
