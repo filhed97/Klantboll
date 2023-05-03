@@ -4,13 +4,22 @@ using Unity.Netcode;
 
 public class GoalRegisterMP : NetworkBehaviour
 {
-    public static int score1, score2;
+    private static NetworkVariable<int> scoreOrange = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    private static NetworkVariable<int> scoreBlue = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
+    //public static int score1, score2;
     [SerializeField] private TextMeshProUGUI textScore;
     private AudioSource GoalCheering;
 
     void Start()
     {
         GoalCheering = GetComponent<AudioSource>();
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        scoreOrange.OnValueChanged += (int oldValue, int newValue) => { };
+        scoreBlue.OnValueChanged += (int oldValue, int newValue) => { };
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,34 +29,34 @@ public class GoalRegisterMP : NetworkBehaviour
             if (name.Equals("Goal1"))
             {
                 GoalCheering.Play();
-                IncreaseScore1ClientRpc();
+                IncreaseScore1ServerRpc();
             }
 
             else if (name.Equals("Goal2"))
             {
                 GoalCheering.Play();
-                IncreaseScore2ClientRpc();
+                IncreaseScore2ServerRpc();
             }
         }
     }
 
-    [ClientRpc]
-    private void IncreaseScore1ClientRpc()
+    [ServerRpc(RequireOwnership = false)]
+    private void IncreaseScore1ServerRpc()
     {
-        score1++;
-        UpdateScoreClientRpc();
+        scoreOrange.Value++;
+        UpdateScoreClientRpc(scoreOrange.Value, scoreBlue.Value);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void IncreaseScore2ServerRpc()
+    {
+        scoreBlue.Value++;
+        UpdateScoreClientRpc(scoreOrange.Value, scoreBlue.Value);
     }
 
     [ClientRpc]
-    private void IncreaseScore2ClientRpc()
+    private void UpdateScoreClientRpc(int val1, int val2)
     {
-        score2++;
-        UpdateScoreClientRpc();
-    }
-
-    [ClientRpc]
-    private void UpdateScoreClientRpc()
-    {
-        textScore.text = score1.ToString() + "       " + score2.ToString();
+        textScore.text = val1.ToString() + "       " + val2.ToString();
     }
 }
