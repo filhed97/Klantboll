@@ -17,7 +17,18 @@ public class Powerup2 : MonoBehaviour
             else if (powerupeffect.GetId() == 1)
             {
                 StartCoroutine(PickupKick(other.gameObject));
-
+            }
+            else if (powerupeffect.GetId() == 2)
+            {
+                StartCoroutine(PickupSlow(other.gameObject));
+            }
+            else if (powerupeffect.GetId() == 3)
+            {
+                StartCoroutine(PickupStick(other.gameObject));
+            }
+            else if (powerupeffect.GetId() == 4)
+            {
+                StartCoroutine(PickupFreeze(other.gameObject));
             }
         }
     }
@@ -38,8 +49,35 @@ public class Powerup2 : MonoBehaviour
         yield return new WaitUntil(MIsPressed);
         powerupeffect.remove(other);
         Destroy(gameObject);
-
     }
+
+    IEnumerator PickupSlow(GameObject other)
+    {
+        DeactivatePowerup();
+        powerupeffect.Apply(other);
+        yield return new WaitForSeconds(duration);
+        powerupeffect.remove(other);
+        Destroy(gameObject);
+    }
+
+    IEnumerator PickupStick(GameObject other)
+    {
+        DeactivatePowerup();
+        powerupeffect.Apply(other);
+        yield return new WaitForSeconds(duration);
+        powerupeffect.remove(other);
+        Destroy(gameObject);
+    }
+
+    IEnumerator PickupFreeze(GameObject other)
+    {
+        DeactivatePowerup();
+        powerupeffect.Apply(other);
+        yield return new WaitForSeconds(duration);
+        powerupeffect.remove(other);
+        Destroy(gameObject);
+    }
+
     public bool MIsPressed()
     {
         return Input.GetKeyDown(KeyCode.M);
