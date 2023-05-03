@@ -7,11 +7,14 @@ public class Powerup2 : MonoBehaviour
     public float duration = 3f;
     public PowerupEffects2 powerupeffect;
     public static int numOfPowerups;
+    [SerializeField] GameObject pickupeffect;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !other.GetComponent<PlayerMove>().hasPowerup)
         {
             numOfPowerups--;
+
             if (powerupeffect.GetId() == 0)
             {
                 StartCoroutine(PickupSpeed(other.gameObject));
@@ -51,6 +54,7 @@ public class Powerup2 : MonoBehaviour
         yield return new WaitUntil(MIsPressed);
         powerupeffect.remove(other);
         Destroy(gameObject);
+
     }
 
     IEnumerator PickupSlow(GameObject other)
@@ -60,6 +64,7 @@ public class Powerup2 : MonoBehaviour
         yield return new WaitForSeconds(duration);
         powerupeffect.remove(other);
         Destroy(gameObject);
+
     }
 
     IEnumerator PickupStick(GameObject other)
@@ -71,6 +76,7 @@ public class Powerup2 : MonoBehaviour
 
         powerupeffect.remove(other);
         Destroy(gameObject);
+
     }
 
     IEnumerator PickupFreeze(GameObject other)
@@ -81,6 +87,7 @@ public class Powerup2 : MonoBehaviour
         Debug.Log("WeAreTesting");
         powerupeffect.remove(other);
         Destroy(gameObject);
+
     }
 
     public bool MIsPressed()
@@ -89,9 +96,7 @@ public class Powerup2 : MonoBehaviour
     }
     public void DeactivatePowerup()
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.GetComponent<Collider>().enabled = false;
-
+        Instantiate(pickupeffect, transform.position, transform.rotation);
+        gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
     }
-
 }
