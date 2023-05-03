@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CountDownStarting : MonoBehaviour
 {
     public float countdownDuration; // Duration of the countdown in seconds
-    public Text countDownDisplay;
+    public TextMeshProUGUI countDownDisplay;
     public static int activate = 1;
     private AudioSource RefreeWhistle;
 

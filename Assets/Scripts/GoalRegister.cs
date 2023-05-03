@@ -27,6 +27,9 @@ public class GoalRegister : MonoBehaviour
                 GoalCheering.Play();
                 IncreaseScore2();
             }
+
+            PlayerPrefs.SetInt("Score1", score1);
+            PlayerPrefs.SetInt("Score2", score2);
         }
     }
 
