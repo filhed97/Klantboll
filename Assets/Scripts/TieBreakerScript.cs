@@ -15,15 +15,22 @@ public class TieBreakerScript : MonoBehaviour
     private Rigidbody footballRB;
     public GameObject goal1, goal2;
 
+    [SerializeField] GameObject endScene;
+    [SerializeField] GameObject frame;
+    [SerializeField] GameObject scores;
+    [SerializeField] GameObject teams;
+    [SerializeField] GameObject resume;
+    
+
     private void Start()
     {
         footballRB = football.GetComponent<Rigidbody>();
         endOfMatch = 0;
+        endScene.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(endOfMatch);
         if(timerTextObject.timeValue <= 0)
         {
 
@@ -39,7 +46,6 @@ public class TieBreakerScript : MonoBehaviour
             }
             else
             {
-                Debug.Log("ELSE!!");
                 goal1.GetComponent<Collider>().enabled = false;
                 goal2.GetComponent<Collider>().enabled = false;
                 StartCoroutine(Delay());
@@ -61,11 +67,20 @@ public class TieBreakerScript : MonoBehaviour
     }
 
     IEnumerator Delay()
-    { 
-        yield return new WaitForSeconds(1f);
-        GoalRegister.score1 = 0;
-        GoalRegister.score2 = 0;
-        
-        SceneManager.LoadScene("Menu");
-    }
+{ 
+    yield return new WaitForSeconds(0.1f);
+
+    GoalRegister.score1 = 0;
+    GoalRegister.score2 = 0;
+
+    endScene.SetActive(true);
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+    Time.timeScale = 0f;
+
+    LeanTween.moveX(frame, 960f, 1f).setDelay(0f).setEase(LeanTweenType.easeInOutCirc).setIgnoreTimeScale(true);
+    LeanTween.moveX(scores, 960f, 1f).setDelay(2f).setEase(LeanTweenType.easeInOutBack).setIgnoreTimeScale(true);
+    LeanTween.moveX(teams, 960f, 1f).setDelay(1.5f).setEase(LeanTweenType.easeInOutBack).setIgnoreTimeScale(true);
+    LeanTween.moveY(resume, 275f, 1.4f).setDelay(2f).setEase(LeanTweenType.easeInOutElastic).setIgnoreTimeScale(true);
+}
 }

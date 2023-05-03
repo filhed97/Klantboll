@@ -42,5 +42,7 @@ public class MainMenuAnimations : MonoBehaviour
 
     public void displayTextButtons() {
         buttons.SetActive(true);
+        //LeanTween.scale(buttons, new Vector3(0.1f, .1f, .1f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.moveY(buttons, 540f, 1.4f).setDelay(0f).setEase(LeanTweenType.easeInOutElastic);
     }
 }
