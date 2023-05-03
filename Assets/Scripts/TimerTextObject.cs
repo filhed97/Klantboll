@@ -8,7 +8,7 @@ public class TimerTextObject : MonoBehaviour
 {
 
     public GameObject Object;
-    public static float timeValue = 10;
+    public float timeValue;
     public Text timerText;
     public static int activate = 2;
 
@@ -23,7 +23,7 @@ public class TimerTextObject : MonoBehaviour
            // check if CountDownStarting is executed (3 2 1 GO!)
            if(CountDownStarting.activate == 0)
            {
-               if(timeValue > 0 && GoalRegister.pauseTimeVar == 0)
+               if(timeValue > 0)
                {
                    timeValue -= Time.deltaTime;
                }
@@ -35,8 +35,6 @@ public class TimerTextObject : MonoBehaviour
 
     void DisplayTime(float timeToDisplay)
     {
-        Debug.Log(timeToDisplay);
-
         if(timeToDisplay < 0)
         {
             timeToDisplay = 0;
