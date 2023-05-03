@@ -17,6 +17,7 @@ public class iceDebuff2 : PowerupEffects2
 
     public override void remove(GameObject target)
     {
+        Debug.Log("REMOVE");
         target.GetComponent<PlayerMove>().hasPowerup = false;
         target.GetComponent<PlayerMove>().strafeSpeed += amount;
         target.GetComponent<PlayerMove>().speed += amount;

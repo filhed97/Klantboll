@@ -64,7 +64,9 @@ public class Powerup2 : MonoBehaviour
     {
         DeactivatePowerup();
         powerupeffect.Apply(other);
+        yield return new WaitUntil(other.GetComponent<stickScript2>().touchingBall);
         yield return new WaitForSeconds(duration);
+
         powerupeffect.remove(other);
         Destroy(gameObject);
     }
@@ -74,6 +76,7 @@ public class Powerup2 : MonoBehaviour
         DeactivatePowerup();
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
+        Debug.Log("WeAreTesting");
         powerupeffect.remove(other);
         Destroy(gameObject);
     }
