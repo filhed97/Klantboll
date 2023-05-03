@@ -34,7 +34,7 @@ public class SpawnPowerups : MonoBehaviour {
     void Update() {
         spawnTimer += Time.deltaTime;
 
-        if (spawnTimer >= spawnDelay && Powerup.numOfPowerups < maxPowerups) {
+        if (spawnTimer >= spawnDelay && Powerup2.numOfPowerups < maxPowerups) {
 
             spawnTimer = 0f;
 
@@ -46,7 +46,7 @@ public class SpawnPowerups : MonoBehaviour {
             // Spawn the powerup prefab at the random position
             Instantiate(powerupsArray[randomIndex], spawnPos + Vector3.up * spawnHeight, Quaternion.identity);
             
-            Powerup.numOfPowerups++;
+            Powerup2.numOfPowerups++;
         }
     }      
 }

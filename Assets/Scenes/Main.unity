@@ -8230,10 +8230,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e043eae6c4d0492399bbe8a9c9ea1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  superKick: {fileID: 7731749496312437795, guid: 4f1071c88c11f73408d45a9084846343, type: 3}
-  superSpeed: {fileID: 8109497134375887955, guid: c846997e398f15144a2fda3738716f27, type: 3}
-  superSpike: {fileID: 9126278931848280159, guid: 3f31f27c67d14b749bbb57e89c987b08, type: 3}
-  iceDebuff: {fileID: 7312892649592341310, guid: 39b1d0e66ad0942e98a47958f5c4442a, type: 3}
+  superKick: {fileID: 8632595226982252782, guid: 2d445469a93163c4ca60ef778cb9217f, type: 3}
+  superSpeed: {fileID: 7239676057019635285, guid: 4b8dde2f2c2e565479e7a2ceda37579b, type: 3}
+  superSpike: {fileID: 1358473938080253074, guid: f0a4271c3447741deac116f9e1adbe50, type: 3}
+  iceDebuff: {fileID: 2099708822238295365, guid: 8978f04cf9bd346a19a238ff6b432f0c, type: 3}
   plane: {fileID: 870863954}
   spawnDelay: 15
   spawnHeight: 1
@@ -18665,7 +18665,8 @@ PrefabInstance:
       propertyPath: goal
       value: 
       objectReference: {fileID: 1086133672}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4410258024100472927, guid: 32733f603157f4779a6e0e382d774588, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 32733f603157f4779a6e0e382d774588, type: 3}
 --- !u!4 &2107437104 stripped
 Transform:

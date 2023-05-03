@@ -6,10 +6,12 @@ public class Powerup2 : MonoBehaviour
 {
     public float duration = 3f;
     public PowerupEffects2 powerupeffect;
+    public static int numOfPowerups;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !other.GetComponent<PlayerMove>().hasPowerup)
         {
+            numOfPowerups--;
             if (powerupeffect.GetId() == 0)
             {
                 StartCoroutine(PickupSpeed(other.gameObject));
