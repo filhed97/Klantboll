@@ -21,7 +21,7 @@ public class BallRespawnMP : MonoBehaviour
             rb.Sleep();
             rb.position = new Vector3(0,1,0);
             rb.velocity = Vector3.zero;
-            //rb.WakeUp();
+            rb.WakeUp();
         }
     }
 }
