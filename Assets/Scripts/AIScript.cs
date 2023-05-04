@@ -10,10 +10,14 @@ public class AIScript : MonoBehaviour
     public Rigidbody hips;
     public bool isGrounded;
     public bool hasPowerup = false;
+    public float kickforce = 1000;
+
+    private AudioSource KickingBallSound;
 
     void Start()
     {
         hips = GetComponent<Rigidbody>();
+        KickingBallSound = GetComponent<AudioSource> ();
     }
 
     void Update()
@@ -55,7 +59,8 @@ public class AIScript : MonoBehaviour
             
             // Apply force to the ball to kick it
             Rigidbody ballRb = ball.GetComponent<Rigidbody>();
-            ballRb.AddForce(kickDir * 1000f);
+            ballRb.AddForce(kickDir * kickforce);
+            KickingBallSound.Play();
 
             // Log a message to the console to indicate that the player has kicked the ball
             //Debug.Log("Player kicked the ball towards the goal!");

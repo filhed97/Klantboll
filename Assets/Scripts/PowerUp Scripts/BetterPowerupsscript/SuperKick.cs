@@ -17,7 +17,7 @@ public class SuperKick : PowerupEffects2
         else
         {
             target.GetComponent<AIScript>().hasPowerup = true;
-            target.GetComponent<BallKicker>().kickforce += amount; 
+            target.GetComponent<AIScript>().kickforce += amount;
         }
     }
 
@@ -31,7 +31,7 @@ public class SuperKick : PowerupEffects2
         else
         {
             target.GetComponent<AIScript>().hasPowerup = false;
-            target.GetComponent<BallKicker>().kickforce -= amount; 
+            target.GetComponent<AIScript>().kickforce -= amount; 
         }
     }
 
