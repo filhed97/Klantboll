@@ -21,12 +21,14 @@ public class TieBreakerScript : MonoBehaviour
     [SerializeField] GameObject teams;
     [SerializeField] GameObject resume;
     
-
+    private AudioSource RefreeWhistle;
+    
     private void Start()
     {
         footballRB = football.GetComponent<Rigidbody>();
         endOfMatch = 0;
         endScene.SetActive(false);
+        RefreeWhistle = GetComponent<AudioSource> ();
     }
     // Update is called once per frame
     void Update()
@@ -46,8 +48,7 @@ public class TieBreakerScript : MonoBehaviour
             }
             else
             {
-                goal1.GetComponent<Collider>().enabled = false;
-                goal2.GetComponent<Collider>().enabled = false;
+
                 StartCoroutine(Delay());
             }
         }
@@ -69,6 +70,7 @@ public class TieBreakerScript : MonoBehaviour
     IEnumerator Delay()
 { 
     yield return new WaitForSeconds(0.1f);
+    RefreeWhistle.Play();
 
     endScene.SetActive(true);
     Cursor.lockState = CursorLockMode.None;
