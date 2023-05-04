@@ -1518,26 +1518,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &999341298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526926682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e043eae6c4d0492399bbe8a9c9ea1e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  superKick: {fileID: 511421333734614567, guid: 2631ae7e5db7a489bbc98d3d4d304606, type: 3}
-  superSpeed: {fileID: 511421333734614567, guid: bd71206a9afd24877ba6465dae592924, type: 3}
-  speedDebuff: {fileID: 511421333734614567, guid: bac21b5ce97ff488492156d4ce9a39be, type: 3}
-  iceDebuff: {fileID: 511421333734614567, guid: b41ed191cc58841a897fec8b939a727f, type: 3}
-  superStick: {fileID: 511421333734614567, guid: f3a1586835ae24000ab1a39f1820cdbf, type: 3}
-  plane: {fileID: 526926682}
-  spawnDelay: 5
-  spawnHeight: 1
 --- !u!64 &999341299
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1552,6 +1532,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -462981019419857548, guid: 1c3e0242447cc4903890c1061da65fd8, type: 3}
+--- !u!114 &999341300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526926682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6eb8a16ba3824218aed1fea8455a654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  superKick: {fileID: 511421333734614567, guid: 9579bf53e0bff42f28a107360e00dc68, type: 3}
+  superSpeed: {fileID: 511421333734614567, guid: 13a4c34f618164f1d82f65ae44b59c42, type: 3}
+  speedDebuff: {fileID: 511421333734614567, guid: 56cd67d236bed4ab99ff860d86412021, type: 3}
+  iceDebuff: {fileID: 511421333734614567, guid: 4b5a5be1602cd4d46a634114a282044b, type: 3}
+  superStick: {fileID: 511421333734614567, guid: d86cd2acf0bed40f1a310e9775244b3e, type: 3}
+  plane: {fileID: 526926682}
+  spawnDelay: 5
+  spawnHeight: 1
 --- !u!64 &1015895827
 MeshCollider:
   m_ObjectHideFlags: 0
