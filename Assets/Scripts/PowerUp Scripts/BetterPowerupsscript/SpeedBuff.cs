@@ -8,17 +8,33 @@ public class SpeedBuff : PowerupEffects2
     public int id = 0;
     public override void Apply(GameObject target)
     {
-        target.GetComponent<PlayerMove>().hasPowerup = true;
-        target.GetComponent<PlayerMove>().strafeSpeed += amount;
-        target.GetComponent<PlayerMove>().speed += amount;
+        if(target.CompareTag("Player"))
+        {
+            target.GetComponent<PlayerMove>().hasPowerup = true;
+            target.GetComponent<PlayerMove>().strafeSpeed += amount;
+            target.GetComponent<PlayerMove>().speed += amount;
+        }
+        else
+        {
+            target.GetComponent<AIScript>().hasPowerup = true;
+            target.GetComponent<AIScript>().movementSpeed += 5;
+        }
         
     }
 
     public override void remove(GameObject target)
     {
-        target.GetComponent<PlayerMove>().hasPowerup = false;
-        target.GetComponent<PlayerMove>().strafeSpeed -= amount;
-        target.GetComponent<PlayerMove>().speed -= amount;
+       if(target.CompareTag("Player"))
+       {
+            target.GetComponent<PlayerMove>().hasPowerup = false;
+            target.GetComponent<PlayerMove>().strafeSpeed -= amount;
+            target.GetComponent<PlayerMove>().speed -= amount;
+       } 
+       else 
+       {
+            target.GetComponent<AIScript>().hasPowerup = false;
+            target.GetComponent<AIScript>().movementSpeed -= 5;
+       }
     }
 
     public override int GetId()

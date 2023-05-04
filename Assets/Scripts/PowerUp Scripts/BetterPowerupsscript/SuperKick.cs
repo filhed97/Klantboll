@@ -9,14 +9,30 @@ public class SuperKick : PowerupEffects2
     public int id = 1;
     public override void Apply(GameObject target)
     {
-        target.GetComponent<PlayerMove>().hasPowerup = true;
-        target.GetComponent<BallKicker>().kickforce += amount;
+        if(target.CompareTag("Player"))
+        {
+            target.GetComponent<PlayerMove>().hasPowerup = true;
+            target.GetComponent<BallKicker>().kickforce += amount;
+        }
+        else
+        {
+            target.GetComponent<AIScript>().hasPowerup = true;
+            target.GetComponent<BallKicker>().kickforce += amount; 
+        }
     }
 
     public override void remove(GameObject target)
     {
-        target.GetComponent<PlayerMove>().hasPowerup = false;
-        target.GetComponent<BallKicker>().kickforce -= amount;
+        if(target.CompareTag("Player"))
+        {
+            target.GetComponent<PlayerMove>().hasPowerup = false;
+            target.GetComponent<BallKicker>().kickforce -= amount;
+        }
+        else
+        {
+            target.GetComponent<AIScript>().hasPowerup = false;
+            target.GetComponent<BallKicker>().kickforce -= amount; 
+        }
     }
 
     public override int GetId()
