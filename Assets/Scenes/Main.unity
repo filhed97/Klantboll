@@ -13772,7 +13772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1108794632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20620,20 +20620,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5081550154551682034, guid: e5b62c30d50d242e5a14c56531e6b162, type: 3}
   m_PrefabInstance: {fileID: 1147299667}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1526218204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526218197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d7e9274a079a4f93aab35e22e24e446, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stick: {fileID: 1760980413}
-  goalExplosion: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
 --- !u!4 &1526218210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5085626970686272920, guid: e5b62c30d50d242e5a14c56531e6b162, type: 3}
@@ -20655,6 +20641,19 @@ MonoBehaviour:
   tweenTime: 0.5
   ball: {fileID: 1526218197}
   stick: {fileID: 1760980413}
+--- !u!114 &1526218218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526218197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d960ccce819544a1a8c2d76d62e8ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalExplosion: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
 --- !u!1001 &1528921779
 PrefabInstance:
   m_ObjectHideFlags: 0
