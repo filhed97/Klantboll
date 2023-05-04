@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallRespawnMP : MonoBehaviour
 {
     Rigidbody rb;
-    public stickscript stick;
+    //public stickscript stick;
 
     // Start is called before the first frame update
     void Start()
