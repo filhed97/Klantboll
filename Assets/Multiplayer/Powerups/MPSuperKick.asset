@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d82d5b613bf4e99aa52729c40eba0b, type: 3}
   m_Name: MPSuperKick
   m_EditorClassIdentifier: 
-  amount: 5000
+  amount: 2000
   id: 1
