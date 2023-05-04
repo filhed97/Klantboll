@@ -35,14 +35,16 @@ public class NetworkMultiplayer : NetworkBehaviour
         rb.velocity += direction * playerSpeed * Time.deltaTime;
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, MaxVelocity);
 
-        if (direction != Vector3.zero)
+        /*if (direction != Vector3.zero)
         {
             rb.transform.forward = direction;
-        }
+        }*/
     }
+  
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("COLLISION");
         RequestOwnershipServerRpc();
     }
 
