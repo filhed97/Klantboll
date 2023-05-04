@@ -70,9 +70,6 @@ public class TieBreakerScript : MonoBehaviour
 { 
     yield return new WaitForSeconds(0.1f);
 
-    GoalRegister.score1 = 0;
-    GoalRegister.score2 = 0;
-
     endScene.SetActive(true);
     Cursor.lockState = CursorLockMode.None;
     Cursor.visible = true;

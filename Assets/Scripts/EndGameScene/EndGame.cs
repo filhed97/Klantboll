@@ -19,6 +19,9 @@ public class EndGame : MonoBehaviour
 
 
     public void ResumeGame() {
+        GoalRegister.score1 = 0;
+        GoalRegister.score2 = 0;
+
         SceneManager.LoadScene("Menu");
     }
 }
