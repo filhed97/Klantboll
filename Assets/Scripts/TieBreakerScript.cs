@@ -61,7 +61,7 @@ public class TieBreakerScript : MonoBehaviour
         Object.SetActive(false);
         Time.timeScale = 1f;
         footballRB.Sleep();
-        footballRB.position = new Vector3(0, 1, 0);
+        footballRB.position = new Vector3(0, 10, 0);
         footballRB.velocity = Vector3.zero;
         footballRB.WakeUp();
     }
