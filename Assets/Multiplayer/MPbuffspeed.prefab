@@ -4952,7 +4952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 3
-  powerupeffect: {fileID: 11400000, guid: fcaea9dc85d324e49b81a10b9c538476, type: 2}
+  powerupeffect: {fileID: 11400000, guid: 0c5024b4775034b73af78b805a004dcd, type: 2}
   pickupeffect: {fileID: 7888857835762348946, guid: 84dab4a8cf751fc4181b5f09a6186c21, type: 3}
 --- !u!1 &1231989312157737460
 GameObject:

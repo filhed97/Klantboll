@@ -23,6 +23,7 @@ public class MPPowerup2 : MonoBehaviour
             }
             else if (powerupeffect.GetId() == 1)
             {
+                Debug.Log("KICK");
                 StartCoroutine(PickupKick(other.gameObject));
             }
             else if (powerupeffect.GetId() == 2)
@@ -51,6 +52,7 @@ public class MPPowerup2 : MonoBehaviour
 
     IEnumerator PickupKick(GameObject other)
     {
+        Debug.Log("KICK");
         DeactivatePowerup();
         powerupeffect.Apply(other);
         yield return new WaitUntil(MIsPressed);
