@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Powerup2 : MonoBehaviour
 {
     public float duration = 3f;
     public PowerupEffects2 powerupeffect;
     public static int numOfPowerups;
+    private Image[] powerupIcons;
     [SerializeField] GameObject pickupeffect;
 
+    void Awake()
+    {
+        powerupIcons = FindObjectsOfType<Image>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other);
@@ -68,9 +74,11 @@ public class Powerup2 : MonoBehaviour
     IEnumerator PickupSpeed(GameObject other)
     {
         DeactivatePowerup();
+        
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
         powerupeffect.remove(other);
+     
         Destroy(gameObject);
     }
 
@@ -97,11 +105,13 @@ public class Powerup2 : MonoBehaviour
     IEnumerator PickupStick(GameObject other)
     {
         DeactivatePowerup();
+        EnableIcon();
         powerupeffect.Apply(other);
         yield return new WaitUntil(other.GetComponent<stickScript2>().touchingBall);
         yield return new WaitForSeconds(duration);
-
         powerupeffect.remove(other);
+
+        DisableIcon();
         Destroy(gameObject);
 
     }
@@ -126,4 +136,14 @@ public class Powerup2 : MonoBehaviour
         Instantiate(pickupeffect, transform.position, transform.rotation);
         gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
     }
+
+    public void EnableIcon()
+    {
+        powerupIcon.GetComponent<Image>().enabled = true;
+    }
+    public void DisableIcon()
+    {
+        powerupIcon.GetComponent<Image>().enabled = false;
+    }
+
 }
