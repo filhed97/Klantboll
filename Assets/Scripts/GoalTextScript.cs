@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoalTextScript : MonoBehaviour
 {
     public GameObject goalText;
-    public float tweenTime = 0.5f;
+    public float tweenTime = 0.05f;
     public GameObject ball;
     public stickScript2 stick;
 
@@ -35,7 +35,7 @@ public class GoalTextScript : MonoBehaviour
 
     public void PlayAnimation()
     {
-        LeanTween.scale(goalText, Vector3.one * 2, tweenTime);
+        LeanTween.scale(goalText, Vector3.one * 1.5f, 0.1f);
     }
 
     public void ResetGoalTextSize()
@@ -49,7 +49,7 @@ public class GoalTextScript : MonoBehaviour
 
         stick.unstick();
         rb.Sleep();
-        rb.position = new Vector3(0, 1, 0);
+        rb.position = new Vector3(0, 10, 0);
         rb.velocity = Vector3.zero;
         rb.WakeUp();
     }
