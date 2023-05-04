@@ -11,7 +11,34 @@ public class Powerup2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other);
+        
         if (other.CompareTag("Player") && !other.GetComponent<PlayerMove>().hasPowerup)
+        {
+            numOfPowerups--;
+
+            if (powerupeffect.GetId() == 0)
+            {
+                StartCoroutine(PickupSpeed(other.gameObject));
+            }
+            else if (powerupeffect.GetId() == 1)
+            {
+                StartCoroutine(PickupKick(other.gameObject));
+            }
+            else if (powerupeffect.GetId() == 2)
+            {
+                StartCoroutine(PickupSlow(other.gameObject));
+            }
+            else if (powerupeffect.GetId() == 3)
+            {
+                StartCoroutine(PickupStick(other.gameObject));
+            }
+            else if (powerupeffect.GetId() == 4)
+            {
+                StartCoroutine(PickupFreeze(other.gameObject));
+            }
+        }
+        else if (other.CompareTag("AI-character") && !other.GetComponent<AIScript>().hasPowerup)
         {
             numOfPowerups--;
 
