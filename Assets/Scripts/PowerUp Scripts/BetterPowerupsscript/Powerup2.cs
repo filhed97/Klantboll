@@ -37,6 +37,10 @@ public class Powerup2 : MonoBehaviour
             {
                 StartCoroutine(PickupFreeze(other.gameObject));
             }
+            else if (powerupeffect.GetId() == 5)
+            {
+                StartCoroutine(PickupShield(other.gameObject));
+            }
         }
         else if (other.CompareTag("AI-character") && !other.GetComponent<AIScript>().hasPowerup)
         {
@@ -61,6 +65,10 @@ public class Powerup2 : MonoBehaviour
             else if (powerupeffect.GetId() == 4)
             {
                 StartCoroutine(PickupFreeze(other.gameObject));
+            }
+            else if (powerupeffect.GetId() == 5)
+            {
+                StartCoroutine(PickupShield(other.gameObject));
             }
         }
     }
@@ -107,6 +115,17 @@ public class Powerup2 : MonoBehaviour
     }
 
     IEnumerator PickupFreeze(GameObject other)
+    {
+        DeactivatePowerup();
+        powerupeffect.Apply(other);
+        yield return new WaitForSeconds(duration);
+        Debug.Log("WeAreTesting");
+        powerupeffect.remove(other);
+        Destroy(gameObject);
+
+    }
+
+    IEnumerator PickupShield(GameObject other)
     {
         DeactivatePowerup();
         powerupeffect.Apply(other);
