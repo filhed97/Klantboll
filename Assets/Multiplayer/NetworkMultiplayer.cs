@@ -11,6 +11,8 @@ public class NetworkMultiplayer : NetworkBehaviour
     [SerializeField] private Transform ball;
     private static Transform spawnedBall;
 
+    public bool hasPowerup = false;
+
     // Start is called before the first frame update
     public override void OnNetworkSpawn()
     {
@@ -44,8 +46,11 @@ public class NetworkMultiplayer : NetworkBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("COLLISION");
-        RequestOwnershipServerRpc();
+        if (other.CompareTag("Ball"))
+        {
+            Debug.Log("COLLISION");
+            RequestOwnershipServerRpc();
+        }
     }
 
     [ServerRpc]

@@ -47,7 +47,7 @@ public class MPSpawnPowerups : NetworkBehaviour {
 
             // Spawn the powerup prefab at the random position
             Instantiate(powerupsArray[randomIndex], spawnPos + Vector3.up * spawnHeight, Quaternion.identity);
-            
+
             Powerup2.numOfPowerups++;
         }
     }      

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 511421333734615001}
   - component: {fileID: 511421333734614566}
   - component: {fileID: 197372926140481758}
-  - component: {fileID: -3994973397769087126}
   - component: {fileID: 7096409172640671040}
   - component: {fileID: 4943176239185855662}
+  - component: {fileID: 9119183214320251121}
+  - component: {fileID: 9171156831151390948}
   m_Layer: 0
   m_Name: MPice
   m_TagString: Untagged
@@ -4855,21 +4856,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &-3994973397769087126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511421333734614567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e565813a10ab2ea4aaaa525a7b421d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 3
-  powerupeffect: {fileID: 11400000, guid: 1245382276fbe4b268c4e0acb1178edf, type: 2}
-  pickupeffect: {fileID: 7888857835762348946, guid: 84dab4a8cf751fc4181b5f09a6186c21, type: 3}
 --- !u!23 &7096409172640671040
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4933,6 +4919,47 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!114 &9119183214320251121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511421333734614567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a3f69da73ff48cd98724be397ed337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  InLocalSpace: 0
+  Interpolate: 1
+--- !u!114 &9171156831151390948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511421333734614567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48144af8f72d54e888f36b862263d041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
+  powerupeffect: {fileID: 11400000, guid: 1245382276fbe4b268c4e0acb1178edf, type: 2}
+  pickupeffect: {fileID: 7888857835762348946, guid: 84dab4a8cf751fc4181b5f09a6186c21, type: 3}
 --- !u!1 &1231989312157737460
 GameObject:
   m_ObjectHideFlags: 0
