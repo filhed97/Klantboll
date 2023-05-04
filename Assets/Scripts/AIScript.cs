@@ -7,7 +7,9 @@ public class AIScript : MonoBehaviour
     public float movementSpeed = 7f;
     public float rotationSpeed = 10f;
 
-    private Rigidbody hips;
+    public Rigidbody hips;
+    public bool isGrounded;
+    public bool hasPowerup = false;
 
     void Start()
     {
@@ -56,7 +58,7 @@ public class AIScript : MonoBehaviour
             ballRb.AddForce(kickDir * 1000f);
 
             // Log a message to the console to indicate that the player has kicked the ball
-            Debug.Log("Player kicked the ball towards the goal!");
+            //Debug.Log("Player kicked the ball towards the goal!");
         }
     }
 }
