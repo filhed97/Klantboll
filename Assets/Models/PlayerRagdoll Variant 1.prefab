@@ -3134,8 +3134,8 @@ GameObject:
   - component: {fileID: 59410592332870559}
   - component: {fileID: 59410592332870549}
   - component: {fileID: 2810753597366412966}
-  - component: {fileID: 59410592332870550}
-  - component: {fileID: 59410592332870551}
+  - component: {fileID: 3218386063941438912}
+  - component: {fileID: 6470161646409187254}
   m_Layer: 0
   m_Name: Hips
   m_TagString: Player
@@ -3347,7 +3347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sticky: 0
   sticky2: 0
---- !u!114 &5011777758736446096
+--- !u!114 &3218386063941438912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3356,7 +3356,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 59410592332870624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 856f8b0e5d25e4e398d0863c8c85b532, type: 3}
+  m_Script: {fileID: 11500000, guid: a17df28205f9846c7bd41e1d5a900618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   kickforce: 200
+--- !u!114 &6470161646409187254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59410592332870624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a794c6dc22a42142b42e58113a3da3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 500
+  strafeSpeed: 500
+  jumpForce: 0
+  hips: {fileID: 59410592332870559}
+  isGrounded: 0
+  hasPowerup: 0

@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Netcode;
 
-public class PlayerMove : NetworkBehaviour
+public class PlayerMove : MonoBehaviour
 {
     public float speed;
     public float strafeSpeed;
@@ -21,9 +20,6 @@ public class PlayerMove : NetworkBehaviour
 
     private void FixedUpdate()
     {
-        if (!IsOwner)
-            return;
-
         if (Input.GetKey(KeyCode.W))
         {
             if (Input.GetKey(KeyCode.LeftShift))
