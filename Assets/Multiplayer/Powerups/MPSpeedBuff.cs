@@ -12,7 +12,6 @@ public class MPSpeedBuff : PowerupEffects2
         {
             target.GetComponent<NetworkMultiplayer>().hasPowerup = true;
             target.GetComponent<NetworkMultiplayer>().playerSpeed += amount;
-            target.GetComponent<NetworkMultiplayer>().MaxVelocity += amount;
         }       
     }
 
