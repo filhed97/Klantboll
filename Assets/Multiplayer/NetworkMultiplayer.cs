@@ -9,11 +9,23 @@ public class NetworkMultiplayer : NetworkBehaviour
     public float playerSpeed = 5;
     public float MaxVelocity = 15;
     [SerializeField] private Transform ball;
+    [SerializeField] private Transform Stewie;
     private static Transform spawnedBall;
+
+    //public bool hasPowerup = false;
+    public NetworkVariable<bool> hasPowerup;
+
+    private Vector3[] spawnPos = new Vector3[2];
 
     // Start is called before the first frame update
     public override void OnNetworkSpawn()
     {
+        hasPowerup = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+        spawnPos = new Vector3[] { new Vector3(10, 0, 0), new Vector3(-10, 0, 0) };
+        var clientId = NetworkManager.Singleton.LocalClientId;
+        Stewie.position = spawnPos[clientId];
+        Debug.Log("clientid: " + clientId);
+
         rb = GetComponent<Rigidbody>();
         if (IsOwner && NetworkManager.Singleton.IsServer)
         {
@@ -44,8 +56,11 @@ public class NetworkMultiplayer : NetworkBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("COLLISION");
-        RequestOwnershipServerRpc();
+        if (other.CompareTag("Ball"))
+        {
+            Debug.Log("COLLISION");
+            RequestOwnershipServerRpc();
+        }
     }
 
     [ServerRpc]
