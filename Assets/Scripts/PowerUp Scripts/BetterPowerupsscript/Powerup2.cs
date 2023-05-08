@@ -18,12 +18,24 @@ public class Powerup2 : MonoBehaviour
         switch (powerId)
         {
             case 0:
-                powerupIcon = Game
+                powerupIcon = GameObject.Find("SpeedupIcon");
+                break;
             case 1:
                 powerupIcon = GameObject.Find("SuperKickIcon");
+                break;
+            case 2:
+                powerupIcon = GameObject.Find("SlowDebuff");
+                break;
+            case 3:
+                powerupIcon = GameObject.Find("StickyIcon");
+                break;
+            case 4:
+                powerupIcon = GameObject.Find("FreezeIcon");
+                break;
+
         }
-        
-     }
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -85,7 +97,7 @@ public class Powerup2 : MonoBehaviour
     IEnumerator PickupSpeed(GameObject other)
     {
         DeactivatePowerup();
-        
+        EnableIcon();
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
         powerupeffect.remove(other);
@@ -108,8 +120,10 @@ public class Powerup2 : MonoBehaviour
     IEnumerator PickupSlow(GameObject other)
     {
         DeactivatePowerup();
+        EnableIcon();
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
+        DisableIcon();
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -118,9 +132,11 @@ public class Powerup2 : MonoBehaviour
     IEnumerator PickupStick(GameObject other)
     {
         DeactivatePowerup();
+        EnableIcon();
         powerupeffect.Apply(other);
         yield return new WaitUntil(other.GetComponent<stickScript2>().touchingBall);
         yield return new WaitForSeconds(duration);
+        DisableIcon();
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -129,9 +145,10 @@ public class Powerup2 : MonoBehaviour
     IEnumerator PickupFreeze(GameObject other)
     {
         DeactivatePowerup();
+        EnableIcon();
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
-        Debug.Log("WeAreTesting");
+        DisableIcon();
         powerupeffect.remove(other);
         Destroy(gameObject);
 
