@@ -11,11 +11,17 @@ public class Powerup2 : MonoBehaviour
     public GameObject powerupIcon;
     [SerializeField] GameObject pickupeffect;
 
-    void awake()
+    private void Awake()
     {
         int powerId = powerupeffect.GetId();
         Debug.Log(powerId);
-         
+        switch (powerId)
+        {
+            case 0:
+                powerupIcon = Game
+            case 1:
+                powerupIcon = GameObject.Find("SuperKickIcon");
+        }
         
      }
 
