@@ -32,6 +32,9 @@ public class Powerup2 : MonoBehaviour
             case 4:
                 powerupIcon = GameObject.Find("FreezeIcon");
                 break;
+            case 5:
+                powerupIcon = GameObject.Find("ShieldIcon");
+                break;
 
         }
 
@@ -49,26 +52,37 @@ public class Powerup2 : MonoBehaviour
             {
                 
                 StartCoroutine(PickupSpeed(other.gameObject));
+                
             }
             else if (powerupeffect.GetId() == 1)
             {
+                
                 StartCoroutine(PickupKick(other.gameObject));
+                
             }
             else if (powerupeffect.GetId() == 2)
             {
+                
                 StartCoroutine(PickupSlow(other.gameObject));
+                
             }
             else if (powerupeffect.GetId() == 3)
             {
+                
                 StartCoroutine(PickupStick(other.gameObject));
+                
             }
             else if (powerupeffect.GetId() == 4)
             {
+                
                 StartCoroutine(PickupFreeze(other.gameObject));
+                
             }
             else if (powerupeffect.GetId() == 5)
             {
+                
                 StartCoroutine(PickupShield(other.gameObject));
+                
             }
         }
         else if (other.CompareTag("AI-character") && !other.GetComponent<AIScript>().hasPowerup)
@@ -77,27 +91,28 @@ public class Powerup2 : MonoBehaviour
 
             if (powerupeffect.GetId() == 0)
             {
-                StartCoroutine(PickupSpeed(other.gameObject));
+
+                StartCoroutine(AIPickupSpeed(other.gameObject));
             }
             else if (powerupeffect.GetId() == 1)
             {
-                StartCoroutine(PickupKick(other.gameObject));
+                StartCoroutine(AIPickupKick(other.gameObject));
             }
             else if (powerupeffect.GetId() == 2)
             {
-                StartCoroutine(PickupSlow(other.gameObject));
+                StartCoroutine(AIPickupSlow(other.gameObject));
             }
             else if (powerupeffect.GetId() == 3)
             {
-                StartCoroutine(PickupStick(other.gameObject));
+                StartCoroutine(AIPickupStick(other.gameObject));
             }
             else if (powerupeffect.GetId() == 4)
             {
-                StartCoroutine(PickupFreeze(other.gameObject));
+                StartCoroutine(AIPickupFreeze(other.gameObject));
             }
             else if (powerupeffect.GetId() == 5)
             {
-                StartCoroutine(PickupShield(other.gameObject));
+                StartCoroutine(AIPickupShield(other.gameObject));
             }
         }
     }
@@ -109,7 +124,7 @@ public class Powerup2 : MonoBehaviour
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
         powerupeffect.remove(other);
-     
+        DisableIcon();
         Destroy(gameObject);
     }
 
@@ -165,6 +180,82 @@ public class Powerup2 : MonoBehaviour
     IEnumerator PickupShield(GameObject other)
     {
         DeactivatePowerup();
+        EnableIcon();
+        powerupeffect.Apply(other);
+        yield return new WaitForSeconds(duration);
+        Debug.Log("WeAreTesting");
+        DisableIcon();
+        powerupeffect.remove(other);
+        Destroy(gameObject);
+
+    }
+
+
+    //quickfix separating ai and player pickups
+
+    IEnumerator AIPickupSpeed(GameObject other)
+    {
+        DeactivatePowerup();
+
+        powerupeffect.Apply(other);
+        yield return new WaitForSeconds(duration);
+        powerupeffect.remove(other);
+
+        Destroy(gameObject);
+    }
+
+    IEnumerator AIPickupKick(GameObject other)
+    {
+        DeactivatePowerup();
+
+        powerupeffect.Apply(other);
+        yield return new WaitUntil(MIsPressed);
+
+        powerupeffect.remove(other);
+        Destroy(gameObject);
+
+    }
+
+    IEnumerator AIPickupSlow(GameObject other)
+    {
+        DeactivatePowerup();
+
+        powerupeffect.Apply(other);
+        yield return new WaitForSeconds(duration);
+
+        powerupeffect.remove(other);
+        Destroy(gameObject);
+
+    }
+
+    IEnumerator AIPickupStick(GameObject other)
+    {
+        DeactivatePowerup();
+
+        powerupeffect.Apply(other);
+        yield return new WaitUntil(other.GetComponent<stickScript2>().touchingBall);
+        yield return new WaitForSeconds(duration);
+
+        powerupeffect.remove(other);
+        Destroy(gameObject);
+
+    }
+
+    IEnumerator AIPickupFreeze(GameObject other)
+    {
+        DeactivatePowerup();
+
+        powerupeffect.Apply(other);
+        yield return new WaitForSeconds(duration);
+
+        powerupeffect.remove(other);
+        Destroy(gameObject);
+
+    }
+
+    IEnumerator AIPickupShield(GameObject other)
+    {
+        DeactivatePowerup();
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
         Debug.Log("WeAreTesting");
@@ -172,6 +263,10 @@ public class Powerup2 : MonoBehaviour
         Destroy(gameObject);
 
     }
+
+
+
+
 
     public bool MIsPressed()
     {
