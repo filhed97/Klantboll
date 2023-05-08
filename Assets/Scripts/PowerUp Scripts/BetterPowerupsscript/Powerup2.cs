@@ -8,16 +8,20 @@ public class Powerup2 : MonoBehaviour
     public float duration = 3f;
     public PowerupEffects2 powerupeffect;
     public static int numOfPowerups;
-    private Image[] powerupIcons;
+    public GameObject powerupIcon;
     [SerializeField] GameObject pickupeffect;
 
-    void Awake()
+    void awake()
     {
-        powerupIcons = FindObjectsOfType<Image>();
-    }
+        int powerId = powerupeffect.GetId();
+        Debug.Log(powerId);
+         
+        
+     }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
+        //Debug.Log(other);
         
         if (other.CompareTag("Player") && !other.GetComponent<PlayerMove>().hasPowerup)
         {
@@ -25,6 +29,7 @@ public class Powerup2 : MonoBehaviour
 
             if (powerupeffect.GetId() == 0)
             {
+                
                 StartCoroutine(PickupSpeed(other.gameObject));
             }
             else if (powerupeffect.GetId() == 1)
@@ -85,8 +90,10 @@ public class Powerup2 : MonoBehaviour
     IEnumerator PickupKick(GameObject other)
     {
         DeactivatePowerup();
+        EnableIcon();
         powerupeffect.Apply(other);
         yield return new WaitUntil(MIsPressed);
+        DisableIcon();
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -105,13 +112,10 @@ public class Powerup2 : MonoBehaviour
     IEnumerator PickupStick(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
         powerupeffect.Apply(other);
         yield return new WaitUntil(other.GetComponent<stickScript2>().touchingBall);
         yield return new WaitForSeconds(duration);
         powerupeffect.remove(other);
-
-        DisableIcon();
         Destroy(gameObject);
 
     }
