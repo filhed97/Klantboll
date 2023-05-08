@@ -34,9 +34,16 @@ public class MPSpawnPowerups : NetworkBehaviour {
     }
 
     void Update() {
+        if (IsOwner && NetworkManager.Singleton.IsServer)
+            SpawnPowerups();
+    }
+
+    private void SpawnPowerups()
+    {
         spawnTimer += Time.deltaTime;
 
-        if (spawnTimer >= spawnDelay && Powerup2.numOfPowerups < maxPowerups) {
+        if (spawnTimer >= spawnDelay && Powerup2.numOfPowerups < maxPowerups)
+        {
 
             spawnTimer = 0f;
 
@@ -46,9 +53,11 @@ public class MPSpawnPowerups : NetworkBehaviour {
             int randomIndex = Random.Range(0, powerupsArray.Length);
 
             // Spawn the powerup prefab at the random position
-            Instantiate(powerupsArray[randomIndex], spawnPos + Vector3.up * spawnHeight, Quaternion.identity);
+            GameObject powup = Instantiate(powerupsArray[randomIndex], spawnPos + Vector3.up * spawnHeight, Quaternion.identity);
+            powup.GetComponent<NetworkObject>().Spawn();
 
             Powerup2.numOfPowerups++;
         }
-    }      
+    }
+
 }
