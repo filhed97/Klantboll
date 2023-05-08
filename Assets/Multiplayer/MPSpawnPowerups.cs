@@ -30,7 +30,7 @@ public class MPSpawnPowerups : NetworkBehaviour {
             spawnPositions.Add(worldPosition);
         }
 
-        powerupsArray = new GameObject[] {superKick, superSpeed, speedDebuff, iceDebuff, superStick};
+        powerupsArray = new GameObject[] { superKick, superSpeed, speedDebuff, iceDebuff };//, superStick};
     }
 
     void Update() {
