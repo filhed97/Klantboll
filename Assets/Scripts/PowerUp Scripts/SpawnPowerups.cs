@@ -10,12 +10,13 @@ public class SpawnPowerups : MonoBehaviour {
     [SerializeField] public GameObject iceDebuff; // The powerup prefab to spawn
     [SerializeField] public GameObject superStick; // The powerup prefab to spawn
     [SerializeField] public GameObject plane; // Spawn area
+    [SerializeField] public GameObject shieldBuff; // shield power-ups
 
     public float spawnDelay = 1f;
     public float spawnHeight = 1f; 
     private float spawnTimer = 0f; 
     private List<Vector3> spawnPositions = new List<Vector3>(); 
-    private GameObject[] powerupsArray = new GameObject[5];
+    private GameObject[] powerupsArray = new GameObject[6];
     public static int maxPowerups = 20;
 
     void Start() {
@@ -29,7 +30,7 @@ public class SpawnPowerups : MonoBehaviour {
             spawnPositions.Add(worldPosition);
         }
 
-        powerupsArray = new GameObject[] {superKick, superSpeed, speedDebuff, iceDebuff, superStick};
+        powerupsArray = new GameObject[] {superKick, superSpeed, speedDebuff, iceDebuff, superStick, shieldBuff};
     }
 
     void Update() {
