@@ -13,13 +13,14 @@ public class NetworkMultiplayer : NetworkBehaviour
     private static Transform spawnedBall;
 
     //public bool hasPowerup = false;
-    public NetworkVariable<bool> hasPowerup = new NetworkVariable<bool>(false);
+    public NetworkVariable<bool> hasPowerup;
 
     private Vector3[] spawnPos = new Vector3[2];
 
     // Start is called before the first frame update
     public override void OnNetworkSpawn()
     {
+        hasPowerup = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
         spawnPos = new Vector3[] { new Vector3(10, 0, 0), new Vector3(-10, 0, 0) };
         var clientId = NetworkManager.Singleton.LocalClientId;
         Stewie.position = spawnPos[clientId];

@@ -10,7 +10,7 @@ public class MPSpeedBuff : PowerupEffects2
     {
         if(target.CompareTag("Player"))
         {
-            target.GetComponent<NetworkMultiplayer>().hasPowerup = true;
+            target.GetComponent<NetworkMultiplayer>().hasPowerup.Value = true;
             target.GetComponent<NetworkMultiplayer>().playerSpeed += amount;
         }       
     }
@@ -19,7 +19,7 @@ public class MPSpeedBuff : PowerupEffects2
     {
        if(target.CompareTag("Player"))
        {
-            target.GetComponent<NetworkMultiplayer>().hasPowerup = false;
+            target.GetComponent<NetworkMultiplayer>().hasPowerup.Value = false;
             target.GetComponent<NetworkMultiplayer>().playerSpeed -= amount;
        }
     }

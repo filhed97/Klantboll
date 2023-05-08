@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class MPPowerup2 : MonoBehaviour
+public class MPPowerup2 : NetworkBehaviour
 {
     public float duration = 3f;
     public PowerupEffects2 powerupeffect;
@@ -13,7 +14,7 @@ public class MPPowerup2 : MonoBehaviour
     {
         Debug.Log(other);
         
-        if (other.CompareTag("Player") && !other.GetComponent<NetworkMultiplayer>().hasPowerup)
+        if (other.CompareTag("Player") && !other.GetComponent<NetworkMultiplayer>().hasPowerup.Value)
         {
             numOfPowerups--;
 
@@ -48,6 +49,7 @@ public class MPPowerup2 : MonoBehaviour
         yield return new WaitForSeconds(duration);
         powerupeffect.remove(other);
         Destroy(gameObject);
+
     }
 
     IEnumerator PickupKick(GameObject other)
@@ -55,7 +57,8 @@ public class MPPowerup2 : MonoBehaviour
         Debug.Log("KICK");
         DeactivatePowerup();
         powerupeffect.Apply(other);
-        yield return new WaitUntil(MIsPressed);
+        //yield return new WaitUntil(MIsPressed);
+        yield return new WaitForSeconds(duration);
         powerupeffect.remove(other);
         Destroy(gameObject);
 

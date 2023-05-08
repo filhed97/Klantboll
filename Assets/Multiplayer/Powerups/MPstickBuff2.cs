@@ -8,13 +8,13 @@ public class MPstickBuff2 : PowerupEffects2
 
     public override void Apply(GameObject target)
     {
-        target.GetComponent<NetworkMultiplayer>().hasPowerup = true;
+        target.GetComponent<NetworkMultiplayer>().hasPowerup.Value = true;
         target.GetComponent<MPstickScript2>().sticky = true;
     }
 
     public override void remove(GameObject target)
     {
-        target.GetComponent<NetworkMultiplayer>().hasPowerup = false;
+        target.GetComponent<NetworkMultiplayer>().hasPowerup.Value = false;
         target.GetComponent<MPstickScript2>().unstick();
     }
 

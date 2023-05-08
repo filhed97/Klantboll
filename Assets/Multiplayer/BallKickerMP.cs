@@ -18,7 +18,7 @@ public class BallKickerMP : MonoBehaviour
             Vector3 appliedforce = (centre - contact) * kickforce;
 
             other.attachedRigidbody.AddForce(appliedforce);
-            gameObject.GetComponent<NetworkMultiplayer>().hasPowerup = false;
+            gameObject.GetComponent<NetworkMultiplayer>().hasPowerup.Value = false;
             KickingBallSound.Play();
         }
     }
