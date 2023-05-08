@@ -4868,6 +4868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 3
   powerupeffect: {fileID: 11400000, guid: c6d554731fe4742789aa205df9444c16, type: 2}
+  powerupIcon: {fileID: 6685482830504794170, guid: 8685e1b02d7a50b4da22493895cb3274, type: 3}
   pickupeffect: {fileID: 7888857835762348946, guid: 84dab4a8cf751fc4181b5f09a6186c21, type: 3}
 --- !u!23 &-7794236805891544518
 MeshRenderer:

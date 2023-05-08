@@ -4867,9 +4867,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 3
-  powerupeffect: {fileID: 11400000, guid: 66c12a5ef81e3417daef01119209a8c3, type: 2}
+  powerupeffect: {fileID: 11400000, guid: 1245382276fbe4b268c4e0acb1178edf, type: 2}
+  powerupIcon: {fileID: 0}
   pickupeffect: {fileID: 7888857835762348946, guid: 84dab4a8cf751fc4181b5f09a6186c21, type: 3}
-  transparentMaterial: {fileID: 2100000, guid: b730f0dd416184fd6bd330d8e8d0c9c2, type: 2}
 --- !u!23 &-8270763903784061578
 MeshRenderer:
   m_ObjectHideFlags: 0
