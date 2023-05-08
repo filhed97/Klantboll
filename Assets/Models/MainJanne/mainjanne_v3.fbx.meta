@@ -1,8 +1,38 @@
 fileFormatVersion: 2
-guid: b4fb28866ff76cd4988bd095b0ec672e
+guid: 78e258d55f02a3c48ae27661bd162208
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 2656543692989005864
+    second: janne|del
+  - first:
+      74: -946685974198409849
+    second: janne|Kick_L
+  - first:
+      74: -3534262142171415473
+    second: janne|Kick_R
+  - first:
+      74: -92644957308956547
+    second: janne|Rest
+  - first:
+      74: 3140693996390860444
+    second: janne|Running
+  - first:
+      74: -8630645012356669168
+    second: janne|Sprint
+  - first:
+      74: -8810167189156143163
+    second: janne|T-pose
+  - first:
+      74: -7969389610391310325
+    second: janne|T-pose.003
+  - first:
+      74: 4417349826283292015
+    second: janne|T-pose.004
+  - first:
+      74: 6061934020400739132
+    second: janne|T-pose.005
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -14,12 +44,19 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 1
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'janne|Kick_L' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'upper_arm.L' has translation animation
+      that will be discarded.\n\t'upper_arm.R' has translation animation that will
+      be discarded.\n\nClip 'janne|Kick_R' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'upper_arm.L' has translation animation that will be
+      discarded.\n\t'upper_arm.R' has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -35,9 +72,38 @@ ModelImporter:
     - serializedVersion: 16
       name: janne|del
       takeName: janne|del
-      internalID: 2656543692989005864
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: janne|Kick_L
+      takeName: janne|Kick_L
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 14
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -62,11 +128,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: janne|del.001
-      takeName: janne|del.001
-      internalID: -5362420064851934220
+      name: janne|Kick_R
+      takeName: janne|Kick_R
+      internalID: 0
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 14
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -93,67 +159,9 @@ ModelImporter:
     - serializedVersion: 16
       name: janne|Rest
       takeName: janne|Rest
-      internalID: -92644957308956547
+      internalID: 0
       firstFrame: 0
       lastFrame: 5
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: janne|Rest.001
-      takeName: janne|Rest.001
-      internalID: 819235339295376550
-      firstFrame: 0
-      lastFrame: 5
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: janne|Running
-      takeName: janne|Running
-      internalID: 3140693996390860444
-      firstFrame: 0
-      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -178,11 +186,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: janne|Running.001
-      takeName: janne|Running.001
-      internalID: -2782525852177024637
+      name: janne|Running
+      takeName: janne|Running
+      internalID: 0
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 18
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -190,6 +198,35 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: janne|Sprint
+      takeName: janne|Sprint
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -209,38 +246,9 @@ ModelImporter:
     - serializedVersion: 16
       name: janne|T-pose
       takeName: janne|T-pose
-      internalID: -8810167189156143163
+      internalID: 0
       firstFrame: 0
       lastFrame: 5
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: janne|T-pose.001
-      takeName: janne|T-pose.001
-      internalID: -2006609301766889098
-      firstFrame: 0
-      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -267,7 +275,7 @@ ModelImporter:
     - serializedVersion: 16
       name: janne|T-pose.003
       takeName: janne|T-pose.003
-      internalID: -7969389610391310325
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -296,7 +304,7 @@ ModelImporter:
     - serializedVersion: 16
       name: janne|T-pose.004
       takeName: janne|T-pose.004
-      internalID: 4417349826283292015
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -325,36 +333,7 @@ ModelImporter:
     - serializedVersion: 16
       name: janne|T-pose.005
       takeName: janne|T-pose.005
-      internalID: 6061934020400739132
-      firstFrame: 0
-      lastFrame: 1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: janne|T-pose.006
-      takeName: janne|T-pose.006
-      internalID: 1311574609574795685
+      internalID: 0
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -392,7 +371,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 1
+    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -605,13 +584,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: mainjanne(Clone)
+    - name: mainjanne_v3(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: janne
-      parentName: mainjanne(Clone)
+      parentName: mainjanne_v3(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 100, y: 100, z: 100}
@@ -645,11 +624,6 @@ ModelImporter:
       position: {x: 6.613859e-17, y: 0.00047538726, z: 1.3969838e-10}
       rotation: {x: 0.08478788, y: 0.00000011877998, z: -0.000000030322493, w: 0.99639904}
       scale: {x: 1, y: 1, z: 1.0000001}
-    - name: spine.006_end
-      parentName: spine.006
-      position: {x: -0, y: 0.0054038274, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: shoulder.L
       parentName: spine.003
       position: {x: 3.0357888e-10, y: 0.0013522059, z: 0.0012733021}
@@ -658,23 +632,18 @@ ModelImporter:
     - name: upper_arm.L
       parentName: shoulder.L
       position: {x: -0.00006012832, y: 0.003127907, z: -0.0004983498}
-      rotation: {x: 0.08857534, y: -0.7424293, z: 0.14371292, w: 0.6483053}
-      scale: {x: 0.9999995, y: 0.9999999, z: 0.99999964}
+      rotation: {x: 0.0885753, y: -0.7424293, z: 0.14371277, w: 0.64830536}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.99999976}
     - name: forearm.L
       parentName: upper_arm.L
       position: {x: 0.0000000025995541, y: 0.0035160684, z: 1.1408701e-10}
-      rotation: {x: 0.030454673, y: 0.07067708, z: -0.010332841, w: 0.99698067}
-      scale: {x: 1, y: 0.9999998, z: 1.0000002}
+      rotation: {x: 0.030454814, y: 0.070676915, z: -0.010332774, w: 0.99698067}
+      scale: {x: 0.9999999, y: 0.99999964, z: 1.0000004}
     - name: hand.L
       parentName: forearm.L
       position: {x: -0.000000001961889, y: 0.003478883, z: -1.9790605e-11}
-      rotation: {x: 0.04619318, y: -0.0044994713, z: -0.004647845, w: 0.99891156}
-      scale: {x: 1, y: 1.0000002, z: 1.0000002}
-    - name: hand.L_end
-      parentName: hand.L
-      position: {x: -0, y: 0.0007425268, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      rotation: {x: 0.046193156, y: -0.004499412, z: -0.0046478524, w: 0.9989116}
+      scale: {x: 0.9999999, y: 1.0000002, z: 0.99999994}
     - name: shoulder.R
       parentName: spine.003
       position: {x: 3.0357888e-10, y: 0.0013522059, z: 0.0012733021}
@@ -695,11 +664,6 @@ ModelImporter:
       position: {x: -1.2951204e-10, y: 0.003478882, z: -2.1536835e-11}
       rotation: {x: 0.046193186, y: 0.004499442, z: 0.004647922, w: 0.99891156}
       scale: {x: 1.0000001, y: 1.0000005, z: 0.99999994}
-    - name: hand.R_end
-      parentName: hand.R
-      position: {x: -0, y: 0.0007425268, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: thigh.L
       parentName: spine
       position: {x: -0.0021798443, y: 0.0021848571, z: 0.00027385436}
@@ -720,21 +684,11 @@ ModelImporter:
       position: {x: 1.238889e-10, y: 0.00061209133, z: 1.0554704e-11}
       rotation: {x: 0.00000010011716, y: 0.9838478, z: -0.17900737, w: -0.0000017117707}
       scale: {x: 1.0000002, y: 1.0000018, z: 0.99999905}
-    - name: toe.L_end
-      parentName: toe.L
-      position: {x: -0, y: 0.0002676745, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: heel.02.L
       parentName: foot.L
       position: {x: 0.00038000062, y: -0.00011463471, z: 0.00039673396}
       rotation: {x: -0.45858264, y: 0.6657338, z: 0.23832923, w: -0.5382376}
       scale: {x: 1.0000018, y: 0.9999991, z: 0.99999934}
-    - name: heel.02.L_end
-      parentName: heel.02.L
-      position: {x: -0, y: 0.0008, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: thigh.R
       parentName: spine
       position: {x: 0.0021798443, y: 0.0021848576, z: 0.00027385206}
@@ -755,23 +709,13 @@ ModelImporter:
       position: {x: 2.6397754e-11, y: 0.00061209133, z: -9.798047e-12}
       rotation: {x: -0.00000010337679, y: 0.9838478, z: -0.17900719, w: 0.0000017164273}
       scale: {x: 1.0000004, y: 1.0000017, z: 0.9999991}
-    - name: toe.R_end
-      parentName: toe.R
-      position: {x: -0, y: 0.0002676745, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: heel.02.R
       parentName: foot.R
       position: {x: -0.00038000048, y: -0.000114634786, z: 0.0003967339}
       rotation: {x: 0.44955468, y: 0.66167206, z: 0.24938405, w: 0.5458006}
       scale: {x: 1.0000017, y: 0.99999934, z: 0.99999905}
-    - name: heel.02.R_end
-      parentName: heel.02.R
-      position: {x: -0, y: 0.0008, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: Torso.v2
-      parentName: mainjanne(Clone)
+      parentName: mainjanne_v3(Clone)
       position: {x: -0, y: 1.4214119, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 49.77246, y: 49.77246, z: 45.689045}
@@ -792,8 +736,8 @@ ModelImporter:
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 1
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
