@@ -2198,12 +2198,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3378593093044956573}
-  - component: {fileID: 3378593093044956548}
+  - component: {fileID: 267131193178810739}
   - component: {fileID: 3378593093044956551}
   - component: {fileID: 3378593093044956550}
   - component: {fileID: 3378593093044956545}
-  - component: {fileID: 3378593093044956544}
-  - component: {fileID: 3378593093044956547}
+  - component: {fileID: 5106516299564878111}
+  - component: {fileID: 4821558203670970513}
   - component: {fileID: 3378593093044956546}
   - component: {fileID: 3378593093044956549}
   - component: {fileID: -7592504302431623320}
@@ -2233,7 +2233,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3378593093044956548
+--- !u!114 &267131193178810739
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2242,14 +2242,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3378593093044956574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c4fddc179fe44428c366b3827d352b, type: 3}
+  m_Script: {fileID: 11500000, guid: 39c0c548410d340a990944470f649df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _activeRagdoll: {fileID: 3378593093044956551}
   _physicsModule: {fileID: 3378593093044956550}
   _animationModule: {fileID: 3378593093044956546}
-  _cameraModule: {fileID: 3378593093044956547}
-  _forcedMovement: {fileID: 3378593093044956544}
+  _cameraModule: {fileID: 0}
+  _forcedMovement: {fileID: 5106516299564878111}
   _enableMovement: 1
 --- !u!114 &3378593093044956551
 MonoBehaviour:
@@ -2386,7 +2386,7 @@ MonoBehaviour:
   maxFloorSlope: 60
   _rightFoot: {fileID: 4846229951570748977}
   _leftFoot: {fileID: 4846229951570748984}
---- !u!114 &3378593093044956544
+--- !u!114 &5106516299564878111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2395,15 +2395,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3378593093044956574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e5a997c30b396a41a54d540df7f64ec, type: 3}
+  m_Script: {fileID: 11500000, guid: b8f0dddda1f974eaea8b7d4b2690ad88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Joint: {fileID: 3378593092658721748}
   RightLegRoot: {fileID: 3378593092727769255}
-  MovementSpeed: 7
+  MovementSpeed: 7.8
   HeightDamperOffset: 0.5
   DamperForceMultiplier: 0
---- !u!114 &3378593093044956547
+--- !u!114 &4821558203670970513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2412,7 +2412,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3378593093044956574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f883d0d92db2cf4492055911c1a2643, type: 3}
+  m_Script: {fileID: 11500000, guid: dde4fbb3b7fa14eedac00ff5058a792a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _activeRagdoll: {fileID: 3378593093044956551}
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   dontBlockCamera:
     serializedVersion: 2
     m_Bits: 4294967295
-  cameraRepositionOffset: 0.05
+  cameraRepositionOffset: 0.15
 --- !u!114 &3378593093044956546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2532,10 +2532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8b01c188a0f4102a84f9014ee649ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
-  MaxVelocity: 15
-  ball: {fileID: 0}
-  Stewie: {fileID: 0}
+  ball: {fileID: 5085626970686272920, guid: 8a606535083214c88a7ac70f713bb8e4, type: 3}
+  Player2: {fileID: 3378593093044956573}
   hasPowerup:
     m_InternalValue: 0
 --- !u!1 &4166111968659135755
