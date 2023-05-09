@@ -52,7 +52,7 @@ namespace ActiveRagdoll
                 Vector3 newVelocity = new Vector3(moveDirection.x, Joint.velocity.y*0.1f, moveDirection.z);
                 Joint.velocity = newVelocity * MovementSpeed;
 
-                Debug.Log("vel = " + Joint.velocity);
+                //Debug.Log("vel = " + Joint.velocity);
             }
 
             if (Input.GetButton("space"))
@@ -64,7 +64,7 @@ namespace ActiveRagdoll
                 RLegDrive.positionSpring = 1500;
             }
 
-            Debug.Log("xdrive: " + RLegDrive.positionSpring);
+            //Debug.Log("xdrive: " + RLegDrive.positionSpring);
 
             HeightDamper();
         }
