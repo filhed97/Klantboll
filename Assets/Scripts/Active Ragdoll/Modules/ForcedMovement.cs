@@ -44,26 +44,37 @@ namespace ActiveRagdoll
             walkModifyer = 1f;
             if (walking) { walkModifyer = WalkSpeedMultiplier; }
             Vector3 moveDirection = Target3D;
-            
-            if (Input.GetAxis("Horizontal") == 0 & Input.GetAxis("Vertical") == 0) { Joint.velocity = zeroes; } 
-            else 
+            //moveDirection.Set(moveDirection.x, 0, moveDirection.z);
+            //Vector3 moveDirection = smoothedInput(Joint.velocity, Target3D);
+
+            //changes velocity of RigidBody rb
+            //Debug.Log("Target2D: " + Target2D);
+            if (Input.GetAxis("Horizontal") == 0 & Input.GetAxis("Vertical") == 0) {
+                //joint.transform.forward = moveDirection;
+                Joint.velocity = zeroes;
+                //Joint.velocity = smoothedInput(Joint.velocity, zeroes);
+            } else {
+                //changes velocity of RigidBody rb
+                //Joint.velocity = moveDirection * movementInertiaModifier(MovementSpeed);
+
+                //Joint.velocity = smoothedInput(Joint.velocity, moveDirection);
+
+                Vector3 newVelocity = new Vector3(moveDirection.x, Joint.velocity.y*0.1f, moveDirection.z);
+                Joint.velocity = newVelocity * MovementSpeed;
+
+                //Debug.Log("vel = " + Joint.velocity);
+            }
+
+            if (Input.GetButton("space"))
+            {      
+                RLegDrive.positionSpring = 15000;
+            }
+            else
             {
-                if (boostMode)
-                {
-                    //forced velocity in x,y,z. joint height also set in case player enters boostmode in awkward position.
-                    Joint.transform.position = new Vector3(Joint.transform.position.x, initialJointHeight, Joint.transform.position.z);
-                    moveDirection.Set(moveDirection.x, 0, moveDirection.z);
-                    Joint.velocity = moveDirection * BoostSpeed * walkModifyer; 
-                }
-                else
-                {
-                    //y-coordinate is taken from previous frame's velocity, but scaled down.
-                    //if not scaled like this, the active ragdoll had a tendency to kick himself to the moon.
-                    //only the velocity in x and z coordinates (=forward/backward/left/right from input) is strictly forced.
-                    Vector3 newVelocity = new Vector3(moveDirection.x, Joint.velocity.y * 0.1f, moveDirection.z);
-                    Joint.velocity = newVelocity * MovementSpeed * walkModifyer;
-                }
-            }   
+                RLegDrive.positionSpring = 1500;
+            }
+
+            //Debug.Log("xdrive: " + RLegDrive.positionSpring);
 
             HeightDamper();
         }
@@ -117,6 +128,21 @@ namespace ActiveRagdoll
         private float getJointHeight()
         {
             return Joint.transform.position.y;
+        }
+
+        private float movementInertiaModifier(float val)
+        {
+            float mag = Joint.velocity.magnitude;
+            //if (mag < 0.01) { return val; }
+            //return mag * val;
+            return (MovementSpeed + mag) / 10;
+        }
+
+        private Vector3 smoothedInput(Vector3 currentVelocity, Vector3 inputVector)
+        {
+            float magnitude = MovementSpeed*(0.5f/(0.5f+(currentVelocity.normalized - inputVector.normalized).magnitude));
+            //Debug.Log("Mag: " + magnitude);
+            return Vector3.Normalize((currentVelocity.normalized+inputVector.normalized)) * magnitude;
         }
     }
 }

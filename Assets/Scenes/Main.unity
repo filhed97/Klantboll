@@ -12866,7 +12866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1777f9b5f435644a29de374ae65515b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paueButton: {fileID: 0}
+  paueButton: {fileID: 607627690}
   countdownDuration: 3
   countDownDisplay: {fileID: 1027037778}
 --- !u!222 &1027037777
