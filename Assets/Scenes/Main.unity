@@ -3152,6 +3152,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 59410592205807956, guid: 8cd0dac157021f64ba4dfad01e965318, type: 3}
   m_PrefabInstance: {fileID: 241849586}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &279503350 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9190080119709554295, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+  m_PrefabInstance: {fileID: 1793806761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &283910768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10774,7 +10779,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -462981019419857548, guid: 1c3e0242447cc4903890c1061da65fd8, type: 3}
---- !u!114 &870863959
+--- !u!114 &870863957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10783,17 +10788,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 870863954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e043eae6c4d0492399bbe8a9c9ea1e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e7e2b41c373aed4c8843d16972fa3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  superKick: {fileID: 511421333734614567, guid: 2631ae7e5db7a489bbc98d3d4d304606, type: 3}
-  superSpeed: {fileID: 511421333734614567, guid: bd71206a9afd24877ba6465dae592924, type: 3}
-  speedDebuff: {fileID: 511421333734614567, guid: bac21b5ce97ff488492156d4ce9a39be, type: 3}
-  iceDebuff: {fileID: 511421333734614567, guid: b41ed191cc58841a897fec8b939a727f, type: 3}
-  superStick: {fileID: 511421333734614567, guid: f3a1586835ae24000ab1a39f1820cdbf, type: 3}
+  superKick: {fileID: 511421333734614567, guid: 45690949a423c3349b46e9e57a2a69ff, type: 3}
+  speedDebuff: {fileID: 511421333734614567, guid: 755540a176c6e3b45b0e49ddcaf0fc9a, type: 3}
+  iceDebuff: {fileID: 511421333734614567, guid: 099e69b62b0d62c4ea87b45cb99c5025, type: 3}
   plane: {fileID: 870863954}
-  shieldBuff: {fileID: 511421333734614567, guid: bcd6749e9c84e4d868925d9dbdfc3515, type: 3}
-  spawnDelay: 8
+  spawnDelay: 5
   spawnHeight: 1
 --- !u!1001 &904639047
 PrefabInstance:
@@ -15595,19 +15597,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3378593093044956574, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
   m_PrefabInstance: {fileID: 1793806761}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1157438287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157438277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a17df28205f9846c7bd41e1d5a900618, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kickforce: 200
 --- !u!114 &1157438288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15622,6 +15611,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sticky: 0
   sticky2: 0
+--- !u!114 &1157438289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157438277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a051dc6227c4c0b478f5b40183fe7443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 279503350}
+--- !u!114 &1157438290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157438277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd237ae694f26a41b2f9f56d321fe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasPowerup: 0
 --- !u!1001 &1165781160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24640,13 +24655,77 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3378593091534256926, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularXDrive.positionDamper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091534256926, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularYZDrive.positionDamper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularYLimit.limit
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularYLimit.bounciness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularZLimit.bounciness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_LowAngularXLimit.bounciness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularXDrive.positionDamper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_HighAngularXLimit.bounciness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularYZDrive.positionDamper
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3378593093044956544, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
       propertyPath: MovementSpeed
       value: 7.8
       objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956544, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: HeightDamperOffset
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956544, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: DamperForceMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3378593093044956547, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
       propertyPath: dontBlockCamera.m_Bits
       value: 231
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956550, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: uprightTorque
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956550, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: rotationTorque
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956550, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: _stabilizerJointDrive._maximumForce
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956550, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: _stabilizerJointDrive._positionDamper
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956550, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: _stabilizerJointDrive._positionSpring
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 3378593093044956573, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
       propertyPath: m_RootOrder
@@ -24712,7 +24791,9 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7315204463569077245, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+    - {fileID: 6553737969720760508, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
 --- !u!1001 &1803101262
 PrefabInstance:
