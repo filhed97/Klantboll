@@ -13,7 +13,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: -3715888224845756888}
   m_StateMachineBehaviours:
-  - {fileID: 8562501550199129344}
+  - {fileID: -744457304289008419}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -25,9 +25,9 @@ AnimatorState:
   m_Motion: {fileID: -8630645012356669168, guid: 78e258d55f02a3c48ae27661bd162208, type: 3}
   m_Tag: 
   m_SpeedParameter: speed
-  m_MirrorParameter: 
+  m_MirrorParameter: moving
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: speed
 --- !u!1102 &-4937541344818158489
 AnimatorState:
   serializedVersion: 6
@@ -109,6 +109,18 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 350, y: 0, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -4937541344818158489}
+--- !u!114 &-744457304289008419
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f07f4f5dada17946a9bfb046201d021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -143,6 +155,7 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: slowDebuff
+  - m_Name: boost
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
