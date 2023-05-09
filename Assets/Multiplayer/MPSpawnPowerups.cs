@@ -13,7 +13,7 @@ public class MPSpawnPowerups : NetworkBehaviour {
     [SerializeField] public GameObject plane; // Spawn area
 
     public float spawnDelay = 1f;
-    public float spawnHeight = 1f; 
+    public float spawnHeight = 0.1f; 
     private float spawnTimer = 0f; 
     private List<Vector3> spawnPositions = new List<Vector3>(); 
     private GameObject[] powerupsArray = new GameObject[5];
@@ -50,7 +50,7 @@ public class MPSpawnPowerups : NetworkBehaviour {
             // Choose a random spawn position from the list
             Vector3 spawnPos = spawnPositions[Random.Range(0, spawnPositions.Count)];
 
-            int randomIndex = Random.Range(0, powerupsArray.Length);
+            int randomIndex = 0;//Random.Range(0, powerupsArray.Length);
 
             // Spawn the powerup prefab at the random position
             GameObject powup = Instantiate(powerupsArray[randomIndex], spawnPos + Vector3.up * spawnHeight, Quaternion.identity);

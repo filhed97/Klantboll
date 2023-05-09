@@ -11,7 +11,7 @@ public class MPSuperKick : PowerupEffects2
     {
         if(target.CompareTag("Player"))
         {
-            target.GetComponent<NetworkMultiplayer>().hasPowerup.Value = true;
+            target.GetComponent<NetworkMultiplayerJanne>().hasPowerup.Value = true;
             target.GetComponent<BallKickerMP>().kickforce = amount;
         }
     }
@@ -20,7 +20,7 @@ public class MPSuperKick : PowerupEffects2
     {
         if(target.CompareTag("Player"))
         {
-            target.GetComponent<NetworkMultiplayer>().hasPowerup.Value = false;
+            target.GetComponent<NetworkMultiplayerJanne>().hasPowerup.Value = false;
             target.GetComponent<BallKickerMP>().kickforce = 200;
         }
     }

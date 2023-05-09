@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd2bec37a83c412e803e518c9ec925b, type: 3}
   m_Name: MPSpeedBuff
   m_EditorClassIdentifier: 
-  amount: 1000
+  amount: 7
   id: 0
