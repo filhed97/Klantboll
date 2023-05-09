@@ -24145,13 +24145,77 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3378593091534256926, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularXDrive.positionDamper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091534256926, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularYZDrive.positionDamper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularYLimit.limit
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularYLimit.bounciness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularZLimit.bounciness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_LowAngularXLimit.bounciness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularXDrive.positionDamper
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_HighAngularXLimit.bounciness
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593091727654891, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_AngularYZDrive.positionDamper
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3378593093044956544, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
       propertyPath: MovementSpeed
       value: 7.8
       objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956544, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: HeightDamperOffset
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956544, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: DamperForceMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3378593093044956547, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
       propertyPath: dontBlockCamera.m_Bits
       value: 231
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956550, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: uprightTorque
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956550, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: rotationTorque
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956550, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: _stabilizerJointDrive._maximumForce
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956550, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: _stabilizerJointDrive._positionDamper
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378593093044956550, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: _stabilizerJointDrive._positionSpring
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 3378593093044956573, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
       propertyPath: m_RootOrder
