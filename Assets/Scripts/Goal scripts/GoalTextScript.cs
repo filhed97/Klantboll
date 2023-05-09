@@ -47,7 +47,7 @@ public class GoalTextScript : MonoBehaviour
     {
         Rigidbody rb = ball.GetComponent<Rigidbody>();
 
-        stick.unstick();
+       // stick.unstick();
         rb.Sleep();
         rb.position = new Vector3(0, 10, 0);
         rb.velocity = Vector3.zero;
