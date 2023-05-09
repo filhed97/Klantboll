@@ -9,7 +9,7 @@ public class SpawnPowerups : MonoBehaviour {
     [SerializeField] public GameObject speedDebuff; // The powerup prefab to spawn
     [SerializeField] public GameObject iceDebuff; // The powerup prefab to spawn
     [SerializeField] public GameObject superStick; // The powerup prefab to spawn
-    [SerializeField] public GameObject plane; // Spawn area
+    [SerializeField] public GameObject spawnArea; // Spawn area
 
     public float spawnDelay = 1f;
     public float spawnHeight = 1f; 
@@ -19,7 +19,7 @@ public class SpawnPowerups : MonoBehaviour {
     public static int maxPowerups = 20;
 
     void Start() {
-        MeshFilter meshFilter = plane.GetComponent<MeshFilter>();
+        MeshFilter meshFilter = spawnArea.GetComponent<MeshFilter>();
         Mesh mesh = meshFilter.mesh;
 
         Vector3[] vertices = mesh.vertices;
