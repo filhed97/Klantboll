@@ -5,7 +5,7 @@ using Unity.Netcode;
 
 public class NetworkMultiplayerJanne : NetworkBehaviour
 {
-    public Rigidbody rb;
+    Rigidbody rb;
     [SerializeField] private Transform ball;
     [SerializeField] private Transform Player2;
     private static Transform spawnedBall;

@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 6072696297396095727}
   m_Layer: 7
   m_Name: forearm.L
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 6117401985854006415}
   m_Layer: 7
   m_Name: toe.R
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 7568817927262843057}
   m_Layer: 7
   m_Name: shoulder.R
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -626,7 +626,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.035787e-10, y: 0.0013522034, z: 0.001273301}
+  m_ConnectedAnchor: {x: 3.035784e-10, y: 0.0013522, z: 0.0012733012}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -851,9 +851,10 @@ GameObject:
   - component: {fileID: 3378593092658721747}
   - component: {fileID: 1102521574515453913}
   - component: {fileID: 5367953901917282198}
+  - component: {fileID: 569212156121621169}
   m_Layer: 7
   m_Name: spine.001
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1037,6 +1038,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &569212156121621169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566353305064503909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8b01c188a0f4102a84f9014ee649ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 5085626970686272920, guid: 8a606535083214c88a7ac70f713bb8e4, type: 3}
+  Player2: {fileID: 3378593093044956573}
+  hasPowerup:
+    m_InternalValue: 0
 --- !u!1 &1566353305846380527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1247,7 @@ GameObject:
   - component: {fileID: 1164105477988924061}
   m_Layer: 7
   m_Name: neck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1416,7 +1433,7 @@ GameObject:
   - component: {fileID: 2015942915265307146}
   m_Layer: 7
   m_Name: Animated
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1528,7 +1545,7 @@ GameObject:
   - component: {fileID: 2635395026815461824}
   m_Layer: 7
   m_Name: Physical
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1640,7 +1657,7 @@ GameObject:
   - component: {fileID: 951205817242672708}
   m_Layer: 7
   m_Name: spine.002
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2005,7 +2022,7 @@ GameObject:
   - component: {fileID: 983044034252169046}
   m_Layer: 7
   m_Name: shin.R
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2208,7 +2225,6 @@ GameObject:
   - component: {fileID: 3378593093044956549}
   - component: {fileID: -7592504302431623320}
   - component: {fileID: -5930766892396063671}
-  - component: {fileID: 8609033233978083233}
   m_Layer: 7
   m_Name: MPPlayer
   m_TagString: Player
@@ -2248,7 +2264,7 @@ MonoBehaviour:
   _activeRagdoll: {fileID: 3378593093044956551}
   _physicsModule: {fileID: 3378593093044956550}
   _animationModule: {fileID: 3378593093044956546}
-  _cameraModule: {fileID: 0}
+  _cameraModule: {fileID: 4821558203670970513}
   _forcedMovement: {fileID: 5106516299564878111}
   _enableMovement: 1
 --- !u!114 &3378593093044956551
@@ -2520,22 +2536,6 @@ MonoBehaviour:
   AlwaysReplicateAsRoot: 0
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &8609033233978083233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378593093044956574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8b01c188a0f4102a84f9014ee649ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 5085626970686272920, guid: 8a606535083214c88a7ac70f713bb8e4, type: 3}
-  Player2: {fileID: 3378593093044956573}
-  hasPowerup:
-    m_InternalValue: 0
 --- !u!1 &4166111968659135755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,7 +2551,7 @@ GameObject:
   - component: {fileID: 3993506279752599574}
   m_Layer: 7
   m_Name: hand.R
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2912,7 +2912,7 @@ GameObject:
   - component: {fileID: 8019501411987865003}
   m_Layer: 7
   m_Name: hand.L
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2960,7 +2960,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0000000038780854, y: 0.0034788828, z: 3.4924597e-10}
+  m_ConnectedAnchor: {x: -0.0000000059517333, y: 0.0034788828, z: 4.3655746e-11}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -3098,7 +3098,7 @@ GameObject:
   - component: {fileID: 2503002977957971882}
   m_Layer: 7
   m_Name: foot.L
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3478,7 +3478,7 @@ GameObject:
   - component: {fileID: 5861752550637117542}
   m_Layer: 7
   m_Name: head
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3767,7 +3767,7 @@ GameObject:
   - component: {fileID: 909228630297568322}
   m_Layer: 7
   m_Name: upper_arm.R
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4058,7 +4058,7 @@ GameObject:
   - component: {fileID: 1271991581349685015}
   m_Layer: 7
   m_Name: spine.003
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4347,7 +4347,7 @@ GameObject:
   - component: {fileID: 3942446410305274481}
   m_Layer: 7
   m_Name: janne
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4437,7 +4437,7 @@ GameObject:
   - component: {fileID: 9177606103991915939}
   m_Layer: 7
   m_Name: Torso.v2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4770,7 +4770,7 @@ GameObject:
   - component: {fileID: 3276654670008411606}
   m_Layer: 7
   m_Name: shin.L
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5058,7 +5058,7 @@ GameObject:
   - component: {fileID: 6841512222191935549}
   m_Layer: 7
   m_Name: toe.L
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5106,7 +5106,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 8.6402e-11, y: 0.00061209, z: -3.4924597e-10}
+  m_ConnectedAnchor: {x: 4.120011e-10, y: 0.00061208964, z: -0.0000000027939677}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -5419,7 +5419,7 @@ GameObject:
   - component: {fileID: 131913608697092537}
   m_Layer: 7
   m_Name: heel.02.R
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5694,7 +5694,7 @@ GameObject:
   - component: {fileID: 6489211186519532745}
   m_Layer: 7
   m_Name: thigh.R
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5894,7 +5894,7 @@ GameObject:
   - component: {fileID: 1474198964094115022}
   m_Layer: 7
   m_Name: foot.R
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6275,7 +6275,7 @@ GameObject:
   - component: {fileID: 2274435600400275931}
   m_Layer: 7
   m_Name: forearm.R
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6475,7 +6475,7 @@ GameObject:
   - component: {fileID: 6963536686005318755}
   m_Layer: 7
   m_Name: thigh.L
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6853,7 +6853,7 @@ GameObject:
   - component: {fileID: 5679119663985116652}
   m_Layer: 7
   m_Name: upper_arm.L
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7052,7 +7052,7 @@ GameObject:
   - component: {fileID: 892573271897283487}
   m_Layer: 7
   m_Name: shoulder.L
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7328,7 +7328,7 @@ GameObject:
   - component: {fileID: 8794468926753728716}
   m_Layer: 7
   m_Name: spine.physical
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7624,7 +7624,7 @@ GameObject:
   - component: {fileID: 671651266204744941}
   m_Layer: 7
   m_Name: heel.02.L
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
