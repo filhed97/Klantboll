@@ -62,6 +62,8 @@ namespace ActiveRagdoll {
         }
 
         void Start() {
+            if (!IsOwner)
+                return;
             Camera = new GameObject("Active Ragdoll Camera", typeof(UnityEngine.Camera));
             Camera.transform.parent = transform;
 
