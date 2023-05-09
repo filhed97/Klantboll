@@ -40,11 +40,11 @@ public class JannePowerup2 : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider playerCollider)
     {
         //Debug.Log(other);
         
-        if (other.CompareTag("Player") && !other.gameObject.transform.root.GetComponent<powerupCheck>().hasPowerup)
+        if (playerCollider.CompareTag("Player") && !playerCollider.gameObject.transform.root.GetComponent<powerupCheck>().hasPowerup)
         {
             numOfPowerups--;
             Debug.Log("Power picked up");
@@ -52,71 +52,71 @@ public class JannePowerup2 : MonoBehaviour
             if (powerupeffect.GetId() == 0)
             {
                 
-                StartCoroutine(PickupSpeed(other.gameObject));
+                StartCoroutine(PickupSpeed(playerCollider.gameObject));
                 
             }
             else if (powerupeffect.GetId() == 1)
             {
-                Debug.Log("Collided with: " + other.gameObject.name);
+                Debug.Log("Collided with: " + playerCollider.gameObject.name);
                 
-                StartCoroutine(PickupKick(other.gameObject));
+                StartCoroutine(PickupKick(playerCollider.gameObject));
                 
             }
             else if (powerupeffect.GetId() == 2)
             {
                 
-                StartCoroutine(PickupSlow(other.gameObject));
+                StartCoroutine(PickupSlow(playerCollider.gameObject));
                 
             }
             else if (powerupeffect.GetId() == 3)
             {
                 
-                StartCoroutine(PickupStick(other.gameObject));
+                StartCoroutine(PickupStick(playerCollider.gameObject));
                 
             }
             else if (powerupeffect.GetId() == 4)
             {
                 
-                StartCoroutine(PickupFreeze(other.gameObject));
+                StartCoroutine(PickupFreeze(playerCollider.gameObject));
                 
             }
             else if (powerupeffect.GetId() == 5)
             {
                 
-                StartCoroutine(PickupShield(other.gameObject));
+                StartCoroutine(PickupShield(playerCollider.gameObject));
                 
             }
         }
-        else if (other.CompareTag("AI-character") && !other.GetComponent<AIScript>().hasPowerup)
+        else if (playerCollider.CompareTag("AI-character") && !playerCollider.GetComponent<AIScript>().hasPowerup)
         {
             numOfPowerups--;
 
             if (powerupeffect.GetId() == 0)
             {
 
-                StartCoroutine(AIPickupSpeed(other.gameObject));
+                StartCoroutine(AIPickupSpeed(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 1)
             {
-                StartCoroutine(AIPickupKick(other.gameObject));
+                StartCoroutine(AIPickupKick(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 2)
             {
-                StartCoroutine(AIPickupSlow(other.gameObject));
+                StartCoroutine(AIPickupSlow(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 3)
             {
                 Debug.Log("Inide sticker");
-                StartCoroutine(PickupStick(other.gameObject));
-                StartCoroutine(AIPickupStick(other.gameObject));
+                StartCoroutine(PickupStick(playerCollider.gameObject));
+                StartCoroutine(AIPickupStick(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 4)
             {
-                StartCoroutine(AIPickupFreeze(other.gameObject));
+                StartCoroutine(AIPickupFreeze(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 5)
             {
-                StartCoroutine(AIPickupShield(other.gameObject));
+                StartCoroutine(AIPickupShield(playerCollider.gameObject));
             }
         }
     }

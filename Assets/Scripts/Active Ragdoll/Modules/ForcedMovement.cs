@@ -9,7 +9,7 @@ namespace ActiveRagdoll
         //Values supplied by module settings window in editor
         public Rigidbody Joint;
         public Rigidbody RightLegRoot;
-        public float SprintSpeed = 7.8f;
+        public float MovementSpeed = 7.8f;
         public float WalkSpeedMultiplier = 0.5f;
         public float BoostSpeed = 12f;
         public float HeightDamperOffset = 0.3f;
@@ -61,7 +61,7 @@ namespace ActiveRagdoll
                     //if not scaled like this, the active ragdoll had a tendency to kick himself to the moon.
                     //only the velocity in x and z coordinates (=forward/backward/left/right from input) is strictly forced.
                     Vector3 newVelocity = new Vector3(moveDirection.x, Joint.velocity.y * 0.1f, moveDirection.z);
-                    Joint.velocity = newVelocity * SprintSpeed * walkModifyer;
+                    Joint.velocity = newVelocity * MovementSpeed * walkModifyer;
                 }
             }   
 

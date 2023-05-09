@@ -13,7 +13,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: -3715888224845756888}
   m_StateMachineBehaviours:
-  - {fileID: -744457304289008419}
+  - {fileID: -3176793177084100380}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -79,6 +79,19 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-3176793177084100380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6a77f757405014dad423983b0f847a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationOgSpeed: 1.1
 --- !u!1107 &-1274574762445803048
 AnimatorStateMachine:
   serializedVersion: 6
@@ -154,8 +167,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: slowDebuff
   - m_Name: boost
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: slowDebuff
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
