@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Powerup2 : MonoBehaviour
+public class JannePowerup2 : MonoBehaviour
 {
     public float duration = 3f;
     public PowerupEffects2 powerupeffect;
@@ -14,7 +14,7 @@ public class Powerup2 : MonoBehaviour
     private void Awake()
     {
         int powerId = powerupeffect.GetId();
-        //Debug.Log(powerId);
+        Debug.Log(powerId);
         switch (powerId)
         {
             case 0:
@@ -44,9 +44,10 @@ public class Powerup2 : MonoBehaviour
     {
         //Debug.Log(other);
         
-        if (other.CompareTag("Player") && !other.GetComponent<PlayerMove>().hasPowerup)
+        if (other.CompareTag("Player") && !other.gameObject.transform.root.GetComponent<powerupCheck>().hasPowerup)
         {
             numOfPowerups--;
+            Debug.Log("Power picked up");
 
             if (powerupeffect.GetId() == 0)
             {
@@ -56,6 +57,7 @@ public class Powerup2 : MonoBehaviour
             }
             else if (powerupeffect.GetId() == 1)
             {
+                Debug.Log("Collided with: " + other.gameObject.name);
                 
                 StartCoroutine(PickupKick(other.gameObject));
                 
@@ -104,6 +106,8 @@ public class Powerup2 : MonoBehaviour
             }
             else if (powerupeffect.GetId() == 3)
             {
+                Debug.Log("Inide sticker");
+                StartCoroutine(PickupStick(other.gameObject));
                 StartCoroutine(AIPickupStick(other.gameObject));
             }
             else if (powerupeffect.GetId() == 4)

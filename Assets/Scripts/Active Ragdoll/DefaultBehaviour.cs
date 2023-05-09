@@ -65,7 +65,7 @@ public class DefaultBehaviour : MonoBehaviour {
             _animationModule.Animator.SetBool("moving", false);
             return;
         }
-        Debug.Log("DB _movement: " + _movement);
+       // Debug.Log("DB _movement: " + _movement);
 
         _animationModule.Animator.SetBool("moving", true);
         _animationModule.Animator.SetFloat("speed", _movement.magnitude);
