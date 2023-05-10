@@ -5868,6 +5868,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5196161606967638826, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020322485391745229, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: f360bc03197c65c46a01862004a93edf, type: 3}
     - target: {fileID: 9020322485391745229, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Controller
       value: 
