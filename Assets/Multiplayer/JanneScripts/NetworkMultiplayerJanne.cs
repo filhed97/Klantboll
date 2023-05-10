@@ -24,6 +24,7 @@ public class NetworkMultiplayerJanne : NetworkBehaviour
         if (IsOwner && NetworkManager.Singleton.IsServer)
         {
             spawnedBall = Instantiate(ball);
+            spawnedBall.position = new Vector3(0, 10, 0);
             spawnedBall.GetComponent<NetworkObject>().Spawn(true);
         }
     }
