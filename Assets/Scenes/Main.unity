@@ -14941,7 +14941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Object: {fileID: 583249360}
-  timeValue: 2
+  timeValue: 60
   timerText: {fileID: 1127325951}
 --- !u!114 &1127325951
 MonoBehaviour:
