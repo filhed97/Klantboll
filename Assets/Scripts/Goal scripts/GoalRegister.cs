@@ -20,13 +20,13 @@ public class GoalRegister : MonoBehaviour
             if(name.Equals("Goal1")) {
 
                 GoalCheering.Play();
-                IncreaseScore1();
+                IncreaseScore2();
             }
 
             else if(name.Equals("Goal2")){
 
                 GoalCheering.Play();
-                IncreaseScore2();
+                IncreaseScore1();
             }
 
             PlayerPrefs.SetInt("Score1", score1);
