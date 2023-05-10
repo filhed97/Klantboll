@@ -72,7 +72,7 @@ public class DefaultBehaviour : MonoBehaviour {
 
         float angleOffset = Vector2.SignedAngle(_movement, Vector2.up);
         Vector3 targetForward = Quaternion.AngleAxis(angleOffset, Vector3.up) * Auxiliary.GetFloorProjection(_aimDirection);
-        _physicsModule.TargetDirection = targetForward;
+        _physicsModule.TargetDirection = targetForward; //där gubben kollar, kameran osv
         _forcedMovement.Target2D = _movement;
         _forcedMovement.Target3D = targetForward;
     }

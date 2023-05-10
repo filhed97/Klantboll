@@ -845,6 +845,12 @@ MonoBehaviour:
   ragdolled: 0
   kickedForce: 15
   ragdollTime: 5
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0, z: 0.01}
 --- !u!1 &1566353305846380527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1560,7 @@ GameObject:
   - component: {fileID: 3378593093044956549}
   - component: {fileID: 6553737969720760508}
   - component: {fileID: 7315204463569077245}
+  - component: {fileID: 1301154282174488306}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -1852,6 +1859,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPowerup: 0
+--- !u!114 &1301154282174488306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378593093044956574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1490f931d1f92e142912d8c22b9c4293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballkicking: {fileID: 9077919560935831944}
+  PlayerHudprefab: {fileID: 7274164603052589560, guid: 43b2fb174efcda2459f895aa35293dcf, type: 3}
 --- !u!1 &4166111968659135755
 GameObject:
   m_ObjectHideFlags: 0
