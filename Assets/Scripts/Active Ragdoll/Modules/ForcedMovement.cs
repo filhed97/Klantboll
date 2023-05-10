@@ -13,7 +13,7 @@ namespace ActiveRagdoll
         private float MovementSpeed;
         public float WalkSpeedMultiplier = 0.5f;
         public float BoostSpeedMultiplier = 1.5f;
-        public float HeightDamperOffset = 0.3f;
+        public float HeightDamperOffset = 0.15f;
         public float DamperForceMultiplier = 2f;
 
         public Vector3 Target2D { get; set; }   //not used
