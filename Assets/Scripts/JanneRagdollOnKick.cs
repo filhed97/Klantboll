@@ -32,8 +32,6 @@ public class JanneRagdollOnKick : MonoBehaviour
     private List<float> damperXOriginal;
     private List<float> damperYZOriginal;
 
-
-    private AudioSource DeepOhNo;
     //Maybe use some other time
     /* [Tooltip("The angularXDrive SpringPosition power")]
      public float springPowerX = 400.0f;
@@ -43,7 +41,6 @@ public class JanneRagdollOnKick : MonoBehaviour
     */
     void Start()
     {
-        DeepOhNo = GetComponent<AudioSource> ();
         StartCoroutine(WaitForStabalizer());
       
     }
@@ -139,8 +136,6 @@ public class JanneRagdollOnKick : MonoBehaviour
                // Debug.Log("Collided with: " + collision.gameObject.name);
                 if(CollidedWith.transform.root.Find(animatedVersionName).GetComponent<Animator>().GetBool(KickParameterName) == true)
                 {
-                    // sound effect on the Janne after he is been kicked 
-                    DeepOhNo.Play();
                     //Debug.Log("Kicked by: " + CollidedWith.name);
                     ragdollOn();
                     startTime = Time.time;
