@@ -15,7 +15,7 @@ public class NetworkMultiplayerJanne : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         hasPowerup = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-        spawnPos = new Vector3[] { new Vector3(10, 0, 0), new Vector3(-10, 0, 0) };
+        spawnPos = new Vector3[] { new Vector3(10, 0, 0), new Vector3(-10, 0, 0), new Vector3(10, 0, 10), new Vector3(-10, 0, 10), new Vector3(10, 0, -10), new Vector3(-10, 0, -10) };
         var clientId = NetworkManager.Singleton.LocalClientId;
         Player2.position = spawnPos[clientId];
         Debug.Log("clientid: " + clientId);
