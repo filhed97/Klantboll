@@ -6,6 +6,8 @@ using TMPro;
 
 public class CountDownStarting : MonoBehaviour
 {
+    [SerializeField] GameObject paueButton;
+
     public float countdownDuration; // Duration of the countdown in seconds
     public TextMeshProUGUI countDownDisplay;
     public static int activate = 1;
@@ -47,6 +49,8 @@ public class CountDownStarting : MonoBehaviour
         Time.timeScale = 1f;
         activate = 0;
         countDownDisplay.gameObject.SetActive(false);
+
+        paueButton.SetActive(true);
     }
 
 }

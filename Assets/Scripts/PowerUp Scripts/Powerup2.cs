@@ -14,7 +14,7 @@ public class Powerup2 : MonoBehaviour
     private void Awake()
     {
         int powerId = powerupeffect.GetId();
-        Debug.Log(powerId);
+        //Debug.Log(powerId);
         switch (powerId)
         {
             case 0:
