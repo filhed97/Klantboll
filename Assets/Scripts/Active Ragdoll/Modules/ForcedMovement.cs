@@ -70,7 +70,7 @@ namespace ActiveRagdoll
             walkModifyer = 1f;
             if (walking) { walkModifyer = WalkSpeedMultiplier; }
             Vector3 moveDirection = Target3D;
-            
+
             if (Input.GetAxis("Horizontal") == 0 & Input.GetAxis("Vertical") == 0) { Joint.velocity = zeroes; } 
             else 
             {
@@ -89,7 +89,7 @@ namespace ActiveRagdoll
                     Vector3 newVelocity = new Vector3(moveDirection.x, Joint.velocity.y * 0.1f, moveDirection.z);
                     Joint.velocity = newVelocity * MovementSpeed * walkModifyer;
                 }
-            }   
+            }
 
             HeightDamper();
         }
@@ -115,7 +115,6 @@ namespace ActiveRagdoll
 
             //if diff is positive, the joint is above its starting position plus offset (additional margin), and triggers a downward force.
             float diff = yVal - initialJointHeight + HeightDamperOffset;
-            //float magnitude = kernel_sq(diff);
             float magnitude = kernel_sq(diff);
             if(diff < 0)
             //joint is above threshold

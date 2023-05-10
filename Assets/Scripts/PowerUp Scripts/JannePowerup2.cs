@@ -8,10 +8,10 @@ public class JannePowerup2 : MonoBehaviour
     public float duration = 3f;
     public PowerupEffects2 powerupeffect;
     public static int numOfPowerups;
-    public GameObject powerupIcon;
+    //public GameObject powerupIcon;
     [SerializeField] GameObject pickupeffect;
 
-    private void Awake()
+    /*private void Awake()
     {
         int powerId = powerupeffect.GetId();
         Debug.Log(powerId);
@@ -41,7 +41,7 @@ public class JannePowerup2 : MonoBehaviour
 
         }
 
-    }
+    }*/
 
     private void OnTriggerEnter(Collider playerCollider)
     {
@@ -137,10 +137,10 @@ public class JannePowerup2 : MonoBehaviour
     IEnumerator PickupSpeed(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
-        DisableIcon();
+
         powerupeffect.remove(other);
         Destroy(gameObject);
     }
@@ -148,10 +148,10 @@ public class JannePowerup2 : MonoBehaviour
     IEnumerator PickupKick(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitUntil(MIsPressed);
-        DisableIcon();
+        
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -160,10 +160,10 @@ public class JannePowerup2 : MonoBehaviour
     IEnumerator PickupSlow(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
-        DisableIcon();
+        
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -172,11 +172,11 @@ public class JannePowerup2 : MonoBehaviour
     IEnumerator PickupStick(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitUntil(other.GetComponent<stickScript2>().touchingBall);
         yield return new WaitForSeconds(duration);
-        DisableIcon();
+        
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -185,10 +185,10 @@ public class JannePowerup2 : MonoBehaviour
     IEnumerator PickupFreeze(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
-        DisableIcon();
+        
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -197,11 +197,11 @@ public class JannePowerup2 : MonoBehaviour
     IEnumerator PickupShield(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
         Debug.Log("WeAreTesting");
-        DisableIcon();
+        
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -295,13 +295,13 @@ public class JannePowerup2 : MonoBehaviour
         gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
     }
 
-    public void EnableIcon()
+   /* public void EnableIcon()
     {
         powerupIcon.GetComponent<Image>().enabled = true;
     }
     public void DisableIcon()
     {
         powerupIcon.GetComponent<Image>().enabled = false;
-    }
+    }*/
 
 }
