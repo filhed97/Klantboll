@@ -45,9 +45,9 @@ public class DefaultBehaviour : MonoBehaviour {
 
         if (Input.GetKeyDown("space"))
         {
-            Debug.Log("space key was pressed");
+            //Debug.Log("space key was pressed");
             _animationModule.Animator.SetBool("kick", true);
-            Debug.Log("Kick:" + _animationModule.Animator.GetBool("kick"));
+           // Debug.Log("Kick:" + _animationModule.Animator.GetBool("kick"));
         }
 
         UpdateMovement();

@@ -560,6 +560,7 @@ GameObject:
   - component: {fileID: 3378593092658721747}
   - component: {fileID: 9077919560935831944}
   - component: {fileID: 3581516088535112425}
+  - component: {fileID: 5460539188561261987}
   m_Layer: 7
   m_Name: spine.001
   m_TagString: Player
@@ -817,6 +818,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5460539188561261987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566353305064503909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d768c86e1dcd2874abb182319199b3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigToGetJointsFrom: {fileID: 3378593093044956574}
+  KickParameterName: kick
+  collisions:
+  - spine.001
+  - spine.physical
+  - foot.R
+  - foot.L
+  - shin.R
+  - shin.L
+  - thigh.L
+  - thigh.R
+  animatedVersionName: Animated
+  ragdolled: 0
+  kickedForce: 15
+  ragdollTime: 5
 --- !u!1 &1566353305846380527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1750,7 @@ MonoBehaviour:
   BoostSpeed: 12
   HeightDamperOffset: 0.5
   DamperForceMultiplier: 0
+  ragdollOnKickBodyPart: {fileID: 1566353305064503909}
 --- !u!114 &3378593093044956547
 MonoBehaviour:
   m_ObjectHideFlags: 0

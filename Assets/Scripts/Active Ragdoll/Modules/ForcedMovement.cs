@@ -14,6 +14,7 @@ namespace ActiveRagdoll
         public float BoostSpeed = 12f;
         public float HeightDamperOffset = 0.3f;
         public float DamperForceMultiplier = 0.0f;
+        public GameObject ragdollOnKickBodyPart;
 
         public Vector3 Target2D { get; set; }   //not used
         public Vector3 Target3D { get; set; }
@@ -45,16 +46,28 @@ namespace ActiveRagdoll
             if (walking) { walkModifyer = WalkSpeedMultiplier; }
             Vector3 moveDirection = Target3D;
             
-            if (Input.GetAxis("Horizontal") == 0 & Input.GetAxis("Vertical") == 0) { Joint.velocity = zeroes; } 
+            if (Input.GetAxis("Horizontal") == 0 & Input.GetAxis("Vertical") == 0 & !ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled()) { Joint.velocity = zeroes; } 
             else 
             {
+
+
                 if (boostMode)
                 {
                     //forced velocity in x,y,z. joint height also set in case player enters boostmode in awkward position.
                     Joint.transform.position = new Vector3(Joint.transform.position.x, initialJointHeight, Joint.transform.position.z);
                     moveDirection.Set(moveDirection.x, 0, moveDirection.z);
-                    Joint.velocity = moveDirection * BoostSpeed * walkModifyer; 
+                    Joint.velocity = moveDirection * BoostSpeed * walkModifyer;
                 }
+
+               else if (ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
+                {
+
+                    //Vector3 newVelocity = new Vector3(moveDirection.x, Joint.velocity.y, moveDirection.z);
+                    //Joint.velocity = newVelocity * MovementSpeed * walkModifyer;
+                    
+
+                }
+
                 else
                 {
                     //y-coordinate is taken from previous frame's velocity, but scaled down.
@@ -62,10 +75,14 @@ namespace ActiveRagdoll
                     //only the velocity in x and z coordinates (=forward/backward/left/right from input) is strictly forced.
                     Vector3 newVelocity = new Vector3(moveDirection.x, Joint.velocity.y * 0.1f, moveDirection.z);
                     Joint.velocity = newVelocity * MovementSpeed * walkModifyer;
+                    
                 }
             }   
 
-            HeightDamper();
+          
+                HeightDamper();
+          
+                
         }
 
         //deals with inputs that affect forced movement
