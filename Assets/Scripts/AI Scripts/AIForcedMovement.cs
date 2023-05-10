@@ -12,7 +12,7 @@ namespace ActiveRagdoll
         public float MovementSpeed = 2.0f;
         public float HeightDamperOffset = 0.1f;
         public float DamperForceMultiplier = 0.0f;
-
+        public GameObject ragdollOnKickBodyPart;
         public Vector2 Target2D { get; set; }       //currently unused
         public Vector3 Target3D { get; set; }
 
@@ -48,17 +48,18 @@ void FixedUpdate()
     Vector3 newVelocity = new Vector3(targetDirection.x, 0, targetDirection.z);
 
     float stoppingDistance = 1.0f; // Add stopping distance to prevent getting too close
-    if (Vector3.Distance(target.position, Joint.position) > stoppingDistance)
+    if (Vector3.Distance(target.position, Joint.position) > stoppingDistance & !ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
     {
-        Joint.velocity = newVelocity * MovementSpeed;
+            Joint.velocity = newVelocity * MovementSpeed;
     }
     else
     {
-        Joint.velocity = Vector3.zero; // Stop the AI if it's within the stopping distance
+        if (!ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
+            Joint.velocity = Vector3.zero; // Stop the AI if it's within the stopping distance
     }
 
     // Kick the ball if close enough
-    if (Vector3.Distance(target.position, Joint.position) < kickDistance)
+    if (Vector3.Distance(target.position, Joint.position) < kickDistance & !ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
     {
         Rigidbody ballRigidbody = target.GetComponent<Rigidbody>();
         Vector3 kickDirection = (goalTarget.position - target.position).normalized;
