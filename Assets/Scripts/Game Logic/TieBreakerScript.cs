@@ -78,9 +78,9 @@ public class TieBreakerScript : MonoBehaviour
     Cursor.visible = true;
     Time.timeScale = 0f;
 
-    LeanTween.moveX(frame, 960f, 1f).setDelay(0f).setEase(LeanTweenType.easeInOutCirc).setIgnoreTimeScale(true);
-    LeanTween.moveX(scores, 960f, 1f).setDelay(2f).setEase(LeanTweenType.easeInOutBack).setIgnoreTimeScale(true);
-    LeanTween.moveX(teams, 960f, 1f).setDelay(1.5f).setEase(LeanTweenType.easeInOutBack).setIgnoreTimeScale(true);
-    LeanTween.moveY(resume, 275f, 1.4f).setDelay(2f).setEase(LeanTweenType.easeInOutElastic).setIgnoreTimeScale(true);
+    LeanTween.moveX(frame, Screen.width/2, 1f).setDelay(0f).setEase(LeanTweenType.easeInOutCirc).setIgnoreTimeScale(true);
+    LeanTween.moveX(scores, Screen.width/2, 1f).setDelay(2f).setEase(LeanTweenType.easeInOutBack).setIgnoreTimeScale(true);
+    LeanTween.moveX(teams, Screen.width/2, 1f).setDelay(1.5f).setEase(LeanTweenType.easeInOutBack).setIgnoreTimeScale(true);
+    LeanTween.moveY(resume, Screen.width/7, 1.4f).setDelay(2f).setEase(LeanTweenType.easeInOutElastic).setIgnoreTimeScale(true);
     }
 }
