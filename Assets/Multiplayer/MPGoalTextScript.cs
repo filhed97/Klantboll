@@ -5,7 +5,7 @@ using UnityEngine;
 public class MPGoalTextScript : MonoBehaviour
 {
     public GameObject goalText;
-    //public float tweenTime = 0.05f;
+    public float tweenTime = 0.05f;
     public GameObject ball;
     //public MPstickScript2 stick;
 
@@ -72,7 +72,7 @@ public class MPGoalTextScript : MonoBehaviour
     IEnumerator PlayGoalTextAnimation()
     {
         goalText.SetActive(true);
-        //PlayAnimation();
+        PlayAnimation();
         yield return new WaitForSecondsRealtime(2);
         goalText.SetActive(false);
         ResetGoalTextSize();
