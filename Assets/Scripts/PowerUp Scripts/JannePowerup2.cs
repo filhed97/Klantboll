@@ -35,6 +35,9 @@ public class JannePowerup2 : MonoBehaviour
             case 5:
                 powerupIcon = GameObject.Find("ShieldIcon");
                 break;
+            case 6:
+                powerupIcon = GameObject.Find("SpeedupIcon");
+                break;
 
         }
 
@@ -86,6 +89,12 @@ public class JannePowerup2 : MonoBehaviour
                 StartCoroutine(PickupShield(playerCollider.gameObject));
                 
             }
+            else if (powerupeffect.GetId() == 6)
+            {
+
+                StartCoroutine(PickupSpeed(playerCollider.gameObject));
+
+            }
         }
         else if (playerCollider.CompareTag("AI-character") && !playerCollider.GetComponent<AIScript>().hasPowerup)
         {
@@ -118,6 +127,10 @@ public class JannePowerup2 : MonoBehaviour
             {
                 StartCoroutine(AIPickupShield(playerCollider.gameObject));
             }
+            else if (powerupeffect.GetId() == 6)
+            {
+                StartCoroutine(AIPickupSpeed(playerCollider.gameObject));
+            }
         }
     }
 
@@ -127,8 +140,8 @@ public class JannePowerup2 : MonoBehaviour
         
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
+
         powerupeffect.remove(other);
-        
         Destroy(gameObject);
     }
 
