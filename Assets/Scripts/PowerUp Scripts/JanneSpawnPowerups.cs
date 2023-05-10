@@ -5,7 +5,7 @@ using UnityEngine;
 public class JanneSpawnPowerups : MonoBehaviour {
 
     [SerializeField] public GameObject superKick; // The powerup prefab to spawn
-    //[SerializeField] public GameObject superSpeed; // The powerup prefab to spawn
+    [SerializeField] public GameObject superSpeed; // The powerup prefab to spawn
     [SerializeField] public GameObject speedDebuff; // The powerup prefab to spawn
     [SerializeField] public GameObject iceDebuff; // The powerup prefab to spawn
     //[SerializeField] public GameObject superStick; // The powerup prefab to spawn
@@ -16,7 +16,7 @@ public class JanneSpawnPowerups : MonoBehaviour {
     public float spawnHeight = 1f; 
     private float spawnTimer = 0f; 
     private List<Vector3> spawnPositions = new List<Vector3>(); 
-    private GameObject[] powerupsArray = new GameObject[3];
+    private GameObject[] powerupsArray = new GameObject[4];
     public static int maxPowerups = 20;
 
     void Start() {
@@ -30,7 +30,7 @@ public class JanneSpawnPowerups : MonoBehaviour {
             spawnPositions.Add(worldPosition);
         }
 
-        powerupsArray = new GameObject[] {superKick, speedDebuff, iceDebuff};
+        powerupsArray = new GameObject[] {superKick, speedDebuff, iceDebuff, superSpeed};
     }
 
     void Update() {
