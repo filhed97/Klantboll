@@ -49,6 +49,7 @@ public class CountDownStarting : MonoBehaviour
         Time.timeScale = 1f;
         activate = 0;
         countDownDisplay.gameObject.SetActive(false);
+
         paueButton.SetActive(true);
     }
 
