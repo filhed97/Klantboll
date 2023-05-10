@@ -12,7 +12,7 @@ namespace ActiveRagdoll {
         public Animator Animator { get; private set; }
 
         private AIForcedMovement aiForcedMovement;
-
+        public GameObject ragdollOnKickBodyPart;
         // New properties for movement and kicking animation
         public Vector3 MovementDirection { get; set; }
         public bool IsKicking { get; set; }
@@ -23,6 +23,10 @@ private void UpdateMovementDirection()
     if (MovementDirection == Vector3.zero) return;
 
     float rotationSpeed = 20f; // Adjust this value to control the rotation speed
+
+    if(ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
+        rotationSpeed = 0;
+
     Quaternion targetRotation = Quaternion.LookRotation(MovementDirection);
     _activeRagdoll.transform.rotation = Quaternion.RotateTowards(_activeRagdoll.transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
 }

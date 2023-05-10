@@ -590,6 +590,7 @@ GameObject:
   - component: {fileID: 3189685618092132580}
   - component: {fileID: 3189685618092132577}
   - component: {fileID: 3189685618092132579}
+  - component: {fileID: 5842383279278903689}
   m_Layer: 7
   m_Name: spine.001
   m_TagString: Untagged
@@ -738,6 +739,31 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5842383279278903689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665180294928384341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d768c86e1dcd2874abb182319199b3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigToGetJointsFrom: {fileID: 3189685618376922798}
+  KickParameterName: kick
+  collisions:
+  - shin.L
+  - foot.L
+  - shin.R
+  - foot.R
+  - spine.001
+  - spine.physical
+  animatedVersionName: Animated
+  ragdolled: 0
+  kickedForce: 15
+  ragdollTime: 5
 --- !u!1 &2014540903001311635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,6 +1629,7 @@ MonoBehaviour:
   MovementSpeed: 3
   HeightDamperOffset: 0.5
   DamperForceMultiplier: 0
+  ragdollOnKickBodyPart: {fileID: 1665180294928384341}
   target: {fileID: 0}
   goalTarget: {fileID: 0}
   kickForce: 250
@@ -1619,6 +1646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _activeRagdoll: {fileID: 3189685618376922807}
+  ragdollOnKickBodyPart: {fileID: 1665180294928384341}
 --- !u!114 &3189685618376922805
 MonoBehaviour:
   m_ObjectHideFlags: 0
