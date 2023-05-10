@@ -10,6 +10,9 @@ public class AIDefaultBehaviour : MonoBehaviour
     [SerializeField] private AIForcedMovement _aiForcedMovement;
     [SerializeField] private AIAnimationModule _aiAnimationModule;
 
+    [Header("Target")]
+    [SerializeField] private Transform target;
+
     private void OnValidate()
     {
         if (_activeRagdoll == null) _activeRagdoll = GetComponent<ActiveRagdoll.ActiveRagdoll>();
@@ -24,6 +27,21 @@ public class AIDefaultBehaviour : MonoBehaviour
 
     private void UpdateMovement()
     {
+        Vector3 ballDirection = target.position - transform.position;
+        ballDirection.y = 0;
+
+        // Rotate the AI to face the ball
+        Quaternion targetRotation = Quaternion.LookRotation(ballDirection.normalized);
+        float rotationSpeed = 5.0f; // Adjust the rotation speed as needed
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+
+        // The modelForwardOffset is not needed if the model is oriented correctly in the Unity editor
+        // If you still need it, uncomment the following two lines and adjust the offset as needed
+        // Vector3 modelForwardOffset = new Vector3(0, 0, 0);
+        // transform.Rotate(modelForwardOffset, Space.Self);
+
+        _aiAnimationModule.MovementDirection = ballDirection.normalized;
+
         Vector3 movementDirection = new Vector3(_aiForcedMovement.Joint.velocity.x, 0, _aiForcedMovement.Joint.velocity.z);
 
         if (movementDirection == Vector3.zero)
@@ -34,8 +52,5 @@ public class AIDefaultBehaviour : MonoBehaviour
 
         _aiAnimationModule.Animator.SetBool("moving", true);
         _aiAnimationModule.Animator.SetFloat("speed", movementDirection.magnitude);
-
-        Vector3 targetForward = movementDirection.normalized;
-        _aiAnimationModule.MovementDirection = targetForward;
     }
 }

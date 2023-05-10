@@ -9,7 +9,7 @@ namespace ActiveRagdoll
         // Values supplied by module settings window in editor
         public Rigidbody Joint;
         public Rigidbody RightLegRoot;
-        public float MovementSpeed = 2.0f;
+        public float MovementSpeed = 7.8f;
         public float HeightDamperOffset = 0.1f;
         public float DamperForceMultiplier = 0.0f;
         public GameObject ragdollOnKickBodyPart;
@@ -40,14 +40,14 @@ namespace ActiveRagdoll
 void FixedUpdate()
 {
     // AI decision-making logic
-    Vector3 targetDirection = target.position - Joint.position;
+    Vector3 targetDirection = target.position - Joint.position; //inverted 
     targetDirection.y = 0; // We don't want to move vertically
     targetDirection.Normalize();
 
     // Control the AI movement based on the targetDirection
     Vector3 newVelocity = new Vector3(targetDirection.x, 0, targetDirection.z);
 
-    float stoppingDistance = 1.0f; // Add stopping distance to prevent getting too close
+    float stoppingDistance = 1.75f; // Add stopping distance to prevent getting too close (changed from 1-2)
     if (Vector3.Distance(target.position, Joint.position) > stoppingDistance & !ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
     {
             Joint.velocity = newVelocity * MovementSpeed;
@@ -68,7 +68,6 @@ void FixedUpdate()
 
     HeightDamper();
 }
-
 
         private void HeightDamper()
         {
