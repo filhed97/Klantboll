@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9e7e2b41c373aed4c8843d16972fa3f4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - superKick: {fileID: 511421333734614567, guid: 45690949a423c3349b46e9e57a2a69ff, type: 3}
+  - speedDebuff: {fileID: 511421333734614567, guid: 755540a176c6e3b45b0e49ddcaf0fc9a, type: 3}
+  - iceDebuff: {fileID: 511421333734614567, guid: 099e69b62b0d62c4ea87b45cb99c5025, type: 3}
+  - plane: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

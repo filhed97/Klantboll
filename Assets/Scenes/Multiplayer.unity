@@ -994,7 +994,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -462981019419857548, guid: 1c3e0242447cc4903890c1061da65fd8, type: 3}
---- !u!114 &870863959
+--- !u!114 &870863963
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1003,15 +1003,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 870863954}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e043eae6c4d0492399bbe8a9c9ea1e9, type: 3}
+  m_Script: {fileID: 11500000, guid: d6eb8a16ba3824218aed1fea8455a654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  superKick: {fileID: 7731749496312437795, guid: 4f1071c88c11f73408d45a9084846343, type: 3}
-  superSpeed: {fileID: 8109497134375887955, guid: c846997e398f15144a2fda3738716f27, type: 3}
-  superSpike: {fileID: 9126278931848280159, guid: 3f31f27c67d14b749bbb57e89c987b08, type: 3}
-  iceDebuff: {fileID: 7312892649592341310, guid: 39b1d0e66ad0942e98a47958f5c4442a, type: 3}
+  superKick: {fileID: 511421333734614567, guid: 9579bf53e0bff42f28a107360e00dc68, type: 3}
+  superSpeed: {fileID: 511421333734614567, guid: 13a4c34f618164f1d82f65ae44b59c42, type: 3}
+  speedDebuff: {fileID: 511421333734614567, guid: 56cd67d236bed4ab99ff860d86412021, type: 3}
+  iceDebuff: {fileID: 511421333734614567, guid: 4b5a5be1602cd4d46a634114a282044b, type: 3}
+  superStick: {fileID: 511421333734614567, guid: d86cd2acf0bed40f1a310e9775244b3e, type: 3}
   plane: {fileID: 870863954}
-  spawnDelay: 15
+  spawnDelay: 5
   spawnHeight: 1
 --- !u!1 &963194225
 GameObject:

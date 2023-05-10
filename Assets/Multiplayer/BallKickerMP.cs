@@ -1,7 +1,7 @@
 using UnityEngine;
 public class BallKickerMP : MonoBehaviour
 {
-    public float kickforce = 80;
+    public float kickforce;
     private AudioSource KickingBallSound;
 
     void Start()
@@ -18,9 +18,8 @@ public class BallKickerMP : MonoBehaviour
             Vector3 appliedforce = (centre - contact) * kickforce;
 
             other.attachedRigidbody.AddForce(appliedforce);
-            gameObject.GetComponent<PlayerMove>().hasPowerup = false;
+            gameObject.GetComponent<NetworkMultiplayer>().hasPowerup.Value = false;
             KickingBallSound.Play();
-            kickforce = 80;
         }
     }
 
