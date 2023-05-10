@@ -17,7 +17,7 @@ public class Hud : MonoBehaviour
 
     private void Start()
     {
-        PlayerHud = Instantiate(PlayerHudprefab, gameObject.transform).transform.GetChild(0).gameObject;
+        PlayerHud = Instantiate(PlayerHudprefab, new Vector3 (960, 540, -0.1f), Quaternion.identity, gameObject.transform).transform.GetChild(0).gameObject;
         Debug.Log("Hud " + PlayerHud.name);
         Image[] images = PlayerHud.GetComponentsInChildren<Image>();
         Debug.Log("image 0" + images[3].name);
