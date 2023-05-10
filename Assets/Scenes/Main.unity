@@ -14940,6 +14940,7 @@ MonoBehaviour:
   scores: {fileID: 466414397}
   teams: {fileID: 2013871651}
   resume: {fileID: 863677154}
+  paueButton: {fileID: 607627690}
 --- !u!82 &1127325954
 AudioSource:
   m_ObjectHideFlags: 0
