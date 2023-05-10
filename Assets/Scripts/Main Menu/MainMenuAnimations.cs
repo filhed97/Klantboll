@@ -17,7 +17,7 @@ public class MainMenuAnimations : MonoBehaviour
         kickoffText.SetActive(false);
         Invoke("displayText", 2f);
 
-        LeanTween.scale(logo, new Vector3(1f, 1f, 1f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.scale(logo, new Vector3(20f, 12f, 1f), 1.8f).setDelay(0.2f).setEase(LeanTweenType.easeOutElastic);
 
     }
 
@@ -33,7 +33,9 @@ public class MainMenuAnimations : MonoBehaviour
         Destroy(kickoffText);
         }
         //LeanTween.scale(logo, new Vector3(0.6f, 0.6f, 0.6f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.move(logo, new Vector3(0f, 35f, 20f), 1.2f).setDelay(0f).setEase(LeanTweenType.easeInOutCubic);
+        LeanTween.scale(logo, new Vector3(10f, 6f, 1f), 3f).setDelay(0f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.move(logo, new Vector3(960f, 900f, 200f), 1.2f).setDelay(0f).setEase(LeanTweenType.easeInOutCubic);
+        LeanTween.delayedCall(2f, () => { });
     }
 
     public void displayText() {
