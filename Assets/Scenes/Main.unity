@@ -5838,14 +5838,6 @@ PrefabInstance:
       propertyPath: goalTarget
       value: 
       objectReference: {fileID: 1086133672}
-    - target: {fileID: 966099307498813681, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
-      propertyPath: MovementSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2590871649949861468, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1526218223}
     - target: {fileID: 3189685618376922797, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_RootOrder
       value: 10
