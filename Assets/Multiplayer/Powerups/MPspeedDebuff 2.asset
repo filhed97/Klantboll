@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb092ce8331e4770b7e7fb85b01a8aa, type: 3}
   m_Name: MPspeedDebuff 2
   m_EditorClassIdentifier: 
-  amount: 250
+  multiplier: 0.5
   id: 2

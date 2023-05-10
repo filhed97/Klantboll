@@ -14,7 +14,7 @@ public class MPPowerup2 : NetworkBehaviour
     {
         Debug.Log(other);
         
-        if (other.CompareTag("Player") && !other.GetComponent<NetworkMultiplayer>().hasPowerup.Value)
+        if (other.CompareTag("Player") && !other.GetComponent<NetworkMultiplayerJanne>().hasPowerup.Value)
         {
             numOfPowerups--;
 

@@ -4,24 +4,29 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Powerups/SpeedBuff")]
 public class MPSpeedBuff : PowerupEffects2
 {
-    public float amount = 1000;
+    public float amount;
     public int id = 0;
     public override void Apply(GameObject target)
     {
-        if(target.CompareTag("Player"))
+        float multiplier = target.transform.root.GetComponent<ActiveRagdoll.MPForcedMovement>().BoostSpeedMultiplier;
+
+        if (target.CompareTag("Player"))
         {
-            target.GetComponent<NetworkMultiplayer>().hasPowerup.Value = true;
-            target.GetComponent<NetworkMultiplayer>().playerSpeed += amount;
+            target.GetComponent<NetworkMultiplayerJanne>().hasPowerup.Value = true;
+            target.transform.root.GetComponent<ActiveRagdoll.MPForcedMovement>().boostMode = true;
+            target.transform.root.GetComponent<ActiveRagdoll.MPForcedMovement>().MultiplySpeedByFactor(multiplier);
         }       
     }
 
     public override void remove(GameObject target)
     {
-       if(target.CompareTag("Player"))
-       {
-            target.GetComponent<NetworkMultiplayer>().hasPowerup.Value = false;
-            target.GetComponent<NetworkMultiplayer>().playerSpeed -= amount;
-       }
+        float multiplier = target.transform.root.GetComponent<ActiveRagdoll.MPForcedMovement>().BoostSpeedMultiplier;
+        if (target.CompareTag("Player"))
+        {
+            target.GetComponent<NetworkMultiplayerJanne>().hasPowerup.Value = false;
+            target.transform.root.GetComponent<ActiveRagdoll.MPForcedMovement>().boostMode = false;
+            target.transform.root.GetComponent<ActiveRagdoll.MPForcedMovement>().MultiplySpeedByFactor((1 / multiplier));
+        }
     }
 
     public override int GetId()

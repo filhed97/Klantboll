@@ -150,7 +150,7 @@ public class JannePowerup2 : MonoBehaviour
         DeactivatePowerup();
         
         powerupeffect.Apply(other);
-        yield return new WaitUntil(MIsPressed);
+        yield return new WaitUntil(SpaceIsPressed);
         
         powerupeffect.remove(other);
         Destroy(gameObject);
@@ -226,7 +226,7 @@ public class JannePowerup2 : MonoBehaviour
         DeactivatePowerup();
 
         powerupeffect.Apply(other);
-        yield return new WaitUntil(MIsPressed);
+        yield return new WaitUntil(SpaceIsPressed);
 
         powerupeffect.remove(other);
         Destroy(gameObject);
@@ -285,9 +285,9 @@ public class JannePowerup2 : MonoBehaviour
 
 
 
-    public bool MIsPressed()
+    public bool SpaceIsPressed()
     {
-        return Input.GetKeyDown(KeyCode.M);
+        return Input.GetKeyDown(KeyCode.Space);
     }
     public void DeactivatePowerup()
     {

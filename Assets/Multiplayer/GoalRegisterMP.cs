@@ -43,14 +43,14 @@ public class GoalRegisterMP : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void IncreaseScore1ServerRpc()
     {
-        scoreOrange.Value++;
+        scoreBlue.Value++;
         UpdateScoreClientRpc(scoreOrange.Value, scoreBlue.Value);
     }
 
     [ServerRpc(RequireOwnership = false)]
     private void IncreaseScore2ServerRpc()
     {
-        scoreBlue.Value++;
+        scoreOrange.Value++;
         UpdateScoreClientRpc(scoreOrange.Value, scoreBlue.Value);
     }
 

@@ -56,7 +56,7 @@ public class NetworkMultiplayer : NetworkBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Ball"))
+        if (other.gameObject.CompareTag("Ball"))
         {
             Debug.Log("COLLISION");
             RequestOwnershipServerRpc();
