@@ -5,20 +5,23 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 543fc39ef8ad148518c03c3a92f6d758
   - enabled: 0
-    path: Assets/Scenes/Main.unity
-    guid: 9e611272e1df44318a1cbdc189c7deda
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/Multiplayer.unity
     guid: b236e2484b6744ab2984de9a2a2e2870
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MP-Janne.unity
     guid: f763bccbb7f65440599988add11dac18
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 66cca28e62e014765a542ca1f6d6947a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b4fcfaf1657d1fe419e089fd2c48839a, type: 2}
