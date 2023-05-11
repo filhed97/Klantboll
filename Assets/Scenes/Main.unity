@@ -3752,7 +3752,7 @@ PrefabInstance:
       objectReference: {fileID: 1600797806}
     - target: {fileID: 966099307498813681, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: MovementSpeed
-      value: 4.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922797, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_RootOrder
@@ -4953,7 +4953,7 @@ PrefabInstance:
       objectReference: {fileID: 1086133672}
     - target: {fileID: 966099307498813681, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: MovementSpeed
-      value: 4.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922797, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_RootOrder
@@ -6070,7 +6070,7 @@ PrefabInstance:
       objectReference: {fileID: 1086133672}
     - target: {fileID: 966099307498813681, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: MovementSpeed
-      value: 4.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922797, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_RootOrder
@@ -14076,7 +14076,7 @@ PrefabInstance:
       objectReference: {fileID: 1086133672}
     - target: {fileID: 966099307498813681, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: MovementSpeed
-      value: 4.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922797, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_RootOrder
@@ -22764,7 +22764,7 @@ PrefabInstance:
       objectReference: {fileID: 1600797806}
     - target: {fileID: 966099307498813681, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: MovementSpeed
-      value: 4.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922797, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_RootOrder
@@ -25665,6 +25665,18 @@ PrefabInstance:
     - target: {fileID: 3378593093044956574, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718618437390493988, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_Radius
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6718618437390493988, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: m_Center.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077919560935831944, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: kickforce
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 9190080121144433661, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
       propertyPath: m_Avatar
