@@ -4915,8 +4915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 3
   powerupeffect: {fileID: 11400000, guid: 3ba5f17084fb66a4195e22f451479f38, type: 2}
-  powerupIcon: {fileID: 0}
-  pickupeffect: {fileID: 3049428253405200621, guid: e62e775cb5c996a4c944ff20f3cec481, type: 3}
+  pickupeffect: {fileID: 7888857835762348946, guid: 84dab4a8cf751fc4181b5f09a6186c21, type: 3}
 --- !u!1 &1231989312157737460
 GameObject:
   m_ObjectHideFlags: 0

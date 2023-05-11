@@ -18,9 +18,9 @@ public class Hud : MonoBehaviour
     private void Start()
     {
         PlayerHud = Instantiate(PlayerHudprefab, gameObject.transform).transform.GetChild(0).gameObject;
-        Debug.Log("Hud " + PlayerHud.name);
+
         Image[] images = PlayerHud.GetComponentsInChildren<Image>();
-        Debug.Log("image 0" + images[3].name);
+
         speedIcon = images[1];
         slowIcon = images[2];
         iceIcon = images[3];

@@ -18,6 +18,8 @@ public class Rotation : MonoBehaviour
         if(!bodypartWithJanneRagdoll.GetComponent<JanneRagdollOnKick>().getRagdolled())
         {
             Quaternion rotation = Quaternion.LookRotation(target.transform.position - this.transform.position);
+            rotation.x = 0;
+            rotation.z = 0;
             transform.rotation = rotation;
         }
         

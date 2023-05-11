@@ -24,12 +24,12 @@ public class AImovementAndDebuffs : StateMachineBehaviour
 
         else if (animator.GetBool("slowDebuff"))
         {
-            animator.speed = 0.45F;
+            animator.speed = 0.27F;
         }
 
         else if (animator.GetBool("boost"))
         {
-            animator.speed = 1.5F;
+            animator.speed = 1f;
         }
 
         else

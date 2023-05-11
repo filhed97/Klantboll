@@ -11,37 +11,6 @@ public class JannePowerup2 : MonoBehaviour
     //public GameObject powerupIcon;
     [SerializeField] GameObject pickupeffect;
 
-    /*private void Awake()
-    {
-        int powerId = powerupeffect.GetId();
-        //Debug.Log(powerId);
-        switch (powerId)
-        {
-            case 0:
-                powerupIcon = GameObject.Find("SpeedupIcon");
-                break;
-            case 1:
-                powerupIcon = GameObject.Find("SuperKickIcon");
-                break;
-            case 2:
-                powerupIcon = GameObject.Find("SlowDebuff");
-                break;
-            case 3:
-                powerupIcon = GameObject.Find("StickyIcon");
-                break;
-            case 4:
-                powerupIcon = GameObject.Find("FreezeIcon");
-                break;
-            case 5:
-                powerupIcon = GameObject.Find("ShieldIcon");
-                break;
-            case 6:
-                powerupIcon = GameObject.Find("SpeedupIcon");
-                break;
-
-        }
-
-    }*/
 
     private void OnTriggerEnter(Collider playerCollider)
     {
@@ -96,40 +65,39 @@ public class JannePowerup2 : MonoBehaviour
 
             }
         }
-        else if (playerCollider.CompareTag("AI-character") && !playerCollider.GetComponent<AIScript>().hasPowerup)
+        else if (playerCollider.CompareTag("AI-character") && !playerCollider.transform.root.GetComponent<powerupCheck>().hasPowerup)
         {
             numOfPowerups--;
 
             if (powerupeffect.GetId() == 0)
             {
 
-                StartCoroutine(AIPickupSpeed(playerCollider.gameObject));
+                StartCoroutine(PickupSpeed(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 1)
             {
-                StartCoroutine(AIPickupKick(playerCollider.gameObject));
+                StartCoroutine(PickupKick(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 2)
             {
-                StartCoroutine(AIPickupSlow(playerCollider.gameObject));
+                StartCoroutine(PickupSlow(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 3)
             {
                 Debug.Log("Inide sticker");
                 StartCoroutine(PickupStick(playerCollider.gameObject));
-                StartCoroutine(AIPickupStick(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 4)
             {
-                StartCoroutine(AIPickupFreeze(playerCollider.gameObject));
+                StartCoroutine(PickupFreeze(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 5)
             {
-                StartCoroutine(AIPickupShield(playerCollider.gameObject));
+                StartCoroutine(PickupShield(playerCollider.gameObject));
             }
             else if (powerupeffect.GetId() == 6)
             {
-                StartCoroutine(AIPickupSpeed(playerCollider.gameObject));
+                StartCoroutine(PickupSpeed(playerCollider.gameObject));
             }
         }
     }
@@ -205,82 +173,8 @@ public class JannePowerup2 : MonoBehaviour
         powerupeffect.remove(other);
         Destroy(gameObject);
 
-    }
-
-
-    //quickfix separating ai and player pickups
-
-    IEnumerator AIPickupSpeed(GameObject other)
-    {
-        DeactivatePowerup();
-
-        powerupeffect.Apply(other);
-        yield return new WaitForSeconds(duration);
-        powerupeffect.remove(other);
-
-        Destroy(gameObject);
-    }
-
-    IEnumerator AIPickupKick(GameObject other)
-    {
-        DeactivatePowerup();
-
-        powerupeffect.Apply(other);
-        yield return new WaitUntil(SpaceIsPressed);
-
-        powerupeffect.remove(other);
-        Destroy(gameObject);
 
     }
-
-    IEnumerator AIPickupSlow(GameObject other)
-    {
-        DeactivatePowerup();
-
-        powerupeffect.Apply(other);
-        yield return new WaitForSeconds(duration);
-
-        powerupeffect.remove(other);
-        Destroy(gameObject);
-
-    }
-
-    IEnumerator AIPickupStick(GameObject other)
-    {
-        DeactivatePowerup();
-
-        powerupeffect.Apply(other);
-        yield return new WaitUntil(other.GetComponent<stickScript2>().touchingBall);
-        yield return new WaitForSeconds(duration);
-
-        powerupeffect.remove(other);
-        Destroy(gameObject);
-
-    }
-
-    IEnumerator AIPickupFreeze(GameObject other)
-    {
-        DeactivatePowerup();
-
-        powerupeffect.Apply(other);
-        yield return new WaitForSeconds(duration);
-
-        powerupeffect.remove(other);
-        Destroy(gameObject);
-
-    }
-
-    IEnumerator AIPickupShield(GameObject other)
-    {
-        DeactivatePowerup();
-        powerupeffect.Apply(other);
-        yield return new WaitForSeconds(duration);
-        Debug.Log("WeAreTesting");
-        powerupeffect.remove(other);
-        Destroy(gameObject);
-
-    }
-
 
 
 
@@ -291,6 +185,7 @@ public class JannePowerup2 : MonoBehaviour
     }
     public void DeactivatePowerup()
     {
+        Debug.Log("remove");
         Instantiate(pickupeffect, transform.position, transform.rotation);
         gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
     }
