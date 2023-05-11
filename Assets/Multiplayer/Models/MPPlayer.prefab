@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 5085626970686272920, guid: 8a606535083214c88a7ac70f713bb8e4, type: 3}
-  Player2: {fileID: 3378593093044956573}
+  nextPlayer: {fileID: 3378593093044956573}
   hasPowerup:
     m_InternalValue: 0
 --- !u!114 &2601166434489122621
@@ -2444,9 +2444,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joint: {fileID: 3378593092658721748}
   RightLegRoot: {fileID: 3378593092727769255}
-  MovementSpeed: 7.8
+  DefaultMovementSpeed: 7.8
+  WalkSpeedMultiplier: 0.5
+  BoostSpeedMultiplier: 1.5
   HeightDamperOffset: 0.5
   DamperForceMultiplier: 0
+  boostMode: 0
 --- !u!114 &4821558203670970513
 MonoBehaviour:
   m_ObjectHideFlags: 0

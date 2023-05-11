@@ -13,23 +13,21 @@ namespace ActiveRagdoll {
 
         private AIForcedMovement aiForcedMovement;
         public GameObject ragdollOnKickBodyPart;
+       
         // New properties for movement and kicking animation
         public Vector3 MovementDirection { get; set; }
         public bool IsKicking { get; set; }
 
         // New method to update the movement direction of the animated model
 private void UpdateMovementDirection()
-{
-    if (MovementDirection == Vector3.zero) return;
-
-    float rotationSpeed = 20f; // Adjust this value to control the rotation speed
-
-    if(ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
-        rotationSpeed = 0;
-
-    Quaternion targetRotation = Quaternion.LookRotation(MovementDirection);
-    _activeRagdoll.transform.rotation = Quaternion.RotateTowards(_activeRagdoll.transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
-}
+{           
+            /*if(!ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
+            {
+                Quaternion rotation = Quaternion.LookRotation(target.transform.position - this.transform.position);
+                bodypartToRotate.transform.rotation = rotation;
+            }
+           */
+        }
 
 
 
@@ -52,7 +50,7 @@ private void UpdateMovementDirection()
         void FixedUpdate() {
             UpdateJointTargets();
             UpdateAnimatorParameters(); // Update Animator parameters each FixedUpdate
-            UpdateMovementDirection(); // Add this line to update the AI model's rotation
+            //UpdateMovementDirection(); // Add this line to update the AI model's rotation
         }
 
 
@@ -65,10 +63,10 @@ private void UpdateMovementDirection()
         // New method to update the Animator parameters based on movement and kicking
         private void UpdateAnimatorParameters() {
             // Update the "Speed" parameter based on the magnitude of the MovementDirection
-            Animator.SetFloat("Speed", MovementDirection.magnitude);
+            Animator.SetFloat("speed", MovementDirection.magnitude);
 
             // Update the "IsKicking" parameter based on the IsKicking property
-            Animator.SetBool("IsKicking", IsKicking);
+            //Animator.SetBool("IsKicking", IsKicking);
         }
     }
 }
