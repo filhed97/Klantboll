@@ -21,6 +21,9 @@ public class AIHivemind : MonoBehaviour
     [Header("Ball")]
     [SerializeField] public GameObject Ball;
 
+    [Header("Carnage Mode")]
+    [SerializeField] public bool CarnageMode;
+
     //List of targetable gameobjects (such as powerups, opponents, or the ball).
     private List<GameObject> Team1Bots;
     private List<GameObject> Team2Bots;
@@ -41,25 +44,38 @@ public class AIHivemind : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        assignTargets(Team1Bots, Team2ValidTargets);
-        assignTargets(Team2Bots, Team1ValidTargets);
+        if (CarnageMode)
+        {
+            setTarget(Bot0, Bot2);
+            setTarget(Bot1, Bot3);
+            Bot2.GetComponent<JensAiForcedMovement>().target = Ball.transform;
+            Bot2.GetComponent<JensAiForcedMovement>().targetIsBall = true;
+            setTarget(Bot3, Bot0);
+            setTarget(Bot4, Player);
+        }
+        else
+        {
+            assignTargets(Team1Bots, Team1ValidTargets);
+            assignTargets(Team2Bots, Team2ValidTargets);
+        }
     }
 
     private void assignTargets(List<GameObject> team, List<GameObject> targets)
     {
         //set targets for each bot
         int ballChaser = getClosestToBall(team);
-        foreach (GameObject bot in team)
+
+        for (int i = 0; i < team.Count; i++)
         {
-            if (team.IndexOf(bot) == ballChaser) 
-            { 
-                bot.GetComponent<JensAiForcedMovement>().target = Ball.transform;
-                bot.GetComponent<JensAiForcedMovement>().targetIsBall = true;
+            if (i == ballChaser)
+            {
+                team[i].GetComponent<JensAiForcedMovement>().target = Ball.transform;
+                team[i].GetComponent<JensAiForcedMovement>().targetIsBall = true;
             }
             else
             {
-                GameObject closestTarget = getClosestOpponent(bot,targets);
-                setTarget(bot, closestTarget);
+                GameObject closestTarget = getClosestOpponent(team[i], targets);
+                setTarget(team[i], closestTarget);
             }
         }
     }

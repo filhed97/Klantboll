@@ -3828,7 +3828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Name
-      value: AI Player (3)
+      value: AI Player (3) (Team 2)
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_IsActive
@@ -3837,6 +3837,14 @@ PrefabInstance:
     - target: {fileID: 5196161606967638826, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842383279278903689, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: kickedForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842383279278903689, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: ragdollTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9020322485391745229, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Avatar
@@ -3849,7 +3857,7 @@ PrefabInstance:
     - target: {fileID: 9020322486170283335, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 9104825e3a5312246a9c9d45bc8be4c9, type: 2}
+      objectReference: {fileID: 9100000, guid: c16024de1813bbe4eb6ce2ff77ab20f1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
 --- !u!1 &315191596 stripped
@@ -4092,6 +4100,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 59410592205807956, guid: 8cd0dac157021f64ba4dfad01e965318, type: 3}
   m_PrefabInstance: {fileID: 324283895}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &324970155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 324970157}
+  - component: {fileID: 324970156}
+  m_Layer: 0
+  m_Name: AIMacroLogic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &324970156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324970155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ce520270ec65e4a967f02cdfb88c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1157438277}
+  Bot0: {fileID: 1072614450}
+  Bot1: {fileID: 484799989}
+  Bot2: {fileID: 2049179978}
+  Bot3: {fileID: 758644962}
+  Bot4: {fileID: 1156807530}
+  Ball: {fileID: 1526218197}
+--- !u!4 &324970157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324970155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6878787, y: 1.5475194, z: 0.84634805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &334252950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4529,7 +4588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc948d813e89894ca003031b5da578d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1526218223}
   bodypartWithJanneRagdoll: {fileID: 837072416}
 --- !u!1001 &397918692
 PrefabInstance:
@@ -5001,7 +5059,7 @@ PrefabInstance:
     - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: goalTarget
       value: 
-      objectReference: {fileID: 1600797806}
+      objectReference: {fileID: 1086133672}
     - target: {fileID: 2956550968044846793, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: target
       value: 
@@ -5068,7 +5126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Name
-      value: AI Player (4)
+      value: AI Player (4) (Team 1)
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_IsActive
@@ -5077,6 +5135,14 @@ PrefabInstance:
     - target: {fileID: 5196161606967638826, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842383279278903689, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: kickedForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842383279278903689, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: ragdollTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9020322485391745229, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Avatar
@@ -5089,7 +5155,7 @@ PrefabInstance:
     - target: {fileID: 9020322486170283335, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 9104825e3a5312246a9c9d45bc8be4c9, type: 2}
+      objectReference: {fileID: 9100000, guid: 64fb9a9b5254e4b4184a37cad3b4f958, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
 --- !u!1 &414008727 stripped
@@ -6060,6 +6126,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 59410592205807956, guid: 8cd0dac157021f64ba4dfad01e965318, type: 3}
   m_PrefabInstance: {fileID: 483986159}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &484799989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+  m_PrefabInstance: {fileID: 315191595}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &488938295 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 59410592205807956, guid: 8cd0dac157021f64ba4dfad01e965318, type: 3}
@@ -6205,11 +6276,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Name
-      value: AI Player
+      value: AI Player (0) (Team 1)
       objectReference: {fileID: 0}
     - target: {fileID: 5196161606967638826, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842383279278903689, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: kickedForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842383279278903689, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: ragdollTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7175585026958689597, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: target
@@ -9119,6 +9198,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 59410592205807956, guid: 8cd0dac157021f64ba4dfad01e965318, type: 3}
   m_PrefabInstance: {fileID: 750847945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &758644962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+  m_PrefabInstance: {fileID: 1083381603}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &768753190
 PrefabInstance:
@@ -14042,6 +14126,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 59410592205807956, guid: 8cd0dac157021f64ba4dfad01e965318, type: 3}
   m_PrefabInstance: {fileID: 1047448661}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1072614450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+  m_PrefabInstance: {fileID: 1574466957}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1077087813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14179,7 +14268,7 @@ PrefabInstance:
     - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: goalTarget
       value: 
-      objectReference: {fileID: 1600797806}
+      objectReference: {fileID: 1086133672}
     - target: {fileID: 2956550968044846793, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: target
       value: 
@@ -14246,7 +14335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Name
-      value: AI Player (2)
+      value: AI Player (2) (Team 1)
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_IsActive
@@ -14255,6 +14344,14 @@ PrefabInstance:
     - target: {fileID: 5196161606967638826, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842383279278903689, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: kickedForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842383279278903689, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: ragdollTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9020322485391745229, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Avatar
@@ -14267,7 +14364,7 @@ PrefabInstance:
     - target: {fileID: 9020322486170283335, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 9104825e3a5312246a9c9d45bc8be4c9, type: 2}
+      objectReference: {fileID: 9100000, guid: e74617c73f285cc4181b8ff4fc2d0675, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
 --- !u!1001 &1083529492
@@ -15460,7 +15557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Object: {fileID: 583249360}
-  timeValue: 300
+  timeValue: 90
   timerText: {fileID: 1127325951}
 --- !u!114 &1127325951
 MonoBehaviour:
@@ -16373,6 +16470,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 59410592205807956, guid: 8cd0dac157021f64ba4dfad01e965318, type: 3}
   m_PrefabInstance: {fileID: 1152612819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1156807530 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+  m_PrefabInstance: {fileID: 414008726}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1157438277 stripped
 GameObject:
@@ -18988,7 +19090,7 @@ MonoBehaviour:
   speedDebuff: {fileID: 511421333734614567, guid: 755540a176c6e3b45b0e49ddcaf0fc9a, type: 3}
   iceDebuff: {fileID: 511421333734614567, guid: 099e69b62b0d62c4ea87b45cb99c5025, type: 3}
   plane: {fileID: 1007272493}
-  spawnDelay: 5
+  spawnDelay: 15
   spawnHeight: 0.2
 --- !u!64 &1297811283
 MeshCollider:
@@ -22902,7 +23004,7 @@ PrefabInstance:
     - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: goalTarget
       value: 
-      objectReference: {fileID: 1086133672}
+      objectReference: {fileID: 1600797806}
     - target: {fileID: 2956550968044846793, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: target
       value: 
@@ -22969,7 +23071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Name
-      value: AI Player (1)
+      value: AI Player (1) (Team 2)
       objectReference: {fileID: 0}
     - target: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_IsActive
@@ -22978,6 +23080,14 @@ PrefabInstance:
     - target: {fileID: 5196161606967638826, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842383279278903689, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: kickedForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842383279278903689, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: ragdollTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9020322485391745229, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Avatar
@@ -22990,7 +23100,7 @@ PrefabInstance:
     - target: {fileID: 9020322486170283335, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 9104825e3a5312246a9c9d45bc8be4c9, type: 2}
+      objectReference: {fileID: 9100000, guid: ae270105177cd6549812f6fbe9b9891d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
 --- !u!1001 &1580081086
@@ -25814,6 +25924,14 @@ PrefabInstance:
     - target: {fileID: 3378593093044956574, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460539188561261987, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: kickedForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460539188561261987, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
+      propertyPath: ragdollTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9190080121144433661, guid: f88c568fb50ac304fb53b745a7636810, type: 3}
       propertyPath: m_Avatar
@@ -29540,6 +29658,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 59410592205807956, guid: 8cd0dac157021f64ba4dfad01e965318, type: 3}
   m_PrefabInstance: {fileID: 2042354748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2049179978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3189685618376922798, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+  m_PrefabInstance: {fileID: 516003761}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2053238004
 GameObject:
