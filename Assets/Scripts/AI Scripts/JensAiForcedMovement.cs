@@ -80,8 +80,9 @@ namespace ActiveRagdoll
 
                 else
                 {
-                Vector3 newVelocity = new Vector3(targetDirection.x, Joint.velocity.y * 0.1f, targetDirection.z);
-                Joint.velocity = newVelocity * MovementSpeed;
+                    Vector3 newVelocity = new Vector3(targetDirection.x, Joint.velocity.y * 0.1f, targetDirection.z);
+                    Joint.velocity = newVelocity * MovementSpeed;
+                }
             }
             else
             {
