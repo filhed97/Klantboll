@@ -3754,6 +3754,14 @@ PrefabInstance:
       propertyPath: MovementSpeed
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1526218223}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: goalTarget
+      value: 
+      objectReference: {fileID: 1600797806}
     - target: {fileID: 2956550968044846793, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: target
       value: 
@@ -4986,6 +4994,14 @@ PrefabInstance:
       propertyPath: MovementSpeed
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1526218223}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: goalTarget
+      value: 
+      objectReference: {fileID: 1600797806}
     - target: {fileID: 2956550968044846793, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: target
       value: 
@@ -6108,13 +6124,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1526218223}
     - target: {fileID: 966099307498813681, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 966099307498813681, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: goalTarget
       value: 
       objectReference: {fileID: 1086133672}
     - target: {fileID: 966099307498813681, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: MovementSpeed
-      value: 4.5
+      value: 5.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1526218223}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: goalTarget
+      value: 
+      objectReference: {fileID: 1086133672}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: RightLegRoot
+      value: 
+      objectReference: {fileID: 1428818750}
     - target: {fileID: 3189685618376922797, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -6198,7 +6230,7 @@ PrefabInstance:
     - target: {fileID: 9020322486170283335, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: ecd788e69f9f94580b7e3505798f9754, type: 2}
+      objectReference: {fileID: 9100000, guid: 9104825e3a5312246a9c9d45bc8be4c9, type: 2}
     m_RemovedComponents:
     - {fileID: 2956550968044846793, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
@@ -14140,6 +14172,14 @@ PrefabInstance:
       propertyPath: MovementSpeed
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1526218223}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: goalTarget
+      value: 
+      objectReference: {fileID: 1600797806}
     - target: {fileID: 2956550968044846793, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: target
       value: 
@@ -20787,6 +20827,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 59410592205807956, guid: 8cd0dac157021f64ba4dfad01e965318, type: 3}
   m_PrefabInstance: {fileID: 1423651042}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1428818750 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3189685618161464215, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+  m_PrefabInstance: {fileID: 516003761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1434580218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22850,6 +22895,14 @@ PrefabInstance:
       propertyPath: MovementSpeed
       value: 4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1526218223}
+    - target: {fileID: 1654686593656648204, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
+      propertyPath: goalTarget
+      value: 
+      objectReference: {fileID: 1086133672}
     - target: {fileID: 2956550968044846793, guid: 0c91fdb388111442aaf93fd81b2b9af6, type: 3}
       propertyPath: target
       value: 
