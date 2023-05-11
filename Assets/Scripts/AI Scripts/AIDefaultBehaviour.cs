@@ -7,13 +7,13 @@ public class AIDefaultBehaviour : MonoBehaviour
 {
     [Header("Modules")]
     [SerializeField] private ActiveRagdoll.ActiveRagdoll _activeRagdoll;
-    [SerializeField] private AIForcedMovement _aiForcedMovement;
+    [SerializeField] private JensAiForcedMovement _aiForcedMovement;
     [SerializeField] private AIAnimationModule _aiAnimationModule;
 
     private void OnValidate()
     {
         if (_activeRagdoll == null) _activeRagdoll = GetComponent<ActiveRagdoll.ActiveRagdoll>();
-        if (_aiForcedMovement == null) _aiForcedMovement = GetComponent<AIForcedMovement>();
+        if (_aiForcedMovement == null) _aiForcedMovement = GetComponent<JensAiForcedMovement>();
         if (_aiAnimationModule == null) _aiAnimationModule = GetComponent<AIAnimationModule>();
     }
 
