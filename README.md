@@ -6,21 +6,18 @@ The game is currently supported on Windows and MacOS. A browser version can be p
 
 To download the game use the following links:
 * MacOS [LINK](https://1dce1aec-9bc8-44f3-b45e-7c01bc62bc67.filesusr.com/archives/3771f3_af4ccd2ac848405eaeb5f64e250d38ed.zip?dn=MacBuildKlantBoll.zip)
-* Windows LINK
+* Windows LINK (TBA)
 
 Unzip the file and launch the executable.
 
 #### Launching the Game
 MacOS may block the game from starting when trying to run the executable. To bypass these warnings follow these steps:
 * Start the executable
-* Open to System Settings
+* Open System Settings
 * Find the Privacy & Security tab
 * Scroll down and press "Open anyway" to launch the game
 
-Windows blocking
-* STEPS HERE
-* HERE
-* HERE
+Solution for Windows blocking the executable TBA.
 
 #### Multiplayer - *NOT SUPPORTED IN BROWSER VERSION*
 This game mode is currently configured for up to 6 players. To play the multiplayer version follow the steps in the main menu. Before clicking _Multiplayer_ follow these steps:
