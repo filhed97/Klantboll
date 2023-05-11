@@ -41,8 +41,8 @@ public class AIHivemind : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        assignTargets(Team1Bots, Team1ValidTargets);
-        assignTargets(Team2Bots, Team2ValidTargets);
+        assignTargets(Team1Bots, Team2ValidTargets);
+        assignTargets(Team2Bots, Team1ValidTargets);
     }
 
     private void assignTargets(List<GameObject> team, List<GameObject> targets)
@@ -51,7 +51,11 @@ public class AIHivemind : MonoBehaviour
         int ballChaser = getClosestToBall(team);
         foreach (GameObject bot in team)
         {
-            if (team.IndexOf(bot) == ballChaser) { bot.GetComponent<AIForcedMovement>().target = Ball.transform; }
+            if (team.IndexOf(bot) == ballChaser) 
+            { 
+                bot.GetComponent<JensAiForcedMovement>().target = Ball.transform;
+                bot.GetComponent<JensAiForcedMovement>().targetIsBall = true;
+            }
             else
             {
                 GameObject closestTarget = getClosestOpponent(bot,targets);
@@ -63,7 +67,8 @@ public class AIHivemind : MonoBehaviour
     private void setTarget(GameObject actor, GameObject target)
     {
         Transform targetTransform = target.transform.Find("Physical").transform;
-        actor.GetComponent<AIForcedMovement>().target = targetTransform;
+        actor.GetComponent<JensAiForcedMovement>().target = targetTransform;
+        actor.GetComponent<JensAiForcedMovement>().targetIsBall = false;
     }
 
     //get index of whichever bot is closest to the ball
