@@ -5,8 +5,10 @@ Klantboll is a football game featuring clumsy ragdoll characters in an arena set
 The game is currently supported on Windows and MacOS. A browser version can be played at [itch.io](https://noahpe0.wixsite.com/klantboll/game).
 
 To download the game use the following links:
-* MacOS LINK
+* MacOS [LINK](https://1dce1aec-9bc8-44f3-b45e-7c01bc62bc67.filesusr.com/archives/3771f3_af4ccd2ac848405eaeb5f64e250d38ed.zip?dn=MacBuildKlantBoll.zip)
 * Windows LINK
+
+Unzip the file and launch the executable.
 
 #### Launching the Game
 MacOS may block the game from starting when trying to run the executable. To bypass these warnings follow these steps:
@@ -42,3 +44,6 @@ You are free to download and modify the project as you like according to the MIT
 * [Michael Stevenson](https://www.mstevenson.net/) for the configurable joint extension scripts
 * OpenAI and ChatGPT
 * Rocket League for the inspiration
+
+## More Info
+For more information about the project and the weekly sprints, visit https://noahpe0.wixsite.com/klantboll.
