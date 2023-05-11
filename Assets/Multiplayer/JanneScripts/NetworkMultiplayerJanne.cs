@@ -10,7 +10,7 @@ public class NetworkMultiplayerJanne : NetworkBehaviour
     [SerializeField] private Transform nextPlayer;
     private static Transform spawnedBall;
     public NetworkVariable<bool> hasPowerup;
-    private Vector3[] spawnPos = new Vector3[2];
+    private Vector3[] spawnPos;
 
     public override void OnNetworkSpawn()
     {
