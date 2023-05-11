@@ -11,7 +11,7 @@ public class BallKicker : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Ball") && Input.GetKey(KeyCode.M))
+        if (other.gameObject.CompareTag("Ball") && Input.GetKey(KeyCode.Space))
         {
             Vector3 centre = other.gameObject.transform.position;
             Vector3 contact = other.ClosestPointOnBounds(transform.position);

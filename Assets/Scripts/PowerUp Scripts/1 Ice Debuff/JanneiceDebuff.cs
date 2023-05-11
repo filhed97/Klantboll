@@ -6,22 +6,19 @@ using UnityEngine;
 
 public class JanneiceDebuff : PowerupEffects2
 {
-    public float amount;
+    public float multiplier = 0.01f;
     public int id = 4;
-    public float originalSpeed;
     public override void Apply(GameObject target)
     {
-        originalSpeed = target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().MovementSpeed;
-
         if (target.CompareTag("Player"))
         {
             target.transform.root.GetComponent<powerupCheck>().hasPowerup = true;
-            target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().MovementSpeed = 0;
+            target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().MultiplySpeedByFactor(multiplier);
         }
         else
         {
             target.GetComponent<AIScript>().hasPowerup = true;
-            target.GetComponent<AIScript>().movementSpeed -= 5;
+            target.GetComponent<AIScript>().movementSpeed *= multiplier;
         }
     }
 
@@ -31,12 +28,12 @@ public class JanneiceDebuff : PowerupEffects2
         if(target.CompareTag("Player"))
         {
             target.transform.root.GetComponent<powerupCheck>().hasPowerup = false;
-            target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().MovementSpeed = originalSpeed;
+            target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().MultiplySpeedByFactor(1/(multiplier));
         }
         else
         {
             target.GetComponent<AIScript>().hasPowerup = false;
-            target.GetComponent<AIScript>().movementSpeed += 5;    
+            target.GetComponent<AIScript>().movementSpeed *= (1/multiplier);    
         }
     }
 

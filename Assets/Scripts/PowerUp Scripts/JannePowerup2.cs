@@ -8,13 +8,13 @@ public class JannePowerup2 : MonoBehaviour
     public float duration = 3f;
     public PowerupEffects2 powerupeffect;
     public static int numOfPowerups;
-    public GameObject powerupIcon;
+    //public GameObject powerupIcon;
     [SerializeField] GameObject pickupeffect;
 
-    private void Awake()
+    /*private void Awake()
     {
         int powerId = powerupeffect.GetId();
-        Debug.Log(powerId);
+        //Debug.Log(powerId);
         switch (powerId)
         {
             case 0:
@@ -35,10 +35,13 @@ public class JannePowerup2 : MonoBehaviour
             case 5:
                 powerupIcon = GameObject.Find("ShieldIcon");
                 break;
+            case 6:
+                powerupIcon = GameObject.Find("SpeedupIcon");
+                break;
 
         }
 
-    }
+    }*/
 
     private void OnTriggerEnter(Collider playerCollider)
     {
@@ -86,6 +89,12 @@ public class JannePowerup2 : MonoBehaviour
                 StartCoroutine(PickupShield(playerCollider.gameObject));
                 
             }
+            else if (powerupeffect.GetId() == 6)
+            {
+
+                StartCoroutine(PickupSpeed(playerCollider.gameObject));
+
+            }
         }
         else if (playerCollider.CompareTag("AI-character") && !playerCollider.GetComponent<AIScript>().hasPowerup)
         {
@@ -118,27 +127,31 @@ public class JannePowerup2 : MonoBehaviour
             {
                 StartCoroutine(AIPickupShield(playerCollider.gameObject));
             }
+            else if (powerupeffect.GetId() == 6)
+            {
+                StartCoroutine(AIPickupSpeed(playerCollider.gameObject));
+            }
         }
     }
 
     IEnumerator PickupSpeed(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
+
         powerupeffect.remove(other);
-        DisableIcon();
         Destroy(gameObject);
     }
 
     IEnumerator PickupKick(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
-        yield return new WaitUntil(MIsPressed);
-        DisableIcon();
+        yield return new WaitUntil(SpaceIsPressed);
+        
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -147,10 +160,10 @@ public class JannePowerup2 : MonoBehaviour
     IEnumerator PickupSlow(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
-        DisableIcon();
+        
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -159,11 +172,11 @@ public class JannePowerup2 : MonoBehaviour
     IEnumerator PickupStick(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitUntil(other.GetComponent<stickScript2>().touchingBall);
         yield return new WaitForSeconds(duration);
-        DisableIcon();
+        
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -172,10 +185,10 @@ public class JannePowerup2 : MonoBehaviour
     IEnumerator PickupFreeze(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
-        DisableIcon();
+        
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -184,11 +197,11 @@ public class JannePowerup2 : MonoBehaviour
     IEnumerator PickupShield(GameObject other)
     {
         DeactivatePowerup();
-        EnableIcon();
+        
         powerupeffect.Apply(other);
         yield return new WaitForSeconds(duration);
         Debug.Log("WeAreTesting");
-        DisableIcon();
+        
         powerupeffect.remove(other);
         Destroy(gameObject);
 
@@ -213,7 +226,7 @@ public class JannePowerup2 : MonoBehaviour
         DeactivatePowerup();
 
         powerupeffect.Apply(other);
-        yield return new WaitUntil(MIsPressed);
+        yield return new WaitUntil(SpaceIsPressed);
 
         powerupeffect.remove(other);
         Destroy(gameObject);
@@ -272,9 +285,9 @@ public class JannePowerup2 : MonoBehaviour
 
 
 
-    public bool MIsPressed()
+    public bool SpaceIsPressed()
     {
-        return Input.GetKeyDown(KeyCode.M);
+        return Input.GetKeyDown(KeyCode.Space);
     }
     public void DeactivatePowerup()
     {
@@ -282,13 +295,13 @@ public class JannePowerup2 : MonoBehaviour
         gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
     }
 
-    public void EnableIcon()
+   /* public void EnableIcon()
     {
         powerupIcon.GetComponent<Image>().enabled = true;
     }
     public void DisableIcon()
     {
         powerupIcon.GetComponent<Image>().enabled = false;
-    }
+    }*/
 
 }

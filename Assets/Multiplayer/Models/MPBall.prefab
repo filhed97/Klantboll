@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 7274674050337782971}
   - component: {fileID: 4516594011248101445}
   - component: {fileID: -5391138109160444372}
+  - component: {fileID: 415324855843652366}
+  - component: {fileID: -1000737935513834294}
   m_Layer: 0
   m_Name: MPBall
   m_TagString: Ball
@@ -34,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 5081550154551682034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 9.434773, y: 9.434773, z: 9.434773}
+  m_LocalScale: {x: 9.5, y: 9.5, z: 9.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,7 +104,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.11000001
+  m_Radius: 0.11
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1204184603723976937
 Rigidbody:
@@ -129,9 +131,9 @@ SphereCollider:
   m_GameObject: {fileID: 5081550154551682034}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.18
+  m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0.0000000037252903}
 --- !u!114 &-4678199464788555508
 MonoBehaviour:
@@ -194,8 +196,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5081550154551682034}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5a4018bbba9e433d96066cd73bde94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &415324855843652366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5081550154551682034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d960ccce819544a1a8c2d76d62e8ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalExplosion: {fileID: 9157105887711914197, guid: 0d592754c198f4675ade51328070b6c1, type: 3}
+--- !u!114 &-1000737935513834294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5081550154551682034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ba97e5019784824b4c234b6e5da602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalText: {fileID: 7904463861127996619, guid: d7992ac3c55f049269bd851fde95bb79, type: 3}
+  tweenTime: 0.05
+  ball: {fileID: 5081550154551682034}

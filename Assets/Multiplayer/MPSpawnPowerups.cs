@@ -13,7 +13,7 @@ public class MPSpawnPowerups : NetworkBehaviour {
     [SerializeField] public GameObject plane; // Spawn area
 
     public float spawnDelay = 1f;
-    public float spawnHeight = 1f; 
+    public float spawnHeight = 0.1f; 
     private float spawnTimer = 0f; 
     private List<Vector3> spawnPositions = new List<Vector3>(); 
     private GameObject[] powerupsArray = new GameObject[5];
