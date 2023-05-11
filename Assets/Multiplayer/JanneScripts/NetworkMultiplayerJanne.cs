@@ -7,17 +7,17 @@ public class NetworkMultiplayerJanne : NetworkBehaviour
 {
     Rigidbody rb;
     [SerializeField] private Transform ball;
-    [SerializeField] private Transform Player2;
+    [SerializeField] private Transform nextPlayer;
     private static Transform spawnedBall;
     public NetworkVariable<bool> hasPowerup;
-    private Vector3[] spawnPos = new Vector3[2];
+    private Vector3[] spawnPos;
 
     public override void OnNetworkSpawn()
     {
         hasPowerup = new NetworkVariable<bool>(false, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-        spawnPos = new Vector3[] { new Vector3(10, 0, 0), new Vector3(-10, 0, 0) };
+        spawnPos = new Vector3[] { new Vector3(10, 0, 0), new Vector3(-10, 0, 0), new Vector3(10, 0, 10), new Vector3(-10, 0, 10), new Vector3(10, 0, -10), new Vector3(-10, 0, -10) };
         var clientId = NetworkManager.Singleton.LocalClientId;
-        Player2.position = spawnPos[clientId];
+        nextPlayer.position = spawnPos[clientId];
         Debug.Log("clientid: " + clientId);
 
         rb = GetComponent<Rigidbody>();
