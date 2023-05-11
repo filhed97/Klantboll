@@ -15460,7 +15460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Object: {fileID: 583249360}
-  timeValue: 60
+  timeValue: 300
   timerText: {fileID: 1127325951}
 --- !u!114 &1127325951
 MonoBehaviour:
@@ -16105,11 +16105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1204184603723976937, guid: e5b62c30d50d242e5a14c56531e6b162, type: 3}
       propertyPath: m_Drag
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1204184603723976937, guid: e5b62c30d50d242e5a14c56531e6b162, type: 3}
       propertyPath: m_Mass
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1204184603723976937, guid: e5b62c30d50d242e5a14c56531e6b162, type: 3}
       propertyPath: m_AngularDrag
