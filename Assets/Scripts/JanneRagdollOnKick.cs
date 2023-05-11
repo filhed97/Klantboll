@@ -32,6 +32,8 @@ public class JanneRagdollOnKick : MonoBehaviour
     private List<float> damperXOriginal;
     private List<float> damperYZOriginal;
 
+    private AudioSource OhNoSound;
+
     //Maybe use some other time
     /* [Tooltip("The angularXDrive SpringPosition power")]
      public float springPowerX = 400.0f;
@@ -41,6 +43,7 @@ public class JanneRagdollOnKick : MonoBehaviour
     */
     void Start()
     {
+        OhNoSound = GetComponent<AudioSource> ();
         StartCoroutine(WaitForStabalizer());
       
     }
@@ -133,6 +136,11 @@ public class JanneRagdollOnKick : MonoBehaviour
             
             if (collisions.Contains(collision.gameObject.name))
             {
+                // add sound effect after the AI-character has been kicked
+                if(collision.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.Space))
+                {
+                    OhNoSound.Play();
+                }
                // Debug.Log("Collided with: " + collision.gameObject.name);
                 if(CollidedWith.transform.root.Find(animatedVersionName).GetComponent<Animator>().GetBool(KickParameterName) == true)
                 {
