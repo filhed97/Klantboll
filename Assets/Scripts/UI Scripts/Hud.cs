@@ -32,13 +32,11 @@ public class Hud : MonoBehaviour
         speed = GetComponent<ActiveRagdoll.ForcedMovement>().GetSpeed();
         kick = ballkicking.kickforce;
 
-
-
         if(speed < 0.1f)
         {
             iceIcon.enabled = true;
         }
-        else if (speed > 9f)
+        else if (speed > 8f)
         {
             speedIcon.enabled = true;
         }
@@ -46,7 +44,7 @@ public class Hud : MonoBehaviour
         {
             slowIcon.enabled = true;
         }
-        else if(kick > 400)
+        else if(kick > 900)
         {
             kickIcon.enabled = true;
         }

@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17df28205f9846c7bd41e1d5a900618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kickforce: 200
+  kickforce: 800
 --- !u!82 &3581516088535112425
 AudioSource:
   m_ObjectHideFlags: 0
@@ -855,7 +855,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.005
+  m_Radius: 0.01
   m_Center: {x: 0, y: 0.001, z: 0.01}
 --- !u!1 &1566353305846380527
 GameObject:
