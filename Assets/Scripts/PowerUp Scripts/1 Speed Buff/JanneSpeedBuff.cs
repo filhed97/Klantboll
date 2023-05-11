@@ -7,39 +7,44 @@ using UnityEngine;
 public class JanneSpeedBuff : PowerupEffects2
 {
     public int id = 6;
+    private float multiplier;
+    private float AIMultiplier;
 
     public override void Apply(GameObject target)
     {
-        float multiplier = target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().BoostSpeedMultiplier;
 
         if (target.CompareTag("Player"))
         {
+            multiplier = target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().BoostSpeedMultiplier;
             target.transform.root.GetComponent<powerupCheck>().hasPowerup = true;
             target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().boostMode = true;
             target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().MultiplySpeedByFactor(multiplier);
         }
-        else
+        else if (target.CompareTag("AI-character"))
         {
-            target.GetComponent<AIScript>().hasPowerup = true;
-            target.GetComponent<AIScript>().movementSpeed *= multiplier;
+            AIMultiplier = target.transform.root.GetComponent<ActiveRagdoll.JensAiForcedMovement>().BoostSpeedMultiplier;
+            target.transform.root.GetComponent<powerupCheck>().hasPowerup = true;
+            target.transform.root.GetComponent<ActiveRagdoll.JensAiForcedMovement>().boostMode = true;
+            target.transform.root.GetComponent<ActiveRagdoll.JensAiForcedMovement>().MultiplySpeedByFactor(AIMultiplier);
         }
     }
 
     public override void remove(GameObject target)
     {      
-        float multiplier = target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().BoostSpeedMultiplier;
 
         // Debug.Log("REMOVE");
         if (target.CompareTag("Player"))
         {
             target.transform.root.GetComponent<powerupCheck>().hasPowerup = false;
             target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().boostMode = false;
-            target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().MultiplySpeedByFactor((1/multiplier));
+            target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().MultiplySpeedByFactor((1/AIMultiplier));
         }
-        else
+        else if(target.CompareTag("AI-character"))
         {
-            target.GetComponent<AIScript>().hasPowerup = false;
-            target.GetComponent<AIScript>().movementSpeed *= (1/multiplier);
+            Debug.Log("hALF OF THINGS");
+            target.transform.root.GetComponent<powerupCheck>().hasPowerup = false;
+            target.transform.root.GetComponent<ActiveRagdoll.JensAiForcedMovement>().boostMode = false;
+            target.transform.root.GetComponent<ActiveRagdoll.JensAiForcedMovement>().MultiplySpeedByFactor(1/AIMultiplier);
         }
     }
 

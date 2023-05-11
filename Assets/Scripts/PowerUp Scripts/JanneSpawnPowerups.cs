@@ -17,7 +17,7 @@ public class JanneSpawnPowerups : MonoBehaviour {
     private float spawnTimer = 0f; 
     private List<Vector3> spawnPositions = new List<Vector3>(); 
     private GameObject[] powerupsArray = new GameObject[4];
-    public static int maxPowerups = 20;
+    public static int maxPowerups = 5;
 
     void Start() {
         MeshFilter meshFilter = plane.GetComponent<MeshFilter>();
