@@ -19,7 +19,7 @@ public class movementBuffsAndDebuffs : StateMachineBehaviour
         if (animator.GetBool("iceDebuff"))
         {
             animator.speed = 0F;
-            animator.transform.root.GetComponent<AIDefaultBehaviour>().enabled = false;
+            animator.transform.root.GetComponent<DefaultBehaviour>().enabled = false;
         }
 
        else if(animator.GetBool("slowDebuff"))
@@ -35,7 +35,7 @@ public class movementBuffsAndDebuffs : StateMachineBehaviour
         else
         {
            animator.speed = animationOgSpeed;
-           animator.transform.root.GetComponent<AIDefaultBehaviour>().enabled = true;
+           animator.transform.root.GetComponent<DefaultBehaviour>().enabled = true;
         }
     }
 

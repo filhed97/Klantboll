@@ -1041,7 +1041,7 @@ Animator:
   m_GameObject: {fileID: 2343389108462185863}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 78e258d55f02a3c48ae27661bd162208, type: 3}
-  m_Controller: {fileID: 9100000, guid: ecd788e69f9f94580b7e3505798f9754, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9104825e3a5312246a9c9d45bc8be4c9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
@@ -1438,6 +1438,8 @@ GameObject:
   - component: {fileID: 7175585026958689597}
   - component: {fileID: 3189685618376922805}
   - component: {fileID: 1654686593656648204}
+  - component: {fileID: 9001028362902683848}
+  - component: {fileID: 218469637031846771}
   m_Layer: 7
   m_Name: AI Player
   m_TagString: Untagged
@@ -1475,7 +1477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _activeRagdoll: {fileID: 3189685618376922807}
-  _aiForcedMovement: {fileID: 0}
+  _aiForcedMovement: {fileID: 1654686593656648204}
   _aiAnimationModule: {fileID: 7175585026958689597}
 --- !u!114 &3189685618376922807
 MonoBehaviour:
@@ -1670,13 +1672,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Joint: {fileID: 3189685618092132580}
   RightLegRoot: {fileID: 3189685618161464215}
-  MovementSpeed: 4.5
   HeightDamperOffset: 0.15
   DamperForceMultiplier: 1.5
   ragdollOnKickBodyPart: {fileID: 1665180294928384341}
+  DefaultMovementSpeed: 7.8
   target: {fileID: 0}
   goalTarget: {fileID: 0}
   kickForce: 300
+  animator: {fileID: 9020322486170283335}
+--- !u!114 &9001028362902683848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189685618376922798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dd237ae694f26a41b2f9f56d321fe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasPowerup: 0
+--- !u!114 &218469637031846771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189685618376922798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6824dd5442022124cb833590d18dc8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   animator: {fileID: 9020322486170283335}
 --- !u!1 &4126501275622876231
 GameObject:
