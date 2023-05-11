@@ -13,9 +13,15 @@ public class MainMenu : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void PlayGame() {
+    public void PlaySingle() {
         //Debug.Log("PLAY!");
         SceneManager.LoadScene("Main");
+        
+    }
+
+    public void PlayMultiplayer() {
+        //Debug.Log("PLAY!");
+        SceneManager.LoadScene("MP-Janne");
         
     }
 
