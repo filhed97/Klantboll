@@ -12,8 +12,10 @@ namespace ActiveRagdoll
         private float MovementSpeed = 4.5F;
         public float HeightDamperOffset = 0.1f;
         public float DamperForceMultiplier = 0.0f;
+        public float BoostSpeedMultiplier = 1.5f;
         public GameObject ragdollOnKickBodyPart;
-        public float DefaultMovementSpeed = 7.8f;
+        public float DefaultMovementSpeed = 7.8f; 
+        public bool boostMode;
         public Vector2 Target2D { get; set; }       //currently unused
         public Vector3 Target3D { get; set; }
 
@@ -36,6 +38,7 @@ namespace ActiveRagdoll
             RLegJoint = RightLegRoot.GetComponent<ConfigurableJoint>();
             RLegDrive = RLegJoint.angularXDrive;
             Joint.velocity = zeroes;
+            boostMode = false;
         }
 
         public void MultiplySpeedByFactor(float factor)
@@ -67,9 +70,19 @@ namespace ActiveRagdoll
             if (Vector3.Distance(target.position, Joint.position) > stoppingDistance & !ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
             {
                 //  Joint.velocity = newVelocity * MovementSpeed;
+                if (boostMode)
+                {
+                    //forced velocity in x,y,z. joint height also set in case player enters boostmode in awkward position.
+                    Joint.transform.position = new Vector3(Joint.transform.position.x, initialJointHeight, Joint.transform.position.z);
+                    Vector3 newVelocity = new Vector3(targetDirection.x, 0, targetDirection.z);
+                    Joint.velocity = newVelocity * MovementSpeed;
+                }
 
-                Vector3 newVelocity = new Vector3(targetDirection.x, Joint.velocity.y * 0.1f, targetDirection.z);
-                Joint.velocity = newVelocity * MovementSpeed;
+                else
+                {
+                    Vector3 newVelocity = new Vector3(targetDirection.x, Joint.velocity.y * 0.1f, targetDirection.z);
+                    Joint.velocity = newVelocity * MovementSpeed;
+                }
             }
             else
             {

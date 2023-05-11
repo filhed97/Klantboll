@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 5842383279278903689}
   m_Layer: 7
   m_Name: spine.001
-  m_TagString: Untagged
+  m_TagString: AI-character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1674,8 +1674,10 @@ MonoBehaviour:
   RightLegRoot: {fileID: 3189685618161464215}
   HeightDamperOffset: 0.15
   DamperForceMultiplier: 1.5
+  BoostSpeedMultiplier: 2
   ragdollOnKickBodyPart: {fileID: 1665180294928384341}
   DefaultMovementSpeed: 7.8
+  boostMode: 0
   target: {fileID: 0}
   goalTarget: {fileID: 0}
   kickForce: 300

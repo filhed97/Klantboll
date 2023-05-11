@@ -15,10 +15,10 @@ public class JanneiceDebuff : PowerupEffects2
             target.transform.root.GetComponent<powerupCheck>().hasPowerup = true;
             target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().MultiplySpeedByFactor(multiplier);
         }
-        else
+        else if (target.CompareTag("AI-character"))
         {
-            target.GetComponent<AIScript>().hasPowerup = true;
-            target.GetComponent<AIScript>().movementSpeed *= multiplier;
+            target.transform.root.GetComponent<powerupCheck>().hasPowerup = true;
+            target.transform.root.GetComponent<ActiveRagdoll.JensAiForcedMovement>().MultiplySpeedByFactor(multiplier);
         }
     }
 
@@ -30,10 +30,10 @@ public class JanneiceDebuff : PowerupEffects2
             target.transform.root.GetComponent<powerupCheck>().hasPowerup = false;
             target.transform.root.GetComponent<ActiveRagdoll.ForcedMovement>().MultiplySpeedByFactor(1/(multiplier));
         }
-        else
+        else if (target.CompareTag("AI-character"))
         {
-            target.GetComponent<AIScript>().hasPowerup = false;
-            target.GetComponent<AIScript>().movementSpeed *= (1/multiplier);    
+            target.transform.root.GetComponent<powerupCheck>().hasPowerup = false;
+            target.transform.root.GetComponent<ActiveRagdoll.JensAiForcedMovement>().MultiplySpeedByFactor(1/multiplier);
         }
     }
 

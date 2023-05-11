@@ -23,7 +23,7 @@ public class AiMovementPowerupCheck : MonoBehaviour
         {
             animator.SetBool("boost", true);
         }
-        else if(movementspeed < originalSpeed*0.9f)
+        else if(movementspeed < originalSpeed*0.5f)
         {
             animator.SetBool("slowDebuff", true);
         }
