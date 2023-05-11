@@ -26,6 +26,7 @@ namespace ActiveRagdoll
 
         // AI Variables
         public Transform target; // Assign the ball target in the Inspector
+        public bool targetIsBall;
         public Transform goalTarget; // Assign the goal target in the Inspector
         private float kickDistance = 1.5f; // Distance to the ball to attempt a kick
         public float kickForce = 300f; // Force applied to the ball when kicked
@@ -56,18 +57,18 @@ namespace ActiveRagdoll
         public float GetSpeed() { return MovementSpeed; }
         // Update is called once per frame
         void FixedUpdate()
-{
-    // AI decision-making logic
-    Vector3 targetDirection = target.position - Joint.position;
-    targetDirection.y = 0; // We don't want to move vertically
-    targetDirection.Normalize();
+        {
+            // AI decision-making logic
+            Vector3 targetDirection = target.position - Joint.position;
+            targetDirection.y = 0; // We don't want to move vertically
+            targetDirection.Normalize();
 
-    // Control the AI movement based on the targetDirection
-    //Vector3 newVelocity = new Vector3(targetDirection.x, 0, targetDirection.z);
+            // Control the AI movement based on the targetDirection
+            //Vector3 newVelocity = new Vector3(targetDirection.x, 0, targetDirection.z);
 
-    float stoppingDistance = 1.0f; // Add stopping distance to prevent getting too close
-    if (Vector3.Distance(target.position, Joint.position) > stoppingDistance & !ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
-    {
+            float stoppingDistance = 1.0f; // Add stopping distance to prevent getting too close
+            if (Vector3.Distance(target.position, Joint.position) > stoppingDistance & !ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
+            {
                 //  Joint.velocity = newVelocity * MovementSpeed;
                 if (boostMode)
                 {
@@ -80,28 +81,30 @@ namespace ActiveRagdoll
                 else
                 {
                 Vector3 newVelocity = new Vector3(targetDirection.x, Joint.velocity.y * 0.1f, targetDirection.z);
-                    Joint.velocity = newVelocity * MovementSpeed ;
-                }
-                
+                Joint.velocity = newVelocity * MovementSpeed;
             }
-    else
-    {
-        if (!ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
-            Joint.velocity = Vector3.zero; // Stop the AI if it's within the stopping distance
-    }
+            else
+            {
+                if (!ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
+                    Joint.velocity = Vector3.zero; // Stop the AI if it's within the stopping distance
+            }
 
-    // Kick the ball if close enough
-    if (Vector3.Distance(target.position, Joint.position) < kickDistance & !ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
-    {
-        animator.SetBool("kick", true);
-        Rigidbody ballRigidbody = target.GetComponent<Rigidbody>();
-        Vector3 kickDirection = (goalTarget.position - target.position).normalized;
-        ballRigidbody.AddForce(kickDirection * kickForce);
+            // Kick the ball if close enough
+            if (targetIsBall & Vector3.Distance(target.position, Joint.position) < kickDistance & !ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
+            {
+                animator.SetBool("kick", true);
+                Rigidbody ballRigidbody = target.GetComponent<Rigidbody>();
+                Vector3 kickDirection = (goalTarget.position - target.position).normalized;
+                ballRigidbody.AddForce(kickDirection * kickForce);
 
-    }
+            }
+            else if (!targetIsBall & Vector3.Distance(target.position, Joint.position) < kickDistance & !ragdollOnKickBodyPart.GetComponent<JanneRagdollOnKick>().getRagdolled())
+            {
+                animator.SetBool("kick", true);
+            }
 
-    HeightDamper();
-}
+            HeightDamper();
+        }
 
 
         private void HeightDamper()
@@ -112,7 +115,7 @@ namespace ActiveRagdoll
             if (diff < 0)
             //joint is above threshold
             {
-                Joint.AddForce(transform.up *-1* -magnitude);
+                Joint.AddForce(transform.up * -1 * -magnitude);
             }
         }
 
