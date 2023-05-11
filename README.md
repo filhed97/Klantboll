@@ -23,7 +23,7 @@ Windows blocking
 * HERE
 
 #### Multiplayer - *NOT SUPPORTED IN BROWSER VERSION*
-This game mode is currently configured for 6 players. To play the multiplayer version follow the steps in the main menu. Before clicking _Multiplayer_ follow these steps:
+This game mode is currently configured for up to 6 players. To play the multiplayer version follow the steps in the main menu. Before clicking _Multiplayer_ follow these steps:
 * Choose one player as the host of the game
 * Find the local IP-address of the host
 * Then click _Multiplayer_ and click on _Host_ in the top right corner
