@@ -5,8 +5,8 @@ Klantboll is a football game featuring clumsy ragdoll characters in an arena set
 The game is currently supported on Windows and MacOS. A browser version can be played at [itch.io](https://noahpe0.wixsite.com/klantboll/game).
 
 To download the game use the following links:
-* MacOS [LINK](https://1dce1aec-9bc8-44f3-b45e-7c01bc62bc67.filesusr.com/archives/3771f3_af4ccd2ac848405eaeb5f64e250d38ed.zip?dn=MacBuildKlantBoll.zip)
-* Windows LINK (TBA)
+* MacOS [LINK](https://1dce1aec-9bc8-44f3-b45e-7c01bc62bc67.filesusr.com/archives/3771f3_a562df8fe41e4aaab77b543e26e83635.zip?dn=KlantbollMac.zip)
+* Windows [LINK](https://1dce1aec-9bc8-44f3-b45e-7c01bc62bc67.filesusr.com/archives/3771f3_9bd7989700ae4c0199b2a9cc18a75669.zip?dn=KlantbollWindows.zip)
 
 Unzip the file and launch the executable.
 
@@ -17,7 +17,10 @@ MacOS may block the game from starting when trying to run the executable. To byp
 * Find the Privacy & Security tab
 * Scroll down and press "Open anyway" to launch the game
 
-Solution for Windows blocking the executable TBA.
+Windows may block the game from running. To run the game follow these steps:
+* Start the executable
+* Click more information in the warning window
+* Click "run anyway" to launch the game
 
 #### Multiplayer - *NOT SUPPORTED IN BROWSER VERSION*
 This game mode is currently configured for up to 6 players. To play the multiplayer version follow the steps in the main menu. Before clicking _Multiplayer_ follow these steps:
