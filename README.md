@@ -29,11 +29,8 @@ This game mode is currently configured for up to 6 players. To play the multipla
 
 If you are unable to connect restart the application and carefully repeat the steps above.
 
-## Get Involved
-You are free to download and modify the project as you like according to the MIT License. 
-* Download [Unity Hub](https://unity.com/download) and install Unity version 2021.3.23f1
-* Clone the repository
-* Open the project in Unity Hub
+## Licensing
+For licensing see LICENSE.
 
 ## Special Thanks
 * Unity
