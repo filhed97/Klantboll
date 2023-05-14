@@ -6,7 +6,7 @@ The game is currently supported on Windows and MacOS. A browser version can be p
 
 To download the game use the following links:
 * MacOS [LINK](https://1dce1aec-9bc8-44f3-b45e-7c01bc62bc67.filesusr.com/archives/3771f3_a562df8fe41e4aaab77b543e26e83635.zip?dn=KlantbollMac.zip)
-* Windows [LINK](https://1dce1aec-9bc8-44f3-b45e-7c01bc62bc67.filesusr.com/archives/3771f3_9bd7989700ae4c0199b2a9cc18a75669.zip?dn=KlantbollWindows.zip)
+* Windows [LINK](https://1dce1aec-9bc8-44f3-b45e-7c01bc62bc67.filesusr.com/archives/3771f3_4194164c416142fc801a31b15a5d53d7.zip?dn=WindowsKlantboll.zip)
 
 Unzip the file and launch the executable.
 
